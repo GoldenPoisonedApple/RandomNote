@@ -1,0 +1,20 @@
+#builtいらない
+built/
+
+#Unity系
+RandomNote/.vs/
+RandomNote/Library/
+RandomNote/Logs/
+RandomNote/obj/
+RandomNote/Packages/
+RandomNote/ProjectSettings/
+RandomNote/UserSettings/
+RandomNote/.vsconfig
+RandomNote/*.csproj
+RandomNote/RandomNote.sln
+
+#Assets系
+RandomNote/Assets/TextMesh Pro/
+
+#メタファイルいらない
+*.meta
