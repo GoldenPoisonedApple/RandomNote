@@ -14,7 +14,7 @@ public class MainScreen : MonoBehaviour
     //定数
     const int FRAME_SPACE = 50;         //フレーム間隔
 
-
+    /*
     void Start() {
         //データ読み込み
         WordDataWrapper wordDataWrapper = WordDataManager.Load();
@@ -49,5 +49,6 @@ public class MainScreen : MonoBehaviour
         //フレームビュワー高さ変更
         frameViewer.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, frame_viewer_height + FRAME_SPACE);
     }
+    */
 
 }

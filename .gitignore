@@ -12,6 +12,7 @@ RandomNote/UserSettings/
 RandomNote/.vsconfig
 RandomNote/*.csproj
 RandomNote/RandomNote.sln
+RandomNote/Temp
 
 #Assets系
 RandomNote/Assets/TextMesh Pro/

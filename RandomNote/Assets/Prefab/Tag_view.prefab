@@ -152,7 +152,7 @@ MonoBehaviour:
     _lineSize: 0.05
     _obsoleteNumSides: -1
     _outlineColor: {r: 0, g: 0, b: 0, a: 1}
-    _outlineSize: 2
+    _outlineSize: 4
     _pathSegments:
     - p0: {x: -0.3, y: 0, z: 0}
       p1: {x: 0, y: 0, z: 0}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u30BF\u30B0"
+  m_text: "\u60AA\u304F\u306A\u3044\u30BF\u30B0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f5e6a218a7cff142aef8dae4f988ac0, type: 2}
   m_sharedMaterial: {fileID: 5244355198591188407, guid: 1f5e6a218a7cff142aef8dae4f988ac0, type: 2}
@@ -270,8 +270,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
