@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Test : MonoBehaviour {
+    /*
     private void Start () {
         //‚±‚±‚ÅTrailRenderer‚Ìî•ñ‚ğ\‘¢‘ÌA‹y‚ÑƒŠƒXƒg‚ÉŠi”[‚·‚é
         TestDataWrapper testDataWrapper = new TestDataWrapper();
@@ -22,4 +23,5 @@ public class Test : MonoBehaviour {
         Debug.Log("path : " + Application.persistentDataPath + "/PaintData" + ".json");
         Debug.Log(TestDataManager.Load());
     }
+    */
 }

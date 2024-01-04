@@ -22,5 +22,8 @@ public class FileData {
     /// </summary>
     public List<WordData> wordDatas = new List<WordData>();
 
+    /// <summary>
+    /// タグデータ
+    /// </summary>
     public TagDataWrapper tagDatas;
 }
