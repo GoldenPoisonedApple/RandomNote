@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// ファイルデータ
 /// </summary>
 [Serializable]
-public class FileData {
+public class FileData : I_FileContent {
 
     /// <summary>
     /// 単語群データタイトル

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="0MJmwhfruCRYVpRNrWJh" name="画面基本情報">
-        <mxGraphModel dx="356" dy="547" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="235" dy="573" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -20,7 +20,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="Z5VG1z7onaDQEja021IE" name="UI・状態遷移">
-        <mxGraphModel dx="1768" dy="1699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1655" dy="1553" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1278,7 +1278,7 @@
                 <mxCell id="s7AQ6gKa5k6qyE13elaj-1" value="削除はリスト再生成&lt;br&gt;新規・更新は再生成しない" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;" parent="1" vertex="1">
                     <mxGeometry x="1153.13" y="677" width="216.87" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="AltwK_SKuCeLCwdgNfup-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0id2lkdGg6IDUxMnB4OyBoZWlnaHQ6IDUxMnB4OyBvcGFjaXR5OiAxOyIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHk9IjBweCIgeD0iMHB4IiBpZD0iX3gzMl8iIHZlcnNpb249IjEuMSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzRCNEI0Qjt9Cjwvc3R5bGU+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IHJnYigyNTUsIDI1NSwgMjU1KTsiIGQ9Ik0zNzYuMzI0LDMxMi41MDhjNDkuNjM4LTc4Ljc3NCw0MC4yMzgtMTg0LjMyNi0yOC4zMDYtMjUyLjg3MWMtNzkuNTA3LTc5LjUxNS0yMDguODcyLTc5LjUxNS0yODguMzg4LDAmIzEwOyYjOTsmIzk7Yy03OS41MDcsNzkuNTE2LTc5LjUwNywyMDguODczLDAsMjg4LjM3OWM2OC41MzYsNjguNTQ0LDE3NC4xMTUsNzcuOTM1LDI1Mi44OCwyOC4zMDZsMTM1LjY2OCwxMzUuNjc2TDUxMiw0NDguMTg2JiMxMDsmIzk7JiM5O0wzNzYuMzI0LDMxMi41MDh6IE0yOTYuNTQzLDI5Ni41NDJjLTUxLjEyMSw1MS4xMzktMTM0LjMwOCw1MS4xMzktMTg1LjQzOSwwYy01MS4xMjEtNTEuMTIxLTUxLjExMi0xMzQuMjk5LDAuMDA5LTE4NS40MyYjMTA7JiM5OyYjOTtjNTEuMTIyLTUxLjEyMSwxMzQuMzA5LTUxLjEzLDE4NS40My0wLjAwOEMzNDcuNjY1LDE2Mi4yNDMsMzQ3LjY2NSwyNDUuNDIxLDI5Ni41NDMsMjk2LjU0MnoiIGNsYXNzPSJzdDAiLz4KPC9nPgo8L3N2Zz4=;" vertex="1" parent="1">
+                <mxCell id="AltwK_SKuCeLCwdgNfup-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0id2lkdGg6IDUxMnB4OyBoZWlnaHQ6IDUxMnB4OyBvcGFjaXR5OiAxOyIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHk9IjBweCIgeD0iMHB4IiBpZD0iX3gzMl8iIHZlcnNpb249IjEuMSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzRCNEI0Qjt9Cjwvc3R5bGU+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IHJnYigyNTUsIDI1NSwgMjU1KTsiIGQ9Ik0zNzYuMzI0LDMxMi41MDhjNDkuNjM4LTc4Ljc3NCw0MC4yMzgtMTg0LjMyNi0yOC4zMDYtMjUyLjg3MWMtNzkuNTA3LTc5LjUxNS0yMDguODcyLTc5LjUxNS0yODguMzg4LDAmIzEwOyYjOTsmIzk7Yy03OS41MDcsNzkuNTE2LTc5LjUwNywyMDguODczLDAsMjg4LjM3OWM2OC41MzYsNjguNTQ0LDE3NC4xMTUsNzcuOTM1LDI1Mi44OCwyOC4zMDZsMTM1LjY2OCwxMzUuNjc2TDUxMiw0NDguMTg2JiMxMDsmIzk7JiM5O0wzNzYuMzI0LDMxMi41MDh6IE0yOTYuNTQzLDI5Ni41NDJjLTUxLjEyMSw1MS4xMzktMTM0LjMwOCw1MS4xMzktMTg1LjQzOSwwYy01MS4xMjEtNTEuMTIxLTUxLjExMi0xMzQuMjk5LDAuMDA5LTE4NS40MyYjMTA7JiM5OyYjOTtjNTEuMTIyLTUxLjEyMSwxMzQuMzA5LTUxLjEzLDE4NS40My0wLjAwOEMzNDcuNjY1LDE2Mi4yNDMsMzQ3LjY2NSwyNDUuNDIxLDI5Ni41NDMsMjk2LjU0MnoiIGNsYXNzPSJzdDAiLz4KPC9nPgo8L3N2Zz4=;" parent="1" vertex="1">
                     <mxGeometry x="-589" y="851.5" width="10" height="10" as="geometry"/>
                 </mxCell>
             </root>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 /// 単語ファイル群の情報ファイル
 /// </summary>
 [Serializable]
-public class FileListDataWrapper {
+public class FileListDataWrapper : I_FileContent {
 
     /// <summary>
     /// 隠しファイルパスワード

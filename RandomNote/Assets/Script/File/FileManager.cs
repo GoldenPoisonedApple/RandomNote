@@ -13,7 +13,7 @@ public class FileManager {
     /// コンストラクタ
     /// </summary>
     /// <param name="file_path">ここで渡したファイルに対して操作を行う</param>
-    FileManager (string file_path) {
+    public FileManager (string file_path) {
         this.file_path = file_path;
     }
 
@@ -21,8 +21,7 @@ public class FileManager {
     /// 書き込み機能
     /// </summary>
     /// <param name="paintDataWrapper">シリアライズするデータ</param>
-    public void Save(I_FileContent fileContent)
-    {
+    public void Save(I_FileContent fileContent) {
         
         string jsonSerializedData = JsonUtility.ToJson(fileContent);
         //ログ表示

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="vcL6-Ej94j082WODxmDW" name="データ設計">
-        <mxGraphModel dx="1651" dy="446" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="2854" dy="464" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -692,41 +692,47 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="136" value="TagData" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=15;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" parent="1" vertex="1">
-                    <mxGeometry x="585" y="810" width="160" height="63" as="geometry">
+                    <mxGeometry x="585" y="810" width="160" height="74" as="geometry">
                         <mxRectangle x="550" y="410" width="90" height="20" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="137" value="+ num : int        //タグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
+                <mxCell id="340" value="+ word : string        //タグ名" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="136">
                     <mxGeometry y="15" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="138" value="+ used_count : int    //使用されている数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
+                <mxCell id="137" value="+ num : int        //タグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
                     <mxGeometry y="26" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="139" value="+ pre : int    //前のタグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
+                <mxCell id="138" value="+ used_count : int    //使用されている数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
                     <mxGeometry y="37" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="140" value="+ next : int    //次のタグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
+                <mxCell id="139" value="+ pre : int    //前のタグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
                     <mxGeometry y="48" width="160" height="11" as="geometry"/>
                 </mxCell>
+                <mxCell id="140" value="+ next : int    //次のタグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
+                    <mxGeometry y="59" width="160" height="11" as="geometry"/>
+                </mxCell>
                 <mxCell id="141" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="136" vertex="1">
-                    <mxGeometry y="59" width="160" height="4" as="geometry"/>
+                    <mxGeometry y="70" width="160" height="4" as="geometry"/>
                 </mxCell>
                 <mxCell id="142" value="TagDataWrapper" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=15;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" parent="1" vertex="1">
-                    <mxGeometry x="570" y="712" width="190" height="52" as="geometry">
+                    <mxGeometry x="570" y="712" width="210" height="72" as="geometry">
                         <mxRectangle x="550" y="410" width="90" height="20" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="143" value="+ end : int    //次データ入力タグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="142" vertex="1">
-                    <mxGeometry y="15" width="190" height="11" as="geometry"/>
+                    <mxGeometry y="15" width="210" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="144" value="+ pre_end : int    //ラストデータ入力タグ番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="142" vertex="1">
-                    <mxGeometry y="26" width="190" height="11" as="geometry"/>
+                    <mxGeometry y="26" width="210" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="145" value="+ tagData : List&lt;TagData&gt;        //タグデータのリスト" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="142" vertex="1">
-                    <mxGeometry y="37" width="190" height="11" as="geometry"/>
+                    <mxGeometry y="37" width="210" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="146" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="142" vertex="1">
-                    <mxGeometry y="48" width="190" height="4" as="geometry"/>
+                    <mxGeometry y="48" width="210" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="341" value="+ addTag(string TagName, int used_count) : int&#10;//タグを追加 タグの保存番号を返す" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="142">
+                    <mxGeometry y="52" width="210" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="148" value="タグ群データ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=15;fontColor=#FFFFFF;spacingTop=-4;" parent="1" vertex="1">
                     <mxGeometry x="670" y="686" width="102.13" height="22" as="geometry"/>
@@ -1038,6 +1044,49 @@
                 </mxCell>
                 <mxCell id="321" value="環境設定値系" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=20;fontColor=default;spacingTop=-4;" parent="1" vertex="1">
                     <mxGeometry x="-753" y="960" width="213" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="322" value="オブザーバーパターン" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=20;fontColor=default;spacingTop=-4;" vertex="1" parent="1">
+                    <mxGeometry x="-1590" y="50" width="213" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="323" value="«interface»&#10;I_Observer" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" vertex="1" parent="1">
+                    <mxGeometry x="-1510" y="192" width="240" height="40" as="geometry">
+                        <mxRectangle x="550" y="410" width="90" height="20" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="324" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="323">
+                    <mxGeometry y="25" width="240" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="326" value="+ update () : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="323">
+                    <mxGeometry y="29" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="330" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=diamondThin;startFill=1;" edge="1" parent="1" source="327" target="323">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="327" value="«interface»&#10;I_Observable" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=25;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" vertex="1" parent="1">
+                    <mxGeometry x="-1190" y="192" width="240" height="73" as="geometry">
+                        <mxRectangle x="550" y="410" width="90" height="20" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="336" value="- observers : List&lt;Observer&gt;    //通知するオブザーバー" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="327">
+                    <mxGeometry y="25" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="328" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="327">
+                    <mxGeometry y="36" width="240" height="4" as="geometry"/>
+                </mxCell>
+                <mxCell id="329" value="+ addObserver() : void    //オブザーバー追加" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="327">
+                    <mxGeometry y="40" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="335" value="+ deleteObserver(Observer observer) : void    //オブザーバー削除" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="327">
+                    <mxGeometry y="51" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="334" value="+ notifyObservers() : void    //通知" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="327">
+                    <mxGeometry y="62" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="331" value="観察者：通知受取" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=12;fontColor=default;spacingTop=-4;" vertex="1" parent="1">
+                    <mxGeometry x="-1440" y="170" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="332" value="観察可能：通知発行" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=12;fontColor=default;spacingTop=-4;" vertex="1" parent="1">
+                    <mxGeometry x="-1130" y="170" width="140" height="20" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
