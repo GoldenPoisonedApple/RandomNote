@@ -5,7 +5,7 @@ using System;
 /// </summary>
 [Serializable]
 public class TagData {
-    
+
     /// <summary>
     /// タグ新規場所に作成時コンストラクタ
     /// </summary>
@@ -14,12 +14,14 @@ public class TagData {
     /// <param name="used_count">使用されている数</param>
     /// <param name="pre">前のタグ保存番号</param>
     /// <param name="next">次のタグ保存番号</param>
-    public TagData (string word, int num, int used_count, int pre, int next) {
+    /// <param name="next">タグの種類</param>
+    public TagData (string word, int num, int used_count, int pre, int next, int state) {
         this.word = word;
         this.num = num;
         this.used_count = used_count;
         this.pre = pre;
         this.next = next;
+        this.state = state;
     }
     /// <summary>
     /// タグ既存場所に追加
@@ -60,4 +62,12 @@ public class TagData {
     /// 次のタグ保存番号
     /// </summary>
     public int next;
+
+    /// <summary>
+    /// 状態, FIRSTかENDかDATA
+    /// </summary>
+    public int state;
+    public const int FIRST = 0;
+    public const int DATA = 1;
+    public const int END = 2;
 }

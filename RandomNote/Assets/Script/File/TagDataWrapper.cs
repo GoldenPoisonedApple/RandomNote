@@ -10,10 +10,12 @@ public class TagDataWrapper {
     /// 作成時コンストラクタ
     /// </summary>
     public TagDataWrapper () {
+        //最初のタグデータ保存
+        tagData.Add(new TagData("first", 0, -1, -1, 1, TagData.FIRST));
         end = 1;
         pre_end = 0;
-        //最初のタグデータ保存
-        tagData.Add(new TagData("first", 0, -1, -1, 1));
+        //最後のタグデータ保存
+        tagData.Add(new TagData("first", 0, end, -1, 1, TagData.END));
     }
 
     /// <summary>
@@ -38,10 +40,10 @@ public class TagDataWrapper {
     /// <param name="used_count">使用されている数</param>
     /// <returns>追加したタグの保存場所</returns>
     public int addTag(string tagName, int used_count) {
-        if (tagData.Count <= end)
+        if (tagData.Count == end)
         {
             //新しい場所に作る場合
-            tagData.Add(new TagData(tagName, end, used_count, pre_end, end + 1));
+            tagData.Add(new TagData(tagName, end, used_count, pre_end, end + 1, TagData.DATA));
         }
         else
         {

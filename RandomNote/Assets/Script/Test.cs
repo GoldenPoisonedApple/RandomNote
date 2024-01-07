@@ -46,7 +46,7 @@ public class Test : MonoBehaviour {
         fileData.wordDatas.Add(new WordData(0, "単語その1", 3, "説明文って難しいよね", new List<int>{1, 5, 7}, "2022/2/1"));
         fileData.wordDatas.Add(new WordData(1, "単語その2", 5, "改行\nとかどうなるんだろう", new List<int> { 7 }, "2022/2/3"));
         TagDataWrapper tagDataWrapper = new TagDataWrapper();
-        Debug.Log("タグその1保存場所 : " + tagDataWrapper.addTag("タグその1", 0));
+        tagDataWrapper.addTag("タグその1", 0);
         tagDataWrapper.addTag("タグその2", 9);
         tagDataWrapper.addTag("タグその3", 2);
         tagDataWrapper.addTag("タグその4", 1);
