@@ -13,7 +13,7 @@ public class ControlInputHeight : MonoBehaviour {
 
 
     public void control_inputfield_height () {
-        Debug.Log("サイズ変更");
+        //Debug.Log("サイズ変更");
         int lineCount = inputField.GetComponent<TMP_InputField>().textComponent.textInfo.lineCount;
         //サイズ計算
         Vector2 after_size = new Vector2(inputField.GetComponent<RectTransform>().sizeDelta.x, inputField.GetComponent<TMP_InputField>().pointSize * lineCount + SPACE);

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="vcL6-Ej94j082WODxmDW" name="データ設計">
-        <mxGraphModel dx="3125" dy="1965" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="2746" dy="1702" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1131,7 +1131,7 @@
                 <mxCell id="536" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="533" vertex="1">
                     <mxGeometry y="97" width="238.25" height="4" as="geometry"/>
                 </mxCell>
-                <mxCell id="537" value="+ コンストラクタ(識別名, string path)    //識別名に応じたものをセット" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="533" vertex="1">
+                <mxCell id="537" value="+ コンストラクタ(識別名, I_FileContent)    //識別名に応じたものをセット" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="533" vertex="1">
                     <mxGeometry y="101" width="238.25" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="552" value="+ それぞれのgetter関数 " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="533" vertex="1">
@@ -1306,6 +1306,23 @@
                             <mxPoint y="790"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="757" value="«singleton»&#10;ObjectData" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=32;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" vertex="1" parent="1">
+                    <mxGeometry x="-1590" y="438.49" width="240" height="69" as="geometry">
+                        <mxRectangle x="550" y="410" width="90" height="20" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="758" value="+ int final DEFAULT_LIST_NUM = 100    //一度に表示するリストの初期数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="757">
+                    <mxGeometry y="32" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="759" value="+ int final COUNT_MAX_DEFALULT = 500    //条件回数maxの初期値" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="757">
+                    <mxGeometry y="43" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="760" value="+ int lock_mode = GlobalSetting.UNLOCK    //隠しファイルモード" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="757">
+                    <mxGeometry y="54" width="240" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="761" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="757">
+                    <mxGeometry y="65" width="240" height="4" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

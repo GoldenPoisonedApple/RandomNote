@@ -5,36 +5,31 @@ using System.Collections.Generic;
 public class Test : MonoBehaviour {
     [SerializeField]
     private Button button;  //テスト発動用ボタン
+    [SerializeField]
+    private GameObject prehub;     //プレハブ
+    [SerializeField]
+    private Transform parent;     //プレハブ
 
     private void Start() {
         //リスナー登録
-        button.onClick.AddListener(OnClick);
-    }
-
-    /*
-    public void OnClick () {
-        Debug.Log("ボタンが押された");
+        //button.onClick.AddListener(OnClick);
+        /*
+        GameObject obj = Instantiate(prehub, parent.position, Quaternion.identity);
+        obj.transform.SetParent(parent, false);
+        obj.GetComponent<I_Flame>().ReflectData(new WordData(1, "新しい単語", 2, "説明文も\n新しいよ\nもいっちょ", new List<int> { 1, 4, 5 }, "2023/5/6"), 6);
+        GameObject obj_2 = Instantiate(prehub, parent.position, Quaternion.identity);
+        obj_2.transform.SetParent(parent, false);
+        obj_2.GetComponent<I_Flame>().ReflectData(new WordData(2, "もげもげ", 5, "説明文も\n新しいよ\nもいっちょ\n長いよね", new List<int> { 1, 4, 5 }, "2023/5/3"), 12);
+        */
         //ファイルパス
         string file_path = Application.persistentDataPath + "/WordsData" + ".json";
-        FileManager fileManager = new FileManager(file_path);
-
-        //データ入力
-        FileListData file_list1 = new FileListData("ファイル1", "aa/ff.c", false, 124, null, "2022/2/3");
-        FileListData file_list2 = new FileListData("ファイル2", "aa/fdesf.c", true, 11, "2022/2/2", "2022/6/3");
-
-        FileListDataWrapper file_list_data = new FileListDataWrapper();
-        file_list_data.pass_word = "hedowigu";
-        file_list_data.listData.Add(file_list1);
-        file_list_data.listData.Add(file_list2);
-
-        //シリアライズ
-        fileManager.Save(file_list_data);
+        I_FileContent fileData = (new FileManager(file_path)).Load<FileData>();
+        new FlameList(new FlameFactory(FlameFactory.FileType.WORD_FLAME, fileData));
     }
-    */
 
     
     /// <summary>
-    /// 登録
+    /// 情報登録
     /// </summary>
     public void OnClick()
     {

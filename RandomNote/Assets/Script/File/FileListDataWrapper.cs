@@ -15,5 +15,5 @@ public class FileListDataWrapper : I_FileContent {
     /// <summary>
     /// 単語リストのリスト
     /// </summary>
-    public List<FileListData> listData = new List<FileListData>();
+    public List<I_FlameData> listData = new List<I_FlameData>();
 }

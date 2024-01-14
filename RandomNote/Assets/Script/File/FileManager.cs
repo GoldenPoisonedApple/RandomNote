@@ -60,6 +60,7 @@ public class FileManager {
             using (StreamReader sr = new StreamReader(fs))
             {
                 string result = sr.ReadToEnd();
+                //ƒƒO•\¦
                 DebugControl.Log(result);
 
                 //“Ç‚İ‚ñ‚¾Json‚ğ\‘¢‘Ì‚É‚Ô‚¿‚±‚Ş
