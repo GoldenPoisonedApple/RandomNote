@@ -32,6 +32,10 @@ public class Test : MonoBehaviour {
     }
     */
 
+    
+    /// <summary>
+    /// 登録
+    /// </summary>
     public void OnClick()
     {
         Debug.Log("ボタンが押された");
@@ -50,6 +54,13 @@ public class Test : MonoBehaviour {
         tagDataWrapper.addTag("タグその2", 9);
         tagDataWrapper.addTag("タグその3", 2);
         tagDataWrapper.addTag("タグその4", 1);
+        tagDataWrapper.addTag("タグその5", 7);
+        tagDataWrapper.addTag("タグその6", 7);
+        tagDataWrapper.deleteTag(2);
+        tagDataWrapper.deleteTag(5);
+        tagDataWrapper.addTag("タグその7", 712);
+        tagDataWrapper.addTag("タグその8", 21);
+        tagDataWrapper.addTag("タグその9", 21);
         fileData.tagDatas = tagDataWrapper;
 
         //シリアライズ

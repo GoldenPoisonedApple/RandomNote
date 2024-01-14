@@ -8,6 +8,7 @@ public class TagData {
 
     /// <summary>
     /// タグ新規場所に作成時コンストラクタ
+    /// endかfirstにしか使わない
     /// </summary>
     /// <param name="word">タグ名</param>
     /// <param name="num">タグ保存番号</param>
@@ -24,18 +25,16 @@ public class TagData {
         this.state = state;
     }
     /// <summary>
-    /// タグ既存場所に追加
-    /// preはやらなくても良いが保険
+    /// タグデータ追加
     /// </summary>
     /// <param name="word">タグ名</param>
     /// <param name="num">タグ保存番号</param>
     /// <param name="used_count">使用されている数</param>
-    /// <param name="pre">前のタグ保存番号</param>
-    public void addData(string word, int num, int used_count, int pre) {
+    public void addData(string word, int num, int used_count) {
         this.word = word;
         this.num = num;
         this.used_count = used_count;
-        this.pre = pre;
+        this.state = DATA;
     }
 
     /// <summary>
@@ -64,10 +63,11 @@ public class TagData {
     public int next;
 
     /// <summary>
-    /// 状態, FIRSTかENDかDATA
+    /// タグの種類, FIRSTかENDかDATA
     /// </summary>
     public int state;
     public const int FIRST = 0;
     public const int DATA = 1;
     public const int END = 2;
+    public const int DELETE = 3;
 }

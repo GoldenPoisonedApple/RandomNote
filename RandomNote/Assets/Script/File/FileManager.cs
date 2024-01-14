@@ -41,13 +41,17 @@ public class FileManager {
         }
     }
 
+
     /// <summary>
-    /// 読み込み機能
+    /// 読み込み
     /// </summary>
-    /// <returns>デシリアライズした構造体</returns>
-    public I_FileContent Load()
+    /// <typeparam name="T">読み込みデータ型</typeparam>
+    /// <returns>読み込んだデータ</returns>
+    public T Load<T>()
+        //制約(I_FileContentというインターフェースを持っている型のみ)
+        where T : I_FileContent
     {
-        I_FileContent jsonDeserializedData = null;
+        T jsonDeserializedData = default;
 
         try
         {
@@ -59,7 +63,7 @@ public class FileManager {
                 DebugControl.Log(result);
 
                 //読み込んだJsonを構造体にぶちこむ
-                jsonDeserializedData = JsonUtility.FromJson<I_FileContent>(result);
+                jsonDeserializedData = JsonUtility.FromJson<T>(result);
             }
         }
         catch (Exception e) //失敗した時の処理
