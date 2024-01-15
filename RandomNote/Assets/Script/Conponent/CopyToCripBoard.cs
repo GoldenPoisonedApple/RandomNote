@@ -12,5 +12,6 @@ public class CopyToCripBoard : MonoBehaviour
         //クリップボードへ文字を設定(コピー)
         GUIUtility.systemCopyBuffer = text.text;
         DebugControl.Log("クリップボードにコピー : " + text.text);
+        GlobalObjData.Instance.PopUp("クリップボードにコピーしました");
     }
 }

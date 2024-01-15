@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using System;
 
 /// <summary>
@@ -45,6 +46,16 @@ public sealed class GlobalObjData : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// ポップアップメッセージ表示
+    /// </summary>
+    /// <param name="message">表示内容</param>
+    public void PopUp (string message)
+    {
+        popUpMessage.text = message;
+        popUp.GetComponent<Animator>().Play("PopUp", 0, 0.0f);
+    }
+
     //FlameList
     [SerializeField]
     private GameObject flameParent;
@@ -59,4 +70,6 @@ public sealed class GlobalObjData : MonoBehaviour
     //CopyToCripBoard
     [SerializeField]
     private GameObject popUp;  //ポップアップ
+    [SerializeField]
+    private TMP_Text popUpMessage;  //ポップアップ
 }
