@@ -5,56 +5,56 @@ using UnityEngine.UI;
 
 public class FlameList
 {
-    //ƒtƒŒ[ƒ€ƒf[ƒ^
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿
     private List<I_FlameData> flameDatas;
-    //•\¦‚·‚éƒf[ƒ^
+    //è¡¨ç¤ºã™ã‚‹ãƒ‡ãƒ¼ã‚¿
     private List<I_FlameData> flameViewDatas;
-    //ƒvƒŒƒnƒuƒf[ƒ^
+    //ãƒ—ãƒ¬ãƒãƒ–ãƒ‡ãƒ¼ã‚¿
     private GameObject flamePrehub;
 
-    //ƒtƒŒ[ƒ€‚Ìe
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ã®è¦ª
     private GameObject flameParent;
 
     /// <summary>
-    /// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    /// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     /// </summary>
-    /// <param name="flameFactory">ƒtƒŒ[ƒ€ƒŠƒXƒg‚É•K—v‚Èî•ñ‚ªŠi”[‚³‚ê‚Ä‚é</param>
+    /// <param name="flameFactory">ãƒ•ãƒ¬ãƒ¼ãƒ ãƒªã‚¹ãƒˆã«å¿…è¦ãªæƒ…å ±ãŒæ ¼ç´ã•ã‚Œã¦ã‚‹</param>
     public FlameList (FlameFactory flameFactory)
     {
-        //î•ñæ“¾
+        //æƒ…å ±å–å¾—
         flamePrehub = flameFactory.flamePrehub;
         flameDatas = flameFactory.flameDatas;
-        //ƒIƒuƒWƒFƒNƒgæ“¾
+        //ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾—
         flameParent = GlobalObjData.Instance.getFlameParent();
-        //•\¦
+        //è¡¨ç¤º
         flameViewDatas = flameDatas;
         create_flames();
     }
 
 
     /// <summary>
-    /// ƒtƒŒ[ƒ€ì¬A•\¦
+    /// ãƒ•ãƒ¬ãƒ¼ãƒ ä½œæˆã€è¡¨ç¤º
     /// </summary>
     private void create_flames()
     {
-        //qƒIƒuƒWƒFƒNƒgíœ
+        //å­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå‰Šé™¤
         foreach (GameObject child in flameParent.transform) { Object.Destroy(child); }
-        // ƒf[ƒ^‘ã“ü
+        // ãƒ‡ãƒ¼ã‚¿ä»£å…¥
         int i = 0;
         foreach (I_FlameData flameData in flameViewDatas)
         {
             i++;
 
-            //ƒvƒŒƒnƒuƒCƒ“ƒXƒ^ƒ“ƒXì¬
+            //ãƒ—ãƒ¬ãƒãƒ–ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ä½œæˆ
             GameObject obj = GlobalObjData.UseInstantiate(flamePrehub, flameParent.transform.position, Quaternion.identity);
-            //ƒf[ƒ^”½‰f
+            //ãƒ‡ãƒ¼ã‚¿åæ˜ 
             obj.GetComponent<I_Flame>().ReflectData(flameData, i);
-            //eİ’è
+            //è¦ªè¨­å®š
             obj.transform.SetParent(flameParent.transform, false);
         }
 
-        //vertical layout ƒvƒŒƒnƒuÀ‘Ì‰»‚Ì1ƒtƒŒ[ƒ€Œã‚ÉƒtƒŒ[ƒ€‚Ì‘å‚«‚³‚ª•Ï‚í‚é–‚É‚æ‚é‚¸‚ê‚ğC³‚·‚é‚½‚ßAˆê“xspacing‚ğ20f‚É‚µ‚Ä‚©‚ç1ƒtƒŒ[ƒ€Œã‚É30f‚É–ß‚µ‚Ä‚é
-        //•ÏX‚ª–³‚¢‚ÆXV‚ª‚³‚ê‚È‚©‚Á‚½
+        //vertical layout ãƒ—ãƒ¬ãƒãƒ–å®Ÿä½“åŒ–ã®1ãƒ•ãƒ¬ãƒ¼ãƒ å¾Œã«ãƒ•ãƒ¬ãƒ¼ãƒ ã®å¤§ãã•ãŒå¤‰ã‚ã‚‹äº‹ã«ã‚ˆã‚‹ãšã‚Œã‚’ä¿®æ­£ã™ã‚‹ãŸã‚ã€ä¸€åº¦spacingã‚’20fã«ã—ã¦ã‹ã‚‰1ãƒ•ãƒ¬ãƒ¼ãƒ å¾Œã«30fã«æˆ»ã—ã¦ã‚‹
+        //å¤‰æ›´ãŒç„¡ã„ã¨æ›´æ–°ãŒã•ã‚Œãªã‹ã£ãŸ
         VerticalLayoutGroup layoutGroup = flameParent.GetComponent<VerticalLayoutGroup>();
         layoutGroup.spacing = 20f;
         GlobalObjData.Instance.Coroutine(() => layoutGroup.spacing = 30f);

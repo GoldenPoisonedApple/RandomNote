@@ -5,29 +5,29 @@ using UnityEngine;
 public class FlameFactory {
 
     /// <summary>
-    /// ƒtƒ@ƒCƒ‹‚Ìí—Ş
+    /// ãƒ•ã‚¡ã‚¤ãƒ«ã®ç¨®é¡
     /// </summary>
     public enum FileType {
         FILE_FLAME,
         WORD_FLAME
     };
 
-    //ƒtƒŒ[ƒ€ƒf[ƒ^
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿
     public List<I_FlameData> flameDatas { get; private set; }
-    //ƒtƒŒ[ƒ€ƒvƒŒƒnƒu
+    //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ—ãƒ¬ãƒãƒ–
     public GameObject flamePrehub { get; private set; }
-    //ƒ\[ƒgŒn“ƒvƒŒƒnƒu
+    //ã‚½ãƒ¼ãƒˆç³»çµ±ãƒ—ãƒ¬ãƒãƒ–
     public GameObject sortPrehub { get; private set; }
-    //ƒtƒBƒ‹ƒ^Œn“ƒvƒŒƒnƒu
+    //ãƒ•ã‚£ãƒ«ã‚¿ç³»çµ±ãƒ—ãƒ¬ãƒãƒ–
     public GameObject fillterPrehub { get; private set; }
 
 
 
     /// <summary>
-    /// ƒtƒŒ[ƒ€‚É•K—v‚Èƒf[ƒ^ì¬
+    /// ãƒ•ãƒ¬ãƒ¼ãƒ ã«å¿…è¦ãªãƒ‡ãƒ¼ã‚¿ä½œæˆ
     /// </summary>
-    /// <param name="type">ƒtƒŒ[ƒ€‚Ìí—Ş</param>
-    /// <param name="fileContent">ƒtƒ@ƒCƒ‹î•ñ</param>
+    /// <param name="type">ãƒ•ãƒ¬ãƒ¼ãƒ ã®ç¨®é¡</param>
+    /// <param name="fileContent">ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±</param>
     public FlameFactory (FileType type, in I_FileContent fileContent)
     {
         GlobalObjData globalObjData = GlobalObjData.Instance;
@@ -42,16 +42,16 @@ public class FlameFactory {
         }
     }
 
-    //ƒtƒ@ƒCƒ‹ƒtƒŒ[ƒ€
+    //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ•ãƒ¬ãƒ¼ãƒ 
     private void fileFlameFactory (in I_FileContent fileContent, GlobalObjData globalObjData)
     {
-        flameDatas = ((FileListDataWrapper)fileContent).listData;   //ƒtƒŒ[ƒ€ƒf[ƒ^Š„‚è“–‚Ä
-        flamePrehub = globalObjData.getFileFlamePrehub();  //ƒtƒŒ[ƒ€ƒvƒŒƒnƒuŠ„‚è“–‚Ä
+        flameDatas = ((FileListDataWrapper)fileContent).listData;   //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿å‰²ã‚Šå½“ã¦
+        flamePrehub = globalObjData.getFileFlamePrehub();  //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ—ãƒ¬ãƒãƒ–å‰²ã‚Šå½“ã¦
     }
-    //ƒ[ƒhƒtƒŒ[ƒ€
+    //ãƒ¯ãƒ¼ãƒ‰ãƒ•ãƒ¬ãƒ¼ãƒ 
     private void wordFlameFactory (in I_FileContent fileContent, GlobalObjData globalObjData)
     {
-        flameDatas = ((FileData)fileContent).wordDatas.ConvertAll(x => (I_FlameData)x); ;   //ƒtƒŒ[ƒ€ƒf[ƒ^Š„‚è“–‚Ä
-        flamePrehub = globalObjData.getWordFlamePrehub();  //ƒtƒŒ[ƒ€ƒvƒŒƒnƒuŠ„‚è“–‚Ä
+        flameDatas = ((FileData)fileContent).wordDatas.ConvertAll(x => (I_FlameData)x); ;   //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ‡ãƒ¼ã‚¿å‰²ã‚Šå½“ã¦
+        flamePrehub = globalObjData.getWordFlamePrehub();  //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ—ãƒ¬ãƒãƒ–å‰²ã‚Šå½“ã¦
     }
 }

@@ -5,36 +5,36 @@ using UnityEngine;
 public class FileManager {
 
     /// <summary>
-    /// ƒf[ƒ^“Ç‚İ‚İA‘‚«‚İ‚·‚éƒf[ƒ^ƒtƒ@ƒCƒ‹ƒpƒX
+    /// ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿ã€æ›¸ãè¾¼ã¿ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
     /// </summary>
     private string file_path;
 
     /// <summary>
-    /// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    /// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     /// </summary>
-    /// <param name="file_path">‚±‚±‚Å“n‚µ‚½ƒtƒ@ƒCƒ‹‚É‘Î‚µ‚Ä‘€ì‚ğs‚¤</param>
+    /// <param name="file_path">ã“ã“ã§æ¸¡ã—ãŸãƒ•ã‚¡ã‚¤ãƒ«ã«å¯¾ã—ã¦æ“ä½œã‚’è¡Œã†</param>
     public FileManager (string file_path) {
         this.file_path = file_path;
     }
 
     /// <summary>
-    /// ‘‚«‚İ‹@”\
+    /// æ›¸ãè¾¼ã¿æ©Ÿèƒ½
     /// </summary>
-    /// <param name="paintDataWrapper">ƒVƒŠƒAƒ‰ƒCƒY‚·‚éƒf[ƒ^</param>
+    /// <param name="paintDataWrapper">ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã™ã‚‹ãƒ‡ãƒ¼ã‚¿</param>
     public void Save(I_FileContent fileContent) {
         
         string jsonSerializedData = JsonUtility.ToJson(fileContent);
-        //ƒƒO•\¦
+        //ãƒ­ã‚°è¡¨ç¤º
         DebugControl.Log(jsonSerializedData);
 
-        //ÀÛ‚Éƒtƒ@ƒCƒ‹ì‚Á‚Ä‘‚«‚Ş
+        //å®Ÿéš›ã«ãƒ•ã‚¡ã‚¤ãƒ«ä½œã£ã¦æ›¸ãè¾¼ã‚€
         using (var sw = new StreamWriter(file_path, false)) {
             try
             {
-                //ƒtƒ@ƒCƒ‹‚É‘‚«‚Ş(ã‘‚«)
+                //ãƒ•ã‚¡ã‚¤ãƒ«ã«æ›¸ãè¾¼ã‚€(ä¸Šæ›¸ã)
                 sw.Write(jsonSerializedData);
             }
-            catch (Exception e) //¸”s‚µ‚½‚Ìˆ—
+            catch (Exception e) //å¤±æ•—ã—ãŸæ™‚ã®å‡¦ç†
             {
                 DebugControl.Error(e);
             }
@@ -43,36 +43,36 @@ public class FileManager {
 
 
     /// <summary>
-    /// “Ç‚İ‚İ
+    /// èª­ã¿è¾¼ã¿
     /// </summary>
-    /// <typeparam name="T">“Ç‚İ‚İƒf[ƒ^Œ^</typeparam>
-    /// <returns>“Ç‚İ‚ñ‚¾ƒf[ƒ^</returns>
+    /// <typeparam name="T">èª­ã¿è¾¼ã¿ãƒ‡ãƒ¼ã‚¿å‹</typeparam>
+    /// <returns>èª­ã¿è¾¼ã‚“ã ãƒ‡ãƒ¼ã‚¿</returns>
     public T Load<T>()
-        //§–ñ(I_FileContent‚Æ‚¢‚¤ƒCƒ“ƒ^[ƒtƒF[ƒX‚ğ‚Á‚Ä‚¢‚éŒ^‚Ì‚İ)
+        //åˆ¶ç´„(I_FileContentã¨ã„ã†ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’æŒã£ã¦ã„ã‚‹å‹ã®ã¿)
         where T : I_FileContent
     {
         T jsonDeserializedData = default;
 
         try
         {
-            //ƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+            //ãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
             using (FileStream fs = new FileStream(file_path, FileMode.Open))
             using (StreamReader sr = new StreamReader(fs))
             {
                 string result = sr.ReadToEnd();
-                //ƒƒO•\¦
+                //ãƒ­ã‚°è¡¨ç¤º
                 DebugControl.Log(result);
 
-                //“Ç‚İ‚ñ‚¾Json‚ğ\‘¢‘Ì‚É‚Ô‚¿‚±‚Ş
+                //èª­ã¿è¾¼ã‚“ã Jsonã‚’æ§‹é€ ä½“ã«ã¶ã¡ã“ã‚€
                 jsonDeserializedData = JsonUtility.FromJson<T>(result);
             }
         }
-        catch (Exception e) //¸”s‚µ‚½‚Ìˆ—
+        catch (Exception e) //å¤±æ•—ã—ãŸæ™‚ã®å‡¦ç†
         {
             DebugControl.Error(e);
         }
 
-        //ƒfƒVƒŠƒAƒ‰ƒCƒY‚µ‚½\‘¢‘Ì‚ğ•Ô‚·
+        //ãƒ‡ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã—ãŸæ§‹é€ ä½“ã‚’è¿”ã™
         return jsonDeserializedData;
     }
 }

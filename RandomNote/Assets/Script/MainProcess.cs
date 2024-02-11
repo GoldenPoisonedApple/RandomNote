@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainProcess : MonoBehaviour {
 
     /// <summary>
-    /// “Ç‚İ‚ñ‚¾ƒtƒ@ƒCƒ‹î•ñ
+    /// èª­ã¿è¾¼ã‚“ã ãƒ•ã‚¡ã‚¤ãƒ«æƒ…å ±
     /// </summary>
     protected I_FileContent fileContent;
 

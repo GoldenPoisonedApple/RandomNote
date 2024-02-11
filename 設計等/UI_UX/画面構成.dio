@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="0MJmwhfruCRYVpRNrWJh" name="画面基本情報">
-        <mxGraphModel dx="988" dy="557" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="770" dy="402" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -20,7 +20,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="Z5VG1z7onaDQEja021IE" name="UI・状態遷移">
-        <mxGraphModel dx="2199" dy="1942" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="4120" dy="3026" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -1000,7 +1000,7 @@
                     <mxGeometry x="1163.25" y="-532.13" width="247.75" height="18.25" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-177" value="破棄or削除" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=0;fontSize=9;fontColor=#ffffff;fillColor=#a20025;strokeColor=#6F0000;" parent="1" vertex="1">
-                    <mxGeometry x="1014.25" y="-353.25" width="45.75" height="10" as="geometry"/>
+                    <mxGeometry x="1014.25" y="-333.25" width="45.75" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-178" value="新規：破棄&lt;br&gt;既存：削除&lt;br&gt;確認画面の後&lt;br&gt;情報破棄、元画面へ&lt;br&gt;削除の場合はデータ書き換え、再表示" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=12;fontColor=default;spacingTop=-4;" parent="1" vertex="1">
                     <mxGeometry x="859.32" y="-260" width="116.87" height="18.25" as="geometry"/>
@@ -1042,19 +1042,19 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-203" value="" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=default;sketch=0;fontSize=15;fontColor=default;fillColor=#000000;arcSize=13;" parent="1" vertex="1">
-                    <mxGeometry x="1006.25" y="-394.5" width="140" height="35" as="geometry"/>
+                    <mxGeometry x="1006.25" y="-394.5" width="140" height="54.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-204" value="🔒 マンガ" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;sketch=0;fontSize=13;fontColor=default;" parent="1" vertex="1">
                     <mxGeometry x="1011" y="-388" width="89" height="24.75" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-205" value="2023/12/05 13:32(2023/12/06 00:12)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;sketch=0;fontSize=6;fontColor=#999999;" parent="1" vertex="1">
-                    <mxGeometry x="1047.5" y="-367.25" width="97.5" height="6.5" as="geometry"/>
+                    <mxGeometry x="1047.5" y="-347.25" width="97.5" height="6.5" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-206" value="120単語" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;labelBackgroundColor=none;sketch=0;fontSize=9;fontColor=default;" parent="1" vertex="1">
                     <mxGeometry x="1108.25" y="-377.13" width="34.5" height="9.88" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-208" value="新規or変更" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=0;fontSize=9;fontColor=#ffffff;fillColor=#1ba1e2;strokeColor=#006EAF;" parent="1" vertex="1">
-                    <mxGeometry x="1091.75" y="-353.25" width="48.5" height="10" as="geometry"/>
+                    <mxGeometry x="1091.75" y="-333.25" width="48.5" height="10" as="geometry"/>
                 </mxCell>
                 <mxCell id="qGvMFI7ZGbrGcnQ0KGDA-209" style="edgeStyle=none;html=1;fontSize=12;fontColor=default;exitX=0.75;exitY=1;exitDx=0;exitDy=0;endArrow=classicThin;endFill=1;entryX=0.162;entryY=0.057;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="qGvMFI7ZGbrGcnQ0KGDA-208" target="qGvMFI7ZGbrGcnQ0KGDA-210" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -1280,6 +1280,18 @@
                 </mxCell>
                 <mxCell id="AltwK_SKuCeLCwdgNfup-1" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/svg+xml,PHN2ZyB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiBzdHlsZT0id2lkdGg6IDUxMnB4OyBoZWlnaHQ6IDUxMnB4OyBvcGFjaXR5OiAxOyIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHk9IjBweCIgeD0iMHB4IiBpZD0iX3gzMl8iIHZlcnNpb249IjEuMSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzRCNEI0Qjt9Cjwvc3R5bGU+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IHJnYigyNTUsIDI1NSwgMjU1KTsiIGQ9Ik0zNzYuMzI0LDMxMi41MDhjNDkuNjM4LTc4Ljc3NCw0MC4yMzgtMTg0LjMyNi0yOC4zMDYtMjUyLjg3MWMtNzkuNTA3LTc5LjUxNS0yMDguODcyLTc5LjUxNS0yODguMzg4LDAmIzEwOyYjOTsmIzk7Yy03OS41MDcsNzkuNTE2LTc5LjUwNywyMDguODczLDAsMjg4LjM3OWM2OC41MzYsNjguNTQ0LDE3NC4xMTUsNzcuOTM1LDI1Mi44OCwyOC4zMDZsMTM1LjY2OCwxMzUuNjc2TDUxMiw0NDguMTg2JiMxMDsmIzk7JiM5O0wzNzYuMzI0LDMxMi41MDh6IE0yOTYuNTQzLDI5Ni41NDJjLTUxLjEyMSw1MS4xMzktMTM0LjMwOCw1MS4xMzktMTg1LjQzOSwwYy01MS4xMjEtNTEuMTIxLTUxLjExMi0xMzQuMjk5LDAuMDA5LTE4NS40MyYjMTA7JiM5OyYjOTtjNTEuMTIyLTUxLjEyMSwxMzQuMzA5LTUxLjEzLDE4NS40My0wLjAwOEMzNDcuNjY1LDE2Mi4yNDMsMzQ3LjY2NSwyNDUuNDIxLDI5Ni41NDMsMjk2LjU0MnoiIGNsYXNzPSJzdDAiLz4KPC9nPgo8L3N2Zz4=;" parent="1" vertex="1">
                     <mxGeometry x="-589" y="851.5" width="10" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="FLnrs4NAXFRmJMxdRKCf-1" value="フレームタイプ選択　　　　　　　　　▽" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;sketch=0;fontSize=6;fontColor=default;fillColor=#000000;align=left;rotation=0;arcSize=50;" vertex="1" parent="1">
+                    <mxGeometry x="1015.13" y="-357.38" width="125.75" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="FLnrs4NAXFRmJMxdRKCf-2" value="新規：フレームタイプを選択 初期値:ワードフレーム&lt;br&gt;更新：変更不可" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;labelBackgroundColor=default;sketch=0;fontSize=12;fontColor=default;spacingTop=-4;" vertex="1" parent="1">
+                    <mxGeometry x="1198.63" y="-406.25" width="161.37" height="18.25" as="geometry"/>
+                </mxCell>
+                <mxCell id="FLnrs4NAXFRmJMxdRKCf-3" style="edgeStyle=none;html=1;fontSize=12;fontColor=default;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=classicThin;endFill=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="FLnrs4NAXFRmJMxdRKCf-1" target="FLnrs4NAXFRmJMxdRKCf-2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1138.125" y="-313.25" as="sourcePoint"/>
+                        <mxPoint x="1195.4035" y="-308.95975" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>

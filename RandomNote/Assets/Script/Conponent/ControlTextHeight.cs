@@ -4,33 +4,33 @@ using TMPro;
 
 public class ControlTextHeight : MonoBehaviour
 {
-    /// <summary>
-    /// s”AƒtƒHƒ“ƒgƒTƒCƒY‚É‡‚í‚¹‚Ä‚‚³‚ğ•ÏX
-    /// •K‚¸ƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µ‚½Œã‚ÉÀs
-    /// </summary>
-    public void controlTextHeight()
-    {
-        //TMP_TextƒRƒ“ƒ|[ƒlƒ“ƒg‚ª‚ ‚é‚©”»’è
-        if (this.GetComponent<TMP_Text>())
-        {
-            // ‚±‚ÌƒXƒNƒŠƒvƒg‚ªƒAƒ^ƒbƒ`‚³‚ê‚Ä‚¢‚éTransform‚ğæ“¾
-            GameObject obj = this.gameObject;
-            TMP_Text text = obj.GetComponent<TMP_Text>();
+	/// <summary>
+	/// è¡Œæ•°ã€ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚ºã«åˆã‚ã›ã¦é«˜ã•ã‚’å¤‰æ›´
+	/// å¿…ãšã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã—ãŸå¾Œã«å®Ÿè¡Œ
+	/// </summary>
+	public void controlTextHeight()
+	{
+		//TMP_Textã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆãŒã‚ã‚‹ã‹åˆ¤å®š
+		if (this.GetComponent<TMP_Text>())
+		{
+			// ã“ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆãŒã‚¢ã‚¿ãƒƒãƒã•ã‚Œã¦ã„ã‚‹Transformã‚’å–å¾—
+			GameObject obj = this.gameObject;
+			TMP_Text text = obj.GetComponent<TMP_Text>();
 
-            // 1ƒtƒŒ[ƒ€‘Ò‚Á‚Ä‚©‚çƒTƒCƒYŒvZ‚ğs‚¤
-            StartCoroutine(DelayedSizeCalculation());
+			// 1ãƒ•ãƒ¬ãƒ¼ãƒ å¾…ã£ã¦ã‹ã‚‰ã‚µã‚¤ã‚ºè¨ˆç®—ã‚’è¡Œã†
+			StartCoroutine(DelayedSizeCalculation());
 
-            IEnumerator DelayedSizeCalculation()
-            {
-                yield return null; // 1ƒtƒŒ[ƒ€‘Ò‚Â
+			IEnumerator DelayedSizeCalculation()
+			{
+				yield return null; // 1ãƒ•ãƒ¬ãƒ¼ãƒ å¾…ã¤
 
-                int lineCount = obj.GetComponent<TMP_Text>().textInfo.lineCount;
-                //Debug.Log("‚‚³•ÏX" + obj.GetComponent<TMP_Text>().textInfo.lineCount);
+				int lineCount = obj.GetComponent<TMP_Text>().textInfo.lineCount;
+				//Debug.Log("é«˜ã•å¤‰æ›´" + obj.GetComponent<TMP_Text>().textInfo.lineCount);
 
-                //ƒTƒCƒYŒvZ
-                obj.GetComponent<RectTransform>().sizeDelta = new Vector2(obj.GetComponent<RectTransform>().sizeDelta.x, text.fontSize * lineCount);
-            }
+				//ã‚µã‚¤ã‚ºè¨ˆç®—
+				obj.GetComponent<RectTransform>().sizeDelta = new Vector2(obj.GetComponent<RectTransform>().sizeDelta.x, text.fontSize * lineCount);
+			}
 
-        }
-    }
+		}
+	}
 }

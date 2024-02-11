@@ -2,18 +2,18 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// ’PŒêƒtƒ@ƒCƒ‹ŒQ‚Ìî•ñƒtƒ@ƒCƒ‹
+/// å˜èªãƒ•ã‚¡ã‚¤ãƒ«ç¾¤ã®æƒ…å ±ãƒ•ã‚¡ã‚¤ãƒ«
 /// </summary>
 [Serializable]
 public class FileListDataWrapper : I_FileContent {
 
     /// <summary>
-    /// ‰B‚µƒtƒ@ƒCƒ‹ƒpƒXƒ[ƒh
+    /// éš ã—ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
     /// </summary>
     public string pass_word;
 
     /// <summary>
-    /// ’PŒêƒŠƒXƒg‚ÌƒŠƒXƒg
+    /// å˜èªãƒªã‚¹ãƒˆã®ãƒªã‚¹ãƒˆ
     /// </summary>
     public List<I_FlameData> listData = new List<I_FlameData>();
 }

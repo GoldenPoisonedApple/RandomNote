@@ -2,28 +2,28 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// ƒtƒ@ƒCƒ‹ƒf[ƒ^
+/// ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‡ãƒ¼ã‚¿
 /// </summary>
 [Serializable]
 public class FileData : I_FileContent {
 
     /// <summary>
-    /// ’PŒêŒQƒf[ƒ^ƒ^ƒCƒgƒ‹
+    /// å˜èªç¾¤ãƒ‡ãƒ¼ã‚¿ã‚¿ã‚¤ãƒˆãƒ«
     /// </summary>
     public string title;
 
     /// <summary>
-    /// ‰B‚µƒtƒ@ƒCƒ‹‚©
+    /// éš ã—ãƒ•ã‚¡ã‚¤ãƒ«ã‹
     /// </summary>
     public bool is_locked;
 
     /// <summary>
-    /// ’PŒêƒf[ƒ^ƒŠƒXƒg
+    /// å˜èªãƒ‡ãƒ¼ã‚¿ãƒªã‚¹ãƒˆ
     /// </summary>
     public List<WordData> wordDatas = new List<WordData>();
 
     /// <summary>
-    /// ƒ^ƒOƒf[ƒ^
+    /// ã‚¿ã‚°ãƒ‡ãƒ¼ã‚¿
     /// </summary>
     public TagDataWrapper tagDatas;
 }

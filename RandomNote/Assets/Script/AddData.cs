@@ -6,30 +6,30 @@ using UnityEngine.UI;
 public class AddData : MonoBehaviour {
 
     [SerializeField]
-    private Transform addButton;      //’Ç‰Áƒ{ƒ^ƒ“
+    private Transform addButton;      //è¿½åŠ ãƒœã‚¿ãƒ³
     [SerializeField]
-    private GameObject inputPanel;      //•\Ž¦Ø‘Öƒpƒlƒ‹
+    private GameObject inputPanel;      //è¡¨ç¤ºåˆ‡æ›¿ãƒ‘ãƒãƒ«
     [SerializeField]
-    private Transform returnPanel;      //–ß‚é—pƒpƒlƒ‹
+    private Transform returnPanel;      //æˆ»ã‚‹ç”¨ãƒ‘ãƒãƒ«
 
 
     private void Start() {
-        //ƒŠƒXƒi[“o˜^
+        //ãƒªã‚¹ãƒŠãƒ¼ç™»éŒ²
         addButton.GetComponent<Button>().onClick.AddListener(show_input_panel);
         returnPanel.GetComponent<Button>().onClick.AddListener(close_input_panel);
     }
 
     /// <summary>
-    /// “ü—Íƒpƒlƒ‹•\Ž¦
+    /// å…¥åŠ›ãƒ‘ãƒãƒ«è¡¨ç¤º
     /// </summary>
     private void show_input_panel () {
-        inputPanel.SetActive(true); // gameObject‚ðƒAƒNƒeƒBƒu‰»
+        inputPanel.SetActive(true); // gameObjectã‚’ã‚¢ã‚¯ãƒ†ã‚£ãƒ–åŒ–
     }
 
     /// <summary>
-    /// “ü—Íƒpƒlƒ‹”ñ•\Ž¦
+    /// å…¥åŠ›ãƒ‘ãƒãƒ«éžè¡¨ç¤º
     /// </summary>
     private void close_input_panel () {
-       inputPanel.SetActive(false); // gameObject‚ð”ñƒAƒNƒeƒBƒu‰»
+       inputPanel.SetActive(false); // gameObjectã‚’éžã‚¢ã‚¯ãƒ†ã‚£ãƒ–åŒ–
     }
 }

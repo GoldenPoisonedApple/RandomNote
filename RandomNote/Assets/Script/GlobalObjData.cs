@@ -5,51 +5,50 @@ using TMPro;
 using System;
 
 /// <summary>
-/// ƒIƒuƒWƒFƒNƒgî•ñ
-/// ƒVƒ“ƒOƒ‹ƒgƒ“
+/// ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆæƒ…å ±
+/// ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³
 /// </summary>
 public sealed class GlobalObjData : MonoBehaviour
 {
-    //ƒCƒ“ƒXƒ^ƒ“ƒX
+    //ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹
     public static GlobalObjData Instance { get; private set; }
-    //new‚·‚é‚Æ“{‚ç‚ê‚é‚½‚ß
+    //newã™ã‚‹ã¨æ€’ã‚‰ã‚Œã‚‹ãŸã‚
     private void Awake() => Instance = this;
-    //ƒVƒ“ƒOƒ‹ƒgƒ“ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    //ã‚·ãƒ³ã‚°ãƒ«ãƒˆãƒ³ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     private GlobalObjData ()
     {
-        //‰Šú‰»ˆ—‚Í‚±‚±‚É‹Lq
+        //åˆæœŸåŒ–å‡¦ç†ã¯ã“ã“ã«è¨˜è¿°
     }
 
     /// <summary>
-    /// MonoBehaviour‚È‚¢ƒNƒ‰ƒX‚ÅƒvƒŒƒnƒuŽÀ‘Ì‰»‚µ‚½‚¢‚Æ‚«‚ÉŽg‚¤‚â‚Â
+    /// MonoBehaviourãªã„ã‚¯ãƒ©ã‚¹ã§ãƒ—ãƒ¬ãƒãƒ–å®Ÿä½“åŒ–ã—ãŸã„ã¨ãã«ä½¿ã†ã‚„ã¤
     /// </summary>
-    /// <returns>ƒCƒ“ƒXƒ^ƒ“ƒX</returns>
+    /// <returns>ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹</returns>
     public static GameObject UseInstantiate (GameObject original, Vector3 position, Quaternion rotation)
     {
         return Instantiate(original, position, rotation);
     }
 
     /// <summary>
-    /// MonoBehaviour‚È‚¢ƒNƒ‰ƒX‚ÅƒRƒ‹[ƒ`ƒ“Žg‚¢‚½‚¢‚Æ‚«‚ÉŽg‚¤‚â‚Â
+    /// MonoBehaviourãªã„ã‚¯ãƒ©ã‚¹ã§ã‚³ãƒ«ãƒ¼ãƒãƒ³ä½¿ã„ãŸã„ã¨ãã«ä½¿ã†ã‚„ã¤
     /// </summary>
-    /// <param name="action">1ƒtƒŒ[ƒ€Œã‚ÉŽÀs‚³‚ê‚éŠÖ”</param>
+    /// <param name="action">1ãƒ•ãƒ¬ãƒ¼ãƒ å¾Œã«å®Ÿè¡Œã•ã‚Œã‚‹é–¢æ•°</param>
     public void Coroutine(Action action)
     {
-        // 1ƒtƒŒ[ƒ€‘Ò‚Á‚Ä‚©‚çƒTƒCƒYŒvŽZ‚ðs‚¤
+        // 1ãƒ•ãƒ¬ãƒ¼ãƒ å¾…ã£ã¦ã‹ã‚‰å‡¦ç†ã‚’è¡Œã†
         StartCoroutine(Delay());
 
         IEnumerator Delay()
         {
-            yield return null; // 1ƒtƒŒ[ƒ€‘Ò‚Â
-
+            yield return null; // 1ãƒ•ãƒ¬ãƒ¼ãƒ å¾…ã¤
             action();
         }
     }
 
     /// <summary>
-    /// ƒ|ƒbƒvƒAƒbƒvƒƒbƒZ[ƒW•\Ž¦
+    /// ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸è¡¨ç¤º
     /// </summary>
-    /// <param name="message">•\Ž¦“à—e</param>
+    /// <param name="message">è¡¨ç¤ºå†…å®¹</param>
     public void PopUp (string message)
     {
         popUpMessage.text = message;
@@ -62,14 +61,14 @@ public sealed class GlobalObjData : MonoBehaviour
     public GameObject getFlameParent () { return flameParent; }
     //FlameFactory
     [SerializeField]
-    private GameObject fileFlamePrehub;   //ƒtƒ@ƒCƒ‹‚ÌƒtƒŒ[ƒ€
+    private GameObject fileFlamePrehub;   //ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ•ãƒ¬ãƒ¼ãƒ 
     public GameObject getFileFlamePrehub() { return fileFlamePrehub; }
     [SerializeField]
-    private GameObject wordFlamePrehub;  //’PŒê‚ÌƒtƒŒ[ƒ€
+    private GameObject wordFlamePrehub;  //å˜èªžã®ãƒ•ãƒ¬ãƒ¼ãƒ 
     public GameObject getWordFlamePrehub() { return wordFlamePrehub; }
     //CopyToCripBoard
     [SerializeField]
-    private GameObject popUp;  //ƒ|ƒbƒvƒAƒbƒv
+    private GameObject popUp;  //ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—
     [SerializeField]
-    private TMP_Text popUpMessage;  //ƒ|ƒbƒvƒAƒbƒv
+    private TMP_Text popUpMessage;  //ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—
 }

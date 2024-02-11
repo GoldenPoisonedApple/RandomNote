@@ -6,50 +6,50 @@ using TMPro;
 public class WordFlame : MonoBehaviour, I_Flame
 {
     [SerializeField]
-    private TMP_Text num_text;     //ƒtƒŒ[ƒ€”Ô†
+    private TMP_Text num_text;     //ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·
     [SerializeField]
-    private TMP_Text word_text;     //’PŒê–¼
+    private TMP_Text word_text;     //å˜èªå
     [SerializeField]
-    private TMP_Text explain_text;     //à–¾
+    private TMP_Text explain_text;     //èª¬æ˜
     [SerializeField]
-    private TMP_Text count_text;     //‰ñ”
+    private TMP_Text count_text;     //å›æ•°
     [SerializeField]
-    private TMP_Text time_text;     //“ú
+    private TMP_Text time_text;     //æ—¥æ™‚
     [SerializeField]
-    private Image[] stars;     //¯
+    private Image[] stars;     //æ˜Ÿ
     [SerializeField]
-    private Sprite star_on;     //¯ƒAƒŠ
+    private Sprite star_on;     //æ˜Ÿã‚¢ãƒª
     [SerializeField]
-    private Sprite star_off;     //¯ƒiƒV
+    private Sprite star_off;     //æ˜ŸãƒŠã‚·
     [SerializeField]
-    private Transform tag_prehub;     //ƒ^ƒO
+    private Transform tag_prehub;     //ã‚¿ã‚°
 
     /// <summary>
-    /// ƒ[ƒhƒtƒŒ[ƒ€‚Éƒf[ƒ^”½‰f
-    /// •K‚¸ƒCƒ“ƒXƒ^ƒ“ƒX‰»‚µ‚½Œã‚ÉÀs
+    /// ãƒ¯ãƒ¼ãƒ‰ãƒ•ãƒ¬ãƒ¼ãƒ ã«ãƒ‡ãƒ¼ã‚¿åæ˜ 
+    /// å¿…ãšã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–ã—ãŸå¾Œã«å®Ÿè¡Œ
     /// </summary>
-    /// <param name="flameData">ƒtƒŒ[ƒ€‚É”½‰f‚³‚¹‚éƒf[ƒ^</param>
-    /// <param name="flame_num">ƒtƒŒ[ƒ€”Ô†</param>
+    /// <param name="flameData">ãƒ•ãƒ¬ãƒ¼ãƒ ã«åæ˜ ã•ã›ã‚‹ãƒ‡ãƒ¼ã‚¿</param>
+    /// <param name="flame_num">ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·</param>
     public void ReflectData(I_FlameData flameData, int flame_num)
     {
         WordData wordData = (WordData)flameData;
-        //ƒf[ƒ^‘ã“ü
-        num_text.text   =   flame_num.ToString();   //ƒtƒŒ[ƒ€”Ô†
-        word_text.text  =   wordData.word;          //’PŒê–¼
-        set_explain(wordData.explain);   //à–¾
-        count_text.text =   wordData.count.ToString();  //ƒRƒs[‰ñ”
-        set_date(wordData.update_date, wordData.entry_date);  //ŠÔ
-        set_star(wordData.star_num);    //¯
+        //ãƒ‡ãƒ¼ã‚¿ä»£å…¥
+        num_text.text   =   flame_num.ToString();   //ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·
+        word_text.text  =   wordData.word;          //å˜èªå
+        set_explain(wordData.explain);   //èª¬æ˜
+        count_text.text =   wordData.count.ToString();  //ã‚³ãƒ”ãƒ¼å›æ•°
+        set_date(wordData.update_date, wordData.entry_date);  //æ™‚é–“
+        set_star(wordData.star_num);    //æ˜Ÿ
     }
 
-    //à–¾•¶İ’è
+    //èª¬æ˜æ–‡è¨­å®š
     private void set_explain (string explain)
     {
         explain_text.text = explain;
-        explain_text.GetComponent<ControlTextHeight>().controlTextHeight(); //‚‚³’²ß
+        explain_text.GetComponent<ControlTextHeight>().controlTextHeight(); //é«˜ã•èª¿ç¯€
     }
 
-    //ŠÔİ’è
+    //æ™‚é–“è¨­å®š
     private void set_date (string update_date, string entry_date)
     {
         if (update_date == entry_date)
@@ -62,16 +62,16 @@ public class WordFlame : MonoBehaviour, I_Flame
         }
     }
 
-    //•]‰¿İ’è
+    //è©•ä¾¡è¨­å®š
     private void set_star(int star_num)
     {
         int i = 0;
-        //•]‰¿‚Ì”‚¾‚¯‚â‚é
+        //è©•ä¾¡ã®æ•°ã ã‘ã‚„ã‚‹
         for (; i < star_num; i++)
         {
             stars[i].sprite = star_on;
         }
-        //c‚è‚ğ”’‚É‚·‚é
+        //æ®‹ã‚Šã‚’ç™½ã«ã™ã‚‹
         for (; i < stars.Length; i++)
         {
             stars[i].sprite = star_off;

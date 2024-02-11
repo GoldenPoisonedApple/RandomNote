@@ -1,12 +1,12 @@
 using System;
 
 /// <summary>
-/// ’PŒêƒŠƒXƒg
+/// å˜èªãƒªã‚¹ãƒˆ
 /// </summary>
 [Serializable]
 public class FileListData : I_FlameData {
     /// <summary>
-    /// ‘S“ü—ÍƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    /// å…¨å…¥åŠ›ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     /// </summary>
     public FileListData(string title, string path, bool is_locked, int word_num, string entry_date, string update_date) {
         this.title = title;
@@ -18,32 +18,32 @@ public class FileListData : I_FlameData {
     }
 
     /// <summary>
-    /// ƒ^ƒCƒgƒ‹
+    /// ã‚¿ã‚¤ãƒˆãƒ«
     /// </summary>
     public string title;
 
     /// <summary>
-    /// ƒf[ƒ^ƒtƒ@ƒCƒ‹‚ÌƒpƒX
+    /// ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
     /// </summary>
     public string path;
 
     /// <summary>
-    /// ‰B‚µƒtƒ@ƒCƒ‹‚©‚Ç‚¤‚©
+    /// éš ã—ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã©ã†ã‹
     /// </summary>
     public bool is_locked;
 
     /// <summary>
-    /// ’PŒê”
+    /// å˜èªæ•°
     /// </summary>
     public int word_num;
 
     /// <summary>
-    /// ì¬“ú
+    /// ä½œæˆæ—¥æ™‚
     /// </summary>
     public string entry_date;
 
     /// <summary>
-    /// XV“ú
+    /// æ›´æ–°æ—¥æ™‚
     /// </summary>
     public string update_date;
 }

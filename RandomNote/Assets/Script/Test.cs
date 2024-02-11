@@ -4,24 +4,24 @@ using System.Collections.Generic;
 
 public class Test : MonoBehaviour {
     [SerializeField]
-    private Button button;  //ƒeƒXƒg”­“®—pƒ{ƒ^ƒ“
+    private Button button;  //ãƒ†ã‚¹ãƒˆç™ºå‹•ç”¨ãƒœã‚¿ãƒ³
     [SerializeField]
-    private GameObject prehub;     //ƒvƒŒƒnƒu
+    private GameObject prehub;     //ãƒ—ãƒ¬ãƒãƒ–
     [SerializeField]
-    private Transform parent;     //ƒvƒŒƒnƒu
+    private Transform parent;     //ãƒ—ãƒ¬ãƒãƒ–
 
     private void Start() {
-        //ƒŠƒXƒi[“o˜^
+        //ãƒªã‚¹ãƒŠãƒ¼ç™»éŒ²
         //button.onClick.AddListener(OnClick);
         /*
         GameObject obj = Instantiate(prehub, parent.position, Quaternion.identity);
         obj.transform.SetParent(parent, false);
-        obj.GetComponent<I_Flame>().ReflectData(new WordData(1, "V‚µ‚¢’PŒê", 2, "à–¾•¶‚à\nV‚µ‚¢‚æ\n‚à‚¢‚Á‚¿‚å", new List<int> { 1, 4, 5 }, "2023/5/6"), 6);
+        obj.GetComponent<I_Flame>().ReflectData(new WordData(1, "æ–°ã—ã„å˜èª", 2, "èª¬æ˜æ–‡ã‚‚\næ–°ã—ã„ã‚ˆ\nã‚‚ã„ã£ã¡ã‚‡", new List<int> { 1, 4, 5 }, "2023/5/6"), 6);
         GameObject obj_2 = Instantiate(prehub, parent.position, Quaternion.identity);
         obj_2.transform.SetParent(parent, false);
-        obj_2.GetComponent<I_Flame>().ReflectData(new WordData(2, "‚à‚°‚à‚°", 5, "à–¾•¶‚à\nV‚µ‚¢‚æ\n‚à‚¢‚Á‚¿‚å\n’·‚¢‚æ‚Ë", new List<int> { 1, 4, 5 }, "2023/5/3"), 12);
+        obj_2.GetComponent<I_Flame>().ReflectData(new WordData(2, "ã‚‚ã’ã‚‚ã’", 5, "èª¬æ˜æ–‡ã‚‚\næ–°ã—ã„ã‚ˆ\nã‚‚ã„ã£ã¡ã‚‡\né•·ã„ã‚ˆã­", new List<int> { 1, 4, 5 }, "2023/5/3"), 12);
         */
-        //ƒtƒ@ƒCƒ‹ƒpƒX
+        //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
         string file_path = Application.persistentDataPath + "/WordsData" + ".json";
         I_FileContent fileData = (new FileManager(file_path)).Load<FileData>();
         new FlameList(new FlameFactory(FlameFactory.FileType.WORD_FLAME, fileData));
@@ -29,36 +29,36 @@ public class Test : MonoBehaviour {
 
     
     /// <summary>
-    /// î•ñ“o˜^
+    /// æƒ…å ±ç™»éŒ²
     /// </summary>
     public void OnClick()
     {
-        Debug.Log("ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½");
-        //ƒtƒ@ƒCƒ‹ƒpƒX
+        Debug.Log("ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸ");
+        //ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
         string file_path = Application.persistentDataPath + "/WordsData" + ".json";
         FileManager fileManager = new FileManager(file_path);
 
-        //ƒf[ƒ^“ü—Í
+        //ãƒ‡ãƒ¼ã‚¿å…¥åŠ›
         FileData fileData = new FileData();
-        fileData.title = "ƒeƒXƒg’PŒêW";
+        fileData.title = "ãƒ†ã‚¹ãƒˆå˜èªé›†";
         fileData.is_locked = false;
-        fileData.wordDatas.Add(new WordData(0, "’PŒê‚»‚Ì1", 3, "à–¾•¶‚Á‚Ä“ï‚µ‚¢‚æ‚Ë", new List<int>{1, 5, 7}, "2022/2/1"));
-        fileData.wordDatas.Add(new WordData(1, "’PŒê‚»‚Ì2", 5, "‰üs\n‚Æ‚©‚Ç‚¤‚È‚é‚ñ‚¾‚ë‚¤", new List<int> { 7 }, "2022/2/3"));
+        fileData.wordDatas.Add(new WordData(0, "å˜èªãã®1", 3, "èª¬æ˜æ–‡ã£ã¦é›£ã—ã„ã‚ˆã­", new List<int>{1, 5, 7}, "2022/2/1"));
+        fileData.wordDatas.Add(new WordData(1, "å˜èªãã®2", 5, "æ”¹è¡Œ\nã¨ã‹ã©ã†ãªã‚‹ã‚“ã ã‚ã†", new List<int> { 7 }, "2022/2/3"));
         TagDataWrapper tagDataWrapper = new TagDataWrapper();
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì1", 0);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì2", 9);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì3", 2);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì4", 1);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì5", 7);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì6", 7);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®1", 0);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®2", 9);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®3", 2);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®4", 1);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®5", 7);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®6", 7);
         tagDataWrapper.deleteTag(2);
         tagDataWrapper.deleteTag(5);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì7", 712);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì8", 21);
-        tagDataWrapper.addTag("ƒ^ƒO‚»‚Ì9", 21);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®7", 712);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®8", 21);
+        tagDataWrapper.addTag("ã‚¿ã‚°ãã®9", 21);
         fileData.tagDatas = tagDataWrapper;
 
-        //ƒVƒŠƒAƒ‰ƒCƒY
+        //ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚º
         fileManager.Save(fileData);
     }
 }

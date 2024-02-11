@@ -1,5 +1,5 @@
 /// <summary>
-/// Json�Ƃ��Ĉ����f�[�^�t�@�C���ꊇ�Ǘ��p
+/// Jsonとして扱うデータファイル一括管理用
 /// </summary>
 public interface I_FileContent {
 }

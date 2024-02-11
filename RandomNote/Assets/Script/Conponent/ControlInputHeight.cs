@@ -1,28 +1,30 @@
 using UnityEngine;
 using TMPro;
 
-public class ControlInputHeight : MonoBehaviour {
+public class ControlInputHeight : MonoBehaviour
+{
 
-    [SerializeField]
-    private Transform inputField;      //‚‚³‚Ì’²®‚ğ‚·‚éInputField
-    [SerializeField]
-    private Transform parent_control_pos_obj;      //‚‚³’²®‚ÌŒãˆÊ’u‚ğ’²®‚·‚éƒIƒuƒWƒFƒNƒg‚Ìe—v‘f
+	[SerializeField]
+	private Transform inputField;      //InputField
+	[SerializeField]
+	private Transform parent_control_pos_obj;      //InputFeildã«ä¼´ã£ãŸã‚µã‚¤ã‚ºå¤‰æ›´ã‚’ã™ã‚‹å¿…è¦ã®objã®è¦ª
 
-    //—]”’
-    int SPACE = 15;
+	//ã¡ã‚‡ã£ã¨ã‚¹ãƒšãƒ¼ã‚¹ã‚ã‘ã‚‹
+	readonly int SPACE = 15;
 
 
-    public void control_inputfield_height () {
-        //Debug.Log("ƒTƒCƒY•ÏX");
-        int lineCount = inputField.GetComponent<TMP_InputField>().textComponent.textInfo.lineCount;
-        //ƒTƒCƒYŒvZ
-        Vector2 after_size = new Vector2(inputField.GetComponent<RectTransform>().sizeDelta.x, inputField.GetComponent<TMP_InputField>().pointSize * lineCount + SPACE);
-        //ˆÊ’u’²®
-        inputField.GetComponent<RectTransform>().sizeDelta = after_size;
-        foreach (Transform item in parent_control_pos_obj) {
-            RectTransform item_rect = item.GetComponent<RectTransform>();
-            item_rect.offsetMax = new Vector2(0f, 0f);
-            item_rect.offsetMin = new Vector2(0f, 0f);
-        }
-    }
+	public void control_inputfield_height()
+	{
+		int lineCount = inputField.GetComponent<TMP_InputField>().textComponent.textInfo.lineCount;
+		//ã‚µã‚¤ã‚ºä½œæˆ
+		Vector2 after_size = new Vector2(inputField.GetComponent<RectTransform>().sizeDelta.x, inputField.GetComponent<TMP_InputField>().pointSize * lineCount + SPACE);
+		//ã‚µã‚¤ã‚ºå¤‰æ›´
+		inputField.GetComponent<RectTransform>().sizeDelta = after_size;
+		foreach (Transform item in parent_control_pos_obj)
+		{
+			RectTransform item_rect = item.GetComponent<RectTransform>();
+			item_rect.offsetMax = new Vector2(0f, 0f);
+			item_rect.offsetMin = new Vector2(0f, 0f);
+		}
+	}
 }

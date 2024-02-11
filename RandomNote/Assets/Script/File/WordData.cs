@@ -2,21 +2,21 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// ’PŒêƒf[ƒ^
+/// å˜èªãƒ‡ãƒ¼ã‚¿
 /// </summary>
 [Serializable]
 public class WordData : I_FlameData {
     /// <summary>
-    /// V‹Kì¬ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-    /// XV“ú‚ÍV‹Kì¬“ú‚Æ“¯‚¶‚É‚È‚é
-    /// ƒRƒs[‰ñ”‚Í0‚ª‰Šú’l‚Æ‚µ‚Ä“ü‚ê‚ç‚ê‚é
+    /// æ–°è¦ä½œæˆæ™‚ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+    /// æ›´æ–°æ—¥æ™‚ã¯æ–°è¦ä½œæˆæ—¥æ™‚ã¨åŒã˜ã«ãªã‚‹
+    /// ã‚³ãƒ”ãƒ¼å›æ•°ã¯0ãŒåˆæœŸå€¤ã¨ã—ã¦å…¥ã‚Œã‚‰ã‚Œã‚‹
     /// </summary>
-    /// <param name="num">“o˜^”Ô†</param>
-    /// <param name="word">’PŒê–¼</param>
-    /// <param name="star_num">•]‰¿</param>
-    /// <param name="explain">à–¾</param>
-    /// <param name="tags">ƒ^ƒO</param>
-    /// <param name="entry_date">ì¬“ú</param>
+    /// <param name="num">ç™»éŒ²ç•ªå·</param>
+    /// <param name="word">å˜èªå</param>
+    /// <param name="star_num">è©•ä¾¡</param>
+    /// <param name="explain">èª¬æ˜</param>
+    /// <param name="tags">ã‚¿ã‚°</param>
+    /// <param name="entry_date">ä½œæˆæ—¥æ™‚</param>
     public WordData(int num, string word, short star_num, string explain, List<int> tags, string entry_date)
     {
         this.num = num;
@@ -30,42 +30,42 @@ public class WordData : I_FlameData {
     }
 
     /// <summary>
-    /// “o˜^”Ô†
+    /// ç™»éŒ²ç•ªå·
     /// </summary>
     public int num;
 
     /// <summary>
-    /// ’PŒê–¼
+    /// å˜èªå
     /// </summary>
     public string word;
 
     /// <summary>
-    /// ƒRƒs[‰ñ”
+    /// ã‚³ãƒ”ãƒ¼å›æ•°
     /// </summary>
     public int count;
 
     /// <summary>
-    /// •]‰¿  0‚ÍƒGƒ‰[ 1`5
+    /// è©•ä¾¡  0ã¯ã‚¨ãƒ©ãƒ¼ 1ï½5
     /// </summary>
     public short star_num;
 
     /// <summary>
-    /// à–¾•¶
+    /// èª¬æ˜æ–‡
     /// </summary>
     public string explain;
 
     /// <summary>
-    /// ƒ^ƒOî•ñ
+    /// ã‚¿ã‚°æƒ…å ±
     /// </summary>
     public List<int> tags = new List<int>();
 
     /// <summary>
-    /// ì¬“ú
+    /// ä½œæˆæ—¥æ™‚
     /// </summary>
     public string entry_date;
 
     /// <summary>
-    /// XV“ú
+    /// æ›´æ–°æ—¥æ™‚
     /// </summary>
     public string update_date;
 }
