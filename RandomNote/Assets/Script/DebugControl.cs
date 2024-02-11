@@ -5,7 +5,7 @@ using UnityEngine;
 public static class DebugControl {
 
     /// <summary>
-    /// ログ表示用
+    /// 繝ｭ繧ｰ陦ｨ遉ｺ逕ｨ
     /// </summary>
     public static void Log (string message)
     {
@@ -13,7 +13,7 @@ public static class DebugControl {
     }
 
     /// <summary>
-    /// エラー表示用
+    /// 繧ｨ繝ｩ繝ｼ陦ｨ遉ｺ逕ｨ
     /// </summary>
     public static void Error (System.Exception message) {
         Debug.Log(message);

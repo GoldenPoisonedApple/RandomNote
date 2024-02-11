@@ -3,15 +3,15 @@ using TMPro;
 
 public class CopyToCripBoard : MonoBehaviour
 {
-    /// <summary>
-    /// ƒNƒŠƒbƒNƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[
-    /// </summary>
-    /// <param name="text">ƒRƒs[Œ³</param>
-    public void Onclick (TMP_Text text)
-    {
-        //ƒNƒŠƒbƒvƒ{[ƒh‚Ö•¶š‚ğİ’è(ƒRƒs[)
-        GUIUtility.systemCopyBuffer = text.text;
-        DebugControl.Log("ƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[ : " + text.text);
-        GlobalObjData.Instance.PopUp("ƒNƒŠƒbƒvƒ{[ƒh‚ÉƒRƒs[‚µ‚Ü‚µ‚½");
-    }
+	/// <summary>
+	/// ã‚¯ãƒªãƒƒã‚¯æ™‚ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼
+	/// </summary>
+	/// <param name="text">ã‚³ãƒ”ãƒ¼å…ƒ</param>
+	public void Onclick(TMP_Text text)
+	{
+		//ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã¸æ–‡å­—ã‚’è¨­å®š(ã‚³ãƒ”ãƒ¼)
+		GUIUtility.systemCopyBuffer = text.text;
+		DebugControl.Log("ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ : " + text.text);
+		GlobalObjData.Instance.PopUp("ã‚¯ãƒªãƒƒãƒ—ãƒœãƒ¼ãƒ‰ã«ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸ");
+	}
 }

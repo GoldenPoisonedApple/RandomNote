@@ -6,10 +6,10 @@ using TMPro;
 public class CopyButton : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text wordText;      //ƒeƒLƒXƒgæ“¾
+    private TMP_Text wordText;      //ãƒ†ã‚­ã‚¹ãƒˆå–å¾—
 
 
     public void OnClickButton () {
-        Debug.Log(wordText.text + "‚ğƒRƒs[‚µ‚Ü‚µ‚½");
+        Debug.Log(wordText.text + "ã‚’ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸ");
     }
 }

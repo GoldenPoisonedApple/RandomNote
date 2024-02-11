@@ -1,13 +1,13 @@
 using UnityEngine;
 
 /// <summary>
-/// ƒtƒŒ[ƒ€‚Æ‚µ‚Äˆµ‚¤ƒCƒ“ƒ^[ƒtƒF[ƒX
+/// ãƒ•ãƒ¬ãƒ¼ãƒ ã¨ã—ã¦æ‰±ã†ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
 /// </summary>
 public interface I_Flame {
     /// <summary>
-    /// ƒtƒŒ[ƒ€ì¬
+    /// ãƒ•ãƒ¬ãƒ¼ãƒ ä½œæˆ
     /// </summary>
-    /// <param name="flameData">ƒtƒŒ[ƒ€‚É•K—v‚Èƒf[ƒ^</param>
-    /// <param name="flame_num">ƒtƒŒ[ƒ€”Ô†</param>
+    /// <param name="flameData">ãƒ•ãƒ¬ãƒ¼ãƒ ã«å¿…è¦ãªãƒ‡ãƒ¼ã‚¿</param>
+    /// <param name="flame_num">ãƒ•ãƒ¬ãƒ¼ãƒ ç•ªå·</param>
     void ReflectData(I_FlameData flameData, int flame_num);
 }

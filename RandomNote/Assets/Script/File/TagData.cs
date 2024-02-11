@@ -1,21 +1,21 @@
 using System;
 
 /// <summary>
-/// ƒ^ƒO
+/// ã‚¿ã‚°
 /// </summary>
 [Serializable]
 public class TagData {
 
     /// <summary>
-    /// ƒ^ƒOV‹KêŠ‚Éì¬ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-    /// end‚©first‚É‚µ‚©g‚í‚È‚¢
+    /// ã‚¿ã‚°æ–°è¦å ´æ‰€ã«ä½œæˆæ™‚ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+    /// endã‹firstã«ã—ã‹ä½¿ã‚ãªã„
     /// </summary>
-    /// <param name="word">ƒ^ƒO–¼</param>
-    /// <param name="num">ƒ^ƒO•Û‘¶”Ô†</param>
-    /// <param name="used_count">g—p‚³‚ê‚Ä‚¢‚é”</param>
-    /// <param name="pre">‘O‚Ìƒ^ƒO•Û‘¶”Ô†</param>
-    /// <param name="next">Ÿ‚Ìƒ^ƒO•Û‘¶”Ô†</param>
-    /// <param name="next">ƒ^ƒO‚Ìí—Ş</param>
+    /// <param name="word">ã‚¿ã‚°å</param>
+    /// <param name="num">ã‚¿ã‚°ä¿å­˜ç•ªå·</param>
+    /// <param name="used_count">ä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹æ•°</param>
+    /// <param name="pre">å‰ã®ã‚¿ã‚°ä¿å­˜ç•ªå·</param>
+    /// <param name="next">æ¬¡ã®ã‚¿ã‚°ä¿å­˜ç•ªå·</param>
+    /// <param name="next">ã‚¿ã‚°ã®ç¨®é¡</param>
     public TagData (string word, int num, int used_count, int pre, int next, int state) {
         this.word = word;
         this.num = num;
@@ -25,11 +25,11 @@ public class TagData {
         this.state = state;
     }
     /// <summary>
-    /// ƒ^ƒOƒf[ƒ^’Ç‰Á
+    /// ã‚¿ã‚°ãƒ‡ãƒ¼ã‚¿è¿½åŠ 
     /// </summary>
-    /// <param name="word">ƒ^ƒO–¼</param>
-    /// <param name="num">ƒ^ƒO•Û‘¶”Ô†</param>
-    /// <param name="used_count">g—p‚³‚ê‚Ä‚¢‚é”</param>
+    /// <param name="word">ã‚¿ã‚°å</param>
+    /// <param name="num">ã‚¿ã‚°ä¿å­˜ç•ªå·</param>
+    /// <param name="used_count">ä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹æ•°</param>
     public void addData(string word, int num, int used_count) {
         this.word = word;
         this.num = num;
@@ -38,32 +38,32 @@ public class TagData {
     }
 
     /// <summary>
-    /// ƒ^ƒO–¼
+    /// ã‚¿ã‚°å
     /// </summary>
     public string word;
 
     /// <summary>
-    /// ƒ^ƒO•Û‘¶”Ô†
+    /// ã‚¿ã‚°ä¿å­˜ç•ªå·
     /// </summary>
     public int num;
 
     /// <summary>
-    /// g—p‚³‚ê‚Ä‚¢‚é”
+    /// ä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹æ•°
     /// </summary>
     public int used_count;
 
     /// <summary>
-    /// ‘O‚Ìƒ^ƒO•Û‘¶”Ô†
+    /// å‰ã®ã‚¿ã‚°ä¿å­˜ç•ªå·
     /// </summary>
     public int pre;
 
     /// <summary>
-    /// Ÿ‚Ìƒ^ƒO•Û‘¶”Ô†
+    /// æ¬¡ã®ã‚¿ã‚°ä¿å­˜ç•ªå·
     /// </summary>
     public int next;
 
     /// <summary>
-    /// ƒ^ƒO‚Ìí—Ş, FIRST‚©END‚©DATA
+    /// ã‚¿ã‚°ã®ç¨®é¡, FIRSTã‹ENDã‹DATA
     /// </summary>
     public int state;
     public const int FIRST = 0;

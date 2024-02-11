@@ -2,68 +2,68 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// ’PŒêƒŠƒXƒg
+/// å˜èªãƒªã‚¹ãƒˆ
 /// </summary>
 [Serializable]
 public class TagDataWrapper {
     /// <summary>
-    /// ì¬ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+    /// ä½œæˆæ™‚ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
     /// </summary>
     public TagDataWrapper () {
         pre_end = 0;
         end = pre_end + 1;
-        //Å‰‚Ìƒ^ƒOƒf[ƒ^•Û‘¶
+        //æœ€åˆã®ã‚¿ã‚°ãƒ‡ãƒ¼ã‚¿ä¿å­˜
         tagData.Add(new TagData("first", pre_end, -1, -1, end, TagData.FIRST));
-        //ÅŒã‚Ìƒ^ƒOƒf[ƒ^•Û‘¶
+        //æœ€å¾Œã®ã‚¿ã‚°ãƒ‡ãƒ¼ã‚¿ä¿å­˜
         tagData.Add(new TagData("first", end, -1, pre_end, end+1, TagData.END));
     }
 
     /// <summary>
-    /// ƒ^ƒO’Ç‰Á
+    /// ã‚¿ã‚°è¿½åŠ 
     /// </summary>
-    /// <param name="tagName">’Ç‰Á‚·‚éƒ^ƒO‚Ì–¼‘O</param>
-    /// <param name="used_count">g—p‚³‚ê‚Ä‚¢‚é”</param>
-    /// <returns>’Ç‰Á‚µ‚½ƒ^ƒO‚Ì•Û‘¶êŠ</returns>
+    /// <param name="tagName">è¿½åŠ ã™ã‚‹ã‚¿ã‚°ã®åå‰</param>
+    /// <param name="used_count">ä½¿ç”¨ã•ã‚Œã¦ã„ã‚‹æ•°</param>
+    /// <returns>è¿½åŠ ã—ãŸã‚¿ã‚°ã®ä¿å­˜å ´æ‰€</returns>
     public int addTag(string tagName, int used_count)
     {
-        //endƒ^ƒOì¬
+        //endã‚¿ã‚°ä½œæˆ
         if (tagData[end].state == TagData.END) {
             tagData.Add(new TagData("end", tagData[end].next, -1, end, end+2, TagData.END));
         }
-        //ƒ^ƒO’Ç‰Á
+        //ã‚¿ã‚°è¿½åŠ 
         tagData[end].addData(tagName, end, used_count);
-        //endİ’è
+        //endè¨­å®š
         pre_end = end;
         end = tagData[end].next;
 
-        //’Ç‰Á‚µ‚½ƒ^ƒO‚Ì•Û‘¶êŠ•Ô‚·
+        //è¿½åŠ ã—ãŸã‚¿ã‚°ã®ä¿å­˜å ´æ‰€è¿”ã™
         return pre_end;
     }
 
     /// <summary>
-    /// ƒ^ƒOíœ
+    /// ã‚¿ã‚°å‰Šé™¤
     /// </summary>
-    /// <param name="tagNum">ƒ^ƒO‚Ì•Û‘¶êŠ</param>
+    /// <param name="tagNum">ã‚¿ã‚°ã®ä¿å­˜å ´æ‰€</param>
     public void deleteTag(int tagNum)
     {
         try {
             if (tagNum == pre_end) {
-                //end_pre‚Ìƒ^ƒOíœ
+                //end_preã®ã‚¿ã‚°å‰Šé™¤
                 tagData[pre_end].state = TagData.DELETE;
                 end = pre_end;
                 pre_end = tagData[end].pre;
 
             } else {
-                //‚»‚Ì‘¼‚Ìƒ^ƒOíœ
+                //ãã®ä»–ã®ã‚¿ã‚°å‰Šé™¤
                 tagData[tagNum].state = TagData.DELETE;
                 tagData[tagData[tagNum].pre].next = tagData[tagNum].next;
                 tagData[tagData[tagNum].next].pre = tagData[tagNum].pre;
-                //ƒ^ƒOŒã’u
+                //ã‚¿ã‚°å¾Œç½®
                 tagData[tagNum].pre = pre_end;
                 tagData[tagNum].next = end;
                 tagData[pre_end].next = tagNum;
                 tagData[end].pre = tagNum;
-                //endİ’è
+                //endè¨­å®š
                 end = tagNum;
 
             }
@@ -73,17 +73,17 @@ public class TagDataWrapper {
     }
 
     /// <summary>
-    /// Ÿƒf[ƒ^“ü—Íƒ^ƒO•Û‘¶”Ô†
+    /// æ¬¡ãƒ‡ãƒ¼ã‚¿å…¥åŠ›ã‚¿ã‚°ä¿å­˜ç•ªå·
     /// </summary>
     public int end;
 
     /// <summary>
-    /// ƒ‰ƒXƒgƒf[ƒ^“ü—Íƒ^ƒO•Û‘¶”Ô†
+    /// ãƒ©ã‚¹ãƒˆãƒ‡ãƒ¼ã‚¿å…¥åŠ›ã‚¿ã‚°ä¿å­˜ç•ªå·
     /// </summary>
     public int pre_end;
 
     /// <summary>
-    /// ’PŒêƒŠƒXƒg‚ÌƒŠƒXƒg
+    /// å˜èªãƒªã‚¹ãƒˆã®ãƒªã‚¹ãƒˆ
     /// </summary>
     public List<TagData> tagData = new List<TagData>();
 }

@@ -6,47 +6,47 @@ using UnityEngine;
 public class MainScreen : MonoBehaviour
 {
     [SerializeField]
-    private Transform frameViewer;      //ƒtƒŒ[ƒ€ƒrƒ…ƒ[
+    private Transform frameViewer;      //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ“ãƒ¥ãƒ¯ãƒ¼
     [SerializeField]
-    private Transform wordFrame;        //ƒ[ƒhƒtƒŒ[ƒ€
+    private Transform wordFrame;        //ãƒ¯ãƒ¼ãƒ‰ãƒ•ãƒ¬ãƒ¼ãƒ 
 
 
-    //’è”
-    const int FRAME_SPACE = 50;         //ƒtƒŒ[ƒ€ŠÔŠu
+    //å®šæ•°
+    const int FRAME_SPACE = 50;         //ãƒ•ãƒ¬ãƒ¼ãƒ é–“éš”
 
     /*
     void Start() {
-        //ƒf[ƒ^“Ç‚İ‚İ
+        //ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
         WordDataWrapper wordDataWrapper = WordDataManager.Load();
-        //ƒtƒŒ[ƒ€ì¬
+        //ãƒ•ãƒ¬ãƒ¼ãƒ ä½œæˆ
         createFrame(wordDataWrapper);
     }
 
     /// <summary>
-    /// ’PŒêƒtƒŒ[ƒ€ì¬A”z’u
+    /// å˜èªãƒ•ãƒ¬ãƒ¼ãƒ ä½œæˆã€é…ç½®
     /// </summary>
     private void createFrame (WordDataWrapper wordDataWrapper) {
-        //ƒtƒŒ[ƒ€ƒrƒ…ƒ[ˆÊ’uİ’è
+        //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ“ãƒ¥ãƒ¯ãƒ¼ä½ç½®è¨­å®š
         frameViewer.position = new Vector2(0f, 0f);
-        //ƒtƒŒ[ƒ€ƒrƒ…ƒ[‚‚³İ’è
+        //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ“ãƒ¥ãƒ¯ãƒ¼é«˜ã•è¨­å®š
         float frame_viewer_height = 0;
 
-        //ƒf[ƒ^‚Ì”‚¾‚¯ŒJ‚è•Ô‚µ
+        //ãƒ‡ãƒ¼ã‚¿ã®æ•°ã ã‘ç¹°ã‚Šè¿”ã—
         for (int i = 0; i < wordDataWrapper.WordDataList.Count; i++)
         {
 
-            //ƒtƒŒ[ƒ€ƒCƒ“ƒXƒ^ƒ“ƒX¶¬
+            //ãƒ•ãƒ¬ãƒ¼ãƒ ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿæˆ
             GameObject frame_instance = Instantiate(wordFrame.gameObject, frameViewer.position, Quaternion.identity);
-            //ƒtƒŒ[ƒ€‚‚³æ“¾
+            //ãƒ•ãƒ¬ãƒ¼ãƒ é«˜ã•å–å¾—
             float frame_height = frame_instance.GetComponent<RectTransform>().sizeDelta.y;
             frame_viewer_height += frame_height + FRAME_SPACE;
-            //ˆÊ’uİ’è
+            //ä½ç½®è¨­å®š
             frame_instance.transform.position = new Vector2(frameViewer.position.x, -((frame_height + FRAME_SPACE) * i + FRAME_SPACE));
-            //eqŠÖŒW\’z    ‘æ“ñˆø”:‘Š‘Î“I‚È‘å‚«‚³‚ÉƒXƒP[ƒ‹‚ğ•ÏX‚·‚é‚©
+            //è¦ªå­é–¢ä¿‚æ§‹ç¯‰    ç¬¬äºŒå¼•æ•°:ç›¸å¯¾çš„ãªå¤§ãã•ã«ã‚¹ã‚±ãƒ¼ãƒ«ã‚’å¤‰æ›´ã™ã‚‹ã‹
             frame_instance.transform.SetParent(frameViewer, false);
         }
 
-        //ƒtƒŒ[ƒ€ƒrƒ…ƒ[‚‚³•ÏX
+        //ãƒ•ãƒ¬ãƒ¼ãƒ ãƒ“ãƒ¥ãƒ¯ãƒ¼é«˜ã•å¤‰æ›´
         frameViewer.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, frame_viewer_height + FRAME_SPACE);
     }
     */

@@ -1,5 +1,5 @@
 /// <summary>
-/// ファイル書き込みファイル一括管理用
+/// 繝輔ぃ繧､繝ｫ譖ｸ縺崎ｾｼ縺ｿ繝輔ぃ繧､繝ｫ荳諡ｬ邂｡逅�逕ｨ
 /// </summary>
 public interface I_FlameData {
 }

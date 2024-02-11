@@ -4,20 +4,20 @@ using UnityEngine.UI;
 public class Star : MonoBehaviour {
 
     [SerializeField]
-    private Transform[] stars;      //¯
+    private Transform[] stars;      //æ˜Ÿ
 
 
-    public int value = 0;               //•]‰¿
+    public int value = 0;               //è©•ä¾¡
 
 
-    //¯‚ÌF
+    //æ˜Ÿã®è‰²
     private Color star_color = new Color(0xff, 0xd0, 0x00);
-    //¯‚ÌF
+    //æ˜Ÿã®è‰²
     private Color star_color_default = new Color(0xff, 0xff, 0xff);
 
     void Start()
     {
-        //ƒŠƒXƒi[İ’è
+        //ãƒªã‚¹ãƒŠãƒ¼è¨­å®š
         for (int i=0; i<stars.Length; i++) {
             int tmp = i;
             stars[i].GetComponent<Button>().onClick.AddListener(() => { set_value(tmp); });
@@ -25,18 +25,18 @@ public class Star : MonoBehaviour {
     }
 
     /// <summary>
-    /// •]‰¿•ÏX
+    /// è©•ä¾¡å¤‰æ›´
     /// </summary>
-    /// <param name="star_num">•]‰¿‚Ì”</param>
+    /// <param name="star_num">è©•ä¾¡ã®æ•°</param>
     private void set_value (int star_num) {
         int i = 0;
-        //•]‰¿‚Ì”‚¾‚¯‚â‚é
+        //è©•ä¾¡ã®æ•°ã ã‘ã‚„ã‚‹
         for ( ; i<star_num+1; i++) {
             stars[i].GetComponent<Image>().color = star_color;
         }
-        //•]‰¿İ’è
+        //è©•ä¾¡è¨­å®š
         value = i;
-        //c‚è‚ğ”’‚É‚·‚é
+        //æ®‹ã‚Šã‚’ç™½ã«ã™ã‚‹
         for ( ; i < stars.Length; i++) {
             stars[i].GetComponent<Image>().color = star_color_default;
         }
