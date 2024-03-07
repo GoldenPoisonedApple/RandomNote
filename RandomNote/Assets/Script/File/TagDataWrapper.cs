@@ -1,89 +1,162 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 /// <summary>
 /// 単語リスト
 /// </summary>
 [Serializable]
-public class TagDataWrapper {
-    /// <summary>
-    /// 作成時コンストラクタ
-    /// </summary>
-    public TagDataWrapper () {
-        pre_end = 0;
-        end = pre_end + 1;
-        //最初のタグデータ保存
-        tagData.Add(new TagData("first", pre_end, -1, -1, end, TagData.FIRST));
-        //最後のタグデータ保存
-        tagData.Add(new TagData("first", end, -1, pre_end, end+1, TagData.END));
+public class TagDataWrapper : I_TagControl
+{
+	/// <summary>
+	/// 単語リストのリスト
+	/// </summary>
+	public List<TagData> tagDatas = new List<TagData>();
+
+
+	//検索の簡単化のため
+	private int next = 0;
+
+	/// <summary>
+	/// タグデータ取得
+	/// </summary>
+	/// <returns>全てのタグデータ</returns>
+	public List<TagData> GetDatas() {
+		return tagDatas;
+	}
+
+	/// <summary>
+	/// タグの名前更新
+	/// </summary>
+	/// <param name="num">更新先のタグ番号</param>
+	/// <param name="name">更新後の名前</param>
+	public void UpdateName(int num, string name) {
+		try
+		{
+			TagData tagData = tagDatas[num];
+			if (tagData.status == TagData.DEL)
+				DebugControl.Error("@TagDataWrapper UpDateName, the tag has already been removed");
+			else
+				tagData.name = name;
+		}
+		catch (Exception e)
+		{
+			DebugControl.Error(e);
     }
+	}
 
-    /// <summary>
-    /// タグ追加
-    /// </summary>
-    /// <param name="tagName">追加するタグの名前</param>
-    /// <param name="used_count">使用されている数</param>
-    /// <returns>追加したタグの保存場所</returns>
-    public int addTag(string tagName, int used_count)
-    {
-        //endタグ作成
-        if (tagData[end].state == TagData.END) {
-            tagData.Add(new TagData("end", tagData[end].next, -1, end, end+2, TagData.END));
-        }
-        //タグ追加
-        tagData[end].addData(tagName, end, used_count);
-        //end設定
-        pre_end = end;
-        end = tagData[end].next;
+	/// <summary>
+	/// タグの使われてる数をインクリメント
+	/// <param name="num">インクリメントするタグ番号</param>
+	/// </summary>
+	public void Increment(int num) {
+		try
+		{
+			tagDatas[num].amount++;
+		}
+		catch (Exception e)
+		{
+			DebugControl.Error(e);
+		}
+	}
 
-        //追加したタグの保存場所返す
-        return pre_end;
-    }
+	/// <summary>
+	/// 使われてる数を更新
+	/// </summary>
+	/// <param name="num">更新先のタグ番号</param>
+	/// <param name="amount">更新後の使われてる数</param>
+	public void UpdateAmount (int num, int amount) {
+		try
+		{
+			tagDatas[num].amount = amount;
+		}
+		catch (Exception e)
+		{
+			DebugControl.Error(e);
+		}
+	}
 
-    /// <summary>
-    /// タグ削除
-    /// </summary>
-    /// <param name="tagNum">タグの保存場所</param>
-    public void deleteTag(int tagNum)
-    {
-        try {
-            if (tagNum == pre_end) {
-                //end_preのタグ削除
-                tagData[pre_end].state = TagData.DELETE;
-                end = pre_end;
-                pre_end = tagData[end].pre;
+	/// <summary>
+	/// タグを追加
+	/// </summary>
+	/// <param name="name">タグの名前</param>
+	/// <returns>追加したタグの保存番号</returns>
+	public int AddTag(string name) {
+		if (next >= tagDatas.Count) {
+			tagDatas.Add(new TagData(next, name));
+		} else {
+			tagDatas[next] = new TagData(next, name);
+		}
+		int tmp = next;
+		next = SearchNext(next+1);
 
-            } else {
-                //その他のタグ削除
-                tagData[tagNum].state = TagData.DELETE;
-                tagData[tagData[tagNum].pre].next = tagData[tagNum].next;
-                tagData[tagData[tagNum].next].pre = tagData[tagNum].pre;
-                //タグ後置
-                tagData[tagNum].pre = pre_end;
-                tagData[tagNum].next = end;
-                tagData[pre_end].next = tagNum;
-                tagData[end].pre = tagNum;
-                //end設定
-                end = tagNum;
+		return tmp;
+	}
 
-            }
-        } catch (Exception e) {
-            DebugControl.Error(e);
-        }
-    }
+	/// <summary>
+	/// タグ削除
+	/// </summary>
+	/// <param name="num">削除するタグ番号</param>
+	public void DelTag(int num) {
+		try
+		{
+			tagDatas[num].status = TagData.DEL;
+			if (num < next)
+				next = num;
+		}
+		catch (Exception e)
+		{
+			DebugControl.Error(e);
+		}
+	}
 
-    /// <summary>
-    /// 次データ入力タグ保存番号
-    /// </summary>
-    public int end;
+	/// <summary>
+	/// タグの名前取得
+	/// </summary>
+	/// <param name="num">取得するタグ番号</param>
+	/// <returns>タグの名前</returns>
+	public string GetName(int num) {
+		string tmp = "エラー";
+		try
+		{
+			tmp = tagDatas[num].name;
+		}
+		catch (Exception e)
+		{
+			DebugControl.Error(e);
+		}
+		return tmp;
+	}
 
-    /// <summary>
-    /// ラストデータ入力タグ保存番号
-    /// </summary>
-    public int pre_end;
+	/// <summary>
+	/// タグの使われてる数取得
+	/// </summary>
+	/// <param name="num">取得するタグ番号</param>
+	/// <returns>タグの使われてる数</returns>
+	public int GetAmount(int num) {
+		int tmp = -1;
+		try
+		{
+			tmp = tagDatas[num].amount;
+		}
+		catch (Exception e)
+		{
+			DebugControl.Error(e);
+		}
+		return tmp;
+	}
 
-    /// <summary>
-    /// 単語リストのリスト
-    /// </summary>
-    public List<TagData> tagData = new List<TagData>();
+	/// <summary>
+	/// 次データ保管場所の検索
+	/// </summary>
+	/// <param name="beginIndex"></param>
+	/// <returns></returns>
+	private int SearchNext (int beginIndex) {
+		int index;
+		for (index=beginIndex; index<tagDatas.Count; index++) {
+			if(tagDatas[index].status == TagData.DEL)
+				break;
+		}
+		return index;
+	}	
 }
