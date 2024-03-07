@@ -83,9 +83,9 @@ public class TagDataWrapper : I_TagControl
 	/// <returns>追加したタグの保存番号</returns>
 	public int AddTag(string name) {
 		if (next >= tagDatas.Count) {
-			tagDatas.Add(new TagData(name));
+			tagDatas.Add(new TagData(next, name));
 		} else {
-			tagDatas[next] = new TagData(name);
+			tagDatas[next] = new TagData(next, name);
 		}
 		int tmp = next;
 		next = SearchNext(next+1);
