@@ -92,6 +92,18 @@ public class TagDataWrapper : I_TagControl
 
 		return tmp;
 	}
+	/// <summary>
+	/// タグを追加
+	/// </summary>
+	/// <param name="name">タグの名前</param>
+	/// <param name="amount">使われてる数</param>
+	/// <returns>追加したタグの保存番号</returns>
+	public int AddTag(string name, int amount) {
+		int index = AddTag(name);
+		UpdateAmount(index, amount);
+		
+		return index;
+	}
 
 	/// <summary>
 	/// タグ削除
