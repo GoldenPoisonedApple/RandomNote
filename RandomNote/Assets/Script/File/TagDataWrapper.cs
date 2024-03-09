@@ -139,6 +139,15 @@ public class TagDataWrapper : I_TagControl
 		}
 		return tmp;
 	}
+	/// <summary>
+	/// タグの個数取得
+	/// </summary>
+	/// <returns>タグの個数</returns>
+	public int GetTagCount() {
+		return tagDatas.Count;
+	}
+
+
 
 	/// <summary>
 	/// タグの使われてる数取得

@@ -62,4 +62,10 @@ public interface I_TagControl {
 	/// <param name="num">取得するタグ番号</param>
 	/// <returns>タグの使われてる数</returns>
 	public int GetAmount(int num);
+
+	/// <summary>
+	/// タグの個数取得
+	/// </summary>
+	/// <returns>タグの個数</returns>
+	public int GetTagCount();
 }
