@@ -140,11 +140,16 @@ public class TagDataWrapper : I_TagControl
 		return tmp;
 	}
 	/// <summary>
-	/// タグの個数取得
+	/// 存在するタグの個数取得
 	/// </summary>
 	/// <returns>タグの個数</returns>
 	public int GetTagCount() {
-		return tagDatas.Count;
+		int count = 0;
+		foreach (TagData tag in tagDatas) {
+			if (tag.status == TagData.DATA)
+				count++;
+		}
+		return count;
 	}
 
 
