@@ -35,7 +35,13 @@ public interface I_TagControl {
 	/// </summary>
 	/// <param name="name">タグの名前</param>
 	/// <returns>追加したタグの保存番号</returns>
-	public int AddTag(string name);
+	public int AddTag(string name);	/// <summary>
+	/// タグを追加
+	/// </summary>
+	/// <param name="name">タグの名前</param>
+	/// <param name="amount">使われてる数</param>
+	/// <returns>追加したタグの保存番号</returns>
+	public int AddTag(string name, int amount);
 
 	/// <summary>
 	/// タグ削除

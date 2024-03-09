@@ -44,19 +44,19 @@ public class Test : MonoBehaviour {
         fileData.is_locked = false;
         fileData.wordDatas.Add(new WordData(0, "単語その1", 3, "説明文って難しいよね", new List<int>{1, 5, 7}, "2022/2/1"));
         fileData.wordDatas.Add(new WordData(1, "単語その2", 5, "改行\nとかどうなるんだろう", new List<int> { 7 }, "2022/2/3"));
-        TagDataWrapper tagDataWrapper = new TagDataWrapper();
-        tagDataWrapper.addTag("タグその1", 0);
-        tagDataWrapper.addTag("タグその2", 9);
-        tagDataWrapper.addTag("タグその3", 2);
-        tagDataWrapper.addTag("タグその4", 1);
-        tagDataWrapper.addTag("タグその5", 7);
-        tagDataWrapper.addTag("タグその6", 7);
-        tagDataWrapper.deleteTag(2);
-        tagDataWrapper.deleteTag(5);
-        tagDataWrapper.addTag("タグその7", 712);
-        tagDataWrapper.addTag("タグその8", 21);
-        tagDataWrapper.addTag("タグその9", 21);
-        fileData.tagDatas = tagDataWrapper;
+        I_TagControl tagDataWrapper = new TagDataWrapper();
+        tagDataWrapper.AddTag("タグその1", 0);
+        tagDataWrapper.AddTag("タグその2", 9);
+        tagDataWrapper.AddTag("タグその3", 2);
+        tagDataWrapper.AddTag("タグその4", 1);
+        tagDataWrapper.AddTag("タグその5", 7);
+        tagDataWrapper.AddTag("タグその6", 7);
+        tagDataWrapper.DelTag(2);
+        tagDataWrapper.DelTag(5);
+        tagDataWrapper.AddTag("タグその7", 712);
+        tagDataWrapper.AddTag("タグその8", 21);
+        tagDataWrapper.AddTag("タグその9", 21);
+        fileData.tagDatas = (TagDataWrapper)tagDataWrapper;
 
         //シリアライズ
         fileManager.Save(fileData);
