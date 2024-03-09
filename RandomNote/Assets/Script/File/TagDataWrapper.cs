@@ -35,13 +35,13 @@ public class TagDataWrapper : I_TagControl
 		{
 			TagData tagData = tagDatas[num];
 			if (tagData.status == TagData.DEL)
-				DebugControl.Error("@TagDataWrapper UpDateName, the tag has already been removed");
+				throw new Exception("This tag is deleted");
 			else
 				tagData.name = name;
 		}
 		catch (Exception e)
 		{
-			DebugControl.Error(e);
+			throw e;
     }
 	}
 
@@ -56,7 +56,7 @@ public class TagDataWrapper : I_TagControl
 		}
 		catch (Exception e)
 		{
-			DebugControl.Error(e);
+			throw e;
 		}
 	}
 
@@ -72,7 +72,7 @@ public class TagDataWrapper : I_TagControl
 		}
 		catch (Exception e)
 		{
-			DebugControl.Error(e);
+			throw e;
 		}
 	}
 
@@ -118,7 +118,7 @@ public class TagDataWrapper : I_TagControl
 		}
 		catch (Exception e)
 		{
-			DebugControl.Error(e);
+			throw e;
 		}
 	}
 
@@ -135,7 +135,7 @@ public class TagDataWrapper : I_TagControl
 		}
 		catch (Exception e)
 		{
-			DebugControl.Error(e);
+			throw e;
 		}
 		return tmp;
 	}
@@ -153,7 +153,7 @@ public class TagDataWrapper : I_TagControl
 		}
 		catch (Exception e)
 		{
-			DebugControl.Error(e);
+			throw e;
 		}
 		return tmp;
 	}
