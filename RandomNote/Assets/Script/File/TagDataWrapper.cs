@@ -16,6 +16,7 @@ public class TagDataWrapper : I_TagControl
 
 	//検索の簡単化のため
 	private int next = 0;
+	private bool FIRST_FLAG = true;
 
 	/// <summary>
 	/// タグデータ取得
@@ -90,6 +91,10 @@ public class TagDataWrapper : I_TagControl
 	/// <param name="name">タグの名前</param>
 	/// <returns>追加したタグの保存番号</returns>
 	public int AddTag(string name) {
+		if (FIRST_FLAG) {
+			FIRST_FLAG = false;
+			next = SearchNext(0);
+		}
 		if (next >= tagDatas.Count) {
 			tagDatas.Add(new TagData(next, name));
 		} else {
