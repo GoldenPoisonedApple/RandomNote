@@ -34,14 +34,14 @@ public class TagDataWrapper : I_TagControl
 		try
 		{
 			TagData tagData = tagDatas[num];
-			if (tagData.status == TagData.DEL)
-				throw new Exception("This tag is deleted");
-			else
+			if (tagData.status == TagData.DATA)
 				tagData.name = name;
+			else
+				throw new Exception("This tag is deleted");
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
-			throw e;
+			throw;
     }
 	}
 
@@ -52,11 +52,15 @@ public class TagDataWrapper : I_TagControl
 	public void Increment(int num) {
 		try
 		{
-			tagDatas[num].amount++;
+			TagData tagData = tagDatas[num];
+			if (tagData.status == TagData.DATA)
+				tagData.amount++;
+			else
+				throw new Exception("This tag is deleted");
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
-			throw e;
+			throw;
 		}
 	}
 
@@ -68,11 +72,15 @@ public class TagDataWrapper : I_TagControl
 	public void UpdateAmount (int num, int amount) {
 		try
 		{
-			tagDatas[num].amount = amount;
+			TagData tagData = tagDatas[num];
+			if (tagData.status == TagData.DATA)
+				tagData.amount = amount;
+			else
+				throw new Exception("This tag is deleted");
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
-			throw e;
+			throw;
 		}
 	}
 
@@ -112,13 +120,17 @@ public class TagDataWrapper : I_TagControl
 	public void DelTag(int num) {
 		try
 		{
-			tagDatas[num].status = TagData.DEL;
-			if (num < next)
-				next = num;
+			TagData tagData = tagDatas[num];
+			if (tagData.status == TagData.DATA) {
+				tagDatas[num].status = TagData.DEL;
+				if (num < next)
+					next = num;
+			} else
+				throw new Exception("This tag is already deleted");
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
-			throw e;
+			throw;
 		}
 	}
 
@@ -128,17 +140,44 @@ public class TagDataWrapper : I_TagControl
 	/// <param name="num">取得するタグ番号</param>
 	/// <returns>タグの名前</returns>
 	public string GetName(int num) {
-		string tmp = "エラー";
+		string tmp = "ERR";
 		try
 		{
-			tmp = tagDatas[num].name;
+			TagData tagData = tagDatas[num];
+			if (tagData.status == TagData.DATA)
+				tmp = tagData.name;
+			else
+				throw new Exception("This tag is deleted");
 		}
-		catch (Exception e)
+		catch (Exception)
 		{
-			throw e;
+			throw;
 		}
 		return tmp;
 	}
+	
+	/// <summary>
+	/// タグの使われてる数取得
+	/// </summary>
+	/// <param name="num">取得するタグ番号</param>
+	/// <returns>タグの使われてる数</returns>
+	public int GetAmount(int num) {
+		int tmp = -1;
+		try
+		{
+			TagData tagData = tagDatas[num];
+			if (tagData.status == TagData.DATA)
+				tmp = tagData.amount;
+			else
+				throw new Exception("This tag is deleted");
+		}
+		catch (Exception)
+		{
+			throw;
+		}
+		return tmp;
+	}
+
 	/// <summary>
 	/// 存在するタグの個数取得
 	/// </summary>
@@ -154,23 +193,6 @@ public class TagDataWrapper : I_TagControl
 
 
 
-	/// <summary>
-	/// タグの使われてる数取得
-	/// </summary>
-	/// <param name="num">取得するタグ番号</param>
-	/// <returns>タグの使われてる数</returns>
-	public int GetAmount(int num) {
-		int tmp = -1;
-		try
-		{
-			tmp = tagDatas[num].amount;
-		}
-		catch (Exception e)
-		{
-			throw e;
-		}
-		return tmp;
-	}
 
 	/// <summary>
 	/// 次データ保管場所の検索
