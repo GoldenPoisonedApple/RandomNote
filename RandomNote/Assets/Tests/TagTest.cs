@@ -42,9 +42,9 @@ public class TagTest
 		list.Add(new TagData(1, "second"));
 		tagDataWrapper.tagDatas = list;
 		// Act
-		tagControl.AddTag("test");
+		tagDataWrapper.AddTag("test");
 		// Assert
-		Assert.AreEqual("test", tagControl.GetName(2));
+		Assert.AreEqual("test", tagDataWrapper.GetName(2));
 	}
 
 	[Test]
