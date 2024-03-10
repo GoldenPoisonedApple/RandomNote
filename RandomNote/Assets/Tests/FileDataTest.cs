@@ -15,7 +15,7 @@ public class FileDataTest
 		// Act
 		fileContent.Save();
 		// Assert
-		FileManager fileManager = new FileManager("aaa", FileManager.PathType.FILE_NAME);
+		FileManager fileManager = new FileManager("作成テスト", FileManager.PathType.FILE_NAME);
 		fileManager.Load<FileData>();
 	}
 
