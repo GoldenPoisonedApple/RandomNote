@@ -10,15 +10,19 @@ public class FileDataTest
 {
 	[Test]
 	public void InitTest() {
-		
+		// Arrange
+		I_FileContent fileContent = new FileData("作成テスト");
+		// Act
+		fileContent.Save();
+		// Assert
+		//目視
 	}
 
 	[Test]
 	public void SaveTest()
 	{
 		// Arrange
-		FileData fileData = new FileData();
-		fileData.title = "テスト単語集";
+		FileData fileData = new FileData("テスト単語集");
 		fileData.is_locked = false;
 		fileData.wordDatas.Add(new WordData(0, "単語その1", 3, "説明文って難しいよね", new List<int>{1, 5, 7}, "2022/2/1"));
 		fileData.wordDatas.Add(new WordData(1, "単語その2", 5, "改行\nとかどうなるんだろう", new List<int> { 7 }, "2022/2/3"));
@@ -40,6 +44,6 @@ public class FileDataTest
 		((I_FileContent)fileData).Save();
 
 		// Assert
-
+		//目視
 	}
 }

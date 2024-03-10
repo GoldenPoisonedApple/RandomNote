@@ -20,15 +20,6 @@ public class FileListDataWrapper : I_FileContent
 	/// </summary>
 	public List<I_FlameData> listData = new List<I_FlameData>();
 
-
-	/// <summary>
-	/// ファイルを新規作成
-	/// </summary>
-	/// <param name="title">作成ファイルタイトル(ファイル名)</param>
-	public void CreateNewFile (string title) {
-		Save();
-	}
-
 	/// <summary>
 	/// データ保存
 	/// </summary>
