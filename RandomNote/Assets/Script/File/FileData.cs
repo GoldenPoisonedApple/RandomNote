@@ -18,9 +18,9 @@ public class FileData : I_FileContent {
     public bool is_locked;
 
     /// <summary>
-    /// 単語データリスト
+    /// 単語データ
     /// </summary>
-    public List<WordData> wordDatas = new List<WordData>();
+    public WordData wordDatas;
 
     /// <summary>
     /// タグデータ
