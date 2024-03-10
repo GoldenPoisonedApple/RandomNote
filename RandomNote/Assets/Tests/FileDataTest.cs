@@ -15,7 +15,8 @@ public class FileDataTest
 		// Act
 		fileContent.Save();
 		// Assert
-		//目視
+		FileManager fileManager = new FileManager("aaa", FileManager.PathType.FILE_NAME);
+		fileManager.Load<FileData>();
 	}
 
 	[Test]
@@ -44,6 +45,8 @@ public class FileDataTest
 		((I_FileContent)fileData).Save();
 
 		// Assert
-		//目視
+		FileManager fileManager = new FileManager("テスト単語集", FileManager.PathType.FILE_NAME);
+		FileData loadData = fileManager.Load<FileData>();
+		Assert.AreEqual("タグその1", loadData.tagDatas.GetName(0));
 	}
 }

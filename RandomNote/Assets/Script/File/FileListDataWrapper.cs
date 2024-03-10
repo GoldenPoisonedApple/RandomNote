@@ -25,7 +25,7 @@ public class FileListDataWrapper : I_FileContent
 	/// </summary>
 	public void Save()
 	{
-		FileManager fileManager = new FileManager(Application.persistentDataPath + "/" + FILE_NAME + ".json");
+		FileManager fileManager = new FileManager(FILE_NAME, FileManager.PathType.FILE_NAME);
 		//シリアライズ
 		fileManager.Save(this);
 	}

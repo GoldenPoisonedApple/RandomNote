@@ -38,7 +38,7 @@ public class FileData : I_FileContent
 	/// </summary>
 	public void Save()
 	{
-		FileManager fileManager = new FileManager(Application.persistentDataPath + "/" + title + ".json");
+		FileManager fileManager = new FileManager(title, FileManager.PathType.FILE_NAME);
 		//シリアライズ
 		fileManager.Save(this);
 	}
