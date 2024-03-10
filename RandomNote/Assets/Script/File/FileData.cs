@@ -29,7 +29,9 @@ public class FileData : I_FileContent
 	/// </summary>
 	public TagDataWrapper tagDatas = new TagDataWrapper();
 
-
+	/// <summary>
+	/// データ保存
+	/// </summary>
 	public void Save()
 	{
 		FileManager fileManager = new FileManager(Application.persistentDataPath + "/" + title + ".json");
