@@ -4,30 +4,57 @@ using UnityEngine;
 
 public class FileManager
 {
-	  /// <summary>
-    /// ファイルのパス読み取り形式
-    /// </summary>
-    public enum PathType {
-        FILE_NAME,
-        FILE_PATH
-    };
+	/// <summary>
+	/// ファイルのパス読み取り形式
+	/// </summary>
+	public enum PathType
+	{
+		PATH,
+		NAME,
+		HIDDEN_NAME,
+	};
 
 	/// <summary>
 	/// データ読み込み、書き込みするデータファイルパス
 	/// </summary>
 	private string file_path;
 
+	private const string FOLDER_NAME = "/data/";
+	private const string HIDDEN_FOLDER_NAME = "/hidden/";
+
+
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="file_path">ファイルの名前</param>
-	/// <param name="type">PathType.FILE_NAME : ファイルの名前, PathType.FILE_PATH : ファイルの絶対パス</param>
+	/// <param name="type">PathType.PATH : ファイルの絶対パス, PathType.NAME : ファイルの名前, PathType.HIDDEN_NAME : 隠しファイルの名前</param>
 	public FileManager(string file_path, PathType type)
 	{
-		if (type == PathType.FILE_NAME) {
-			this.file_path = Application.persistentDataPath + "/" + file_path + ".json";
-		} else if (type == PathType.FILE_PATH) {
+		if (type == PathType.PATH)	// 絶対パス
 			this.file_path = file_path;
+
+		else if (type == PathType.NAME) {	// 通常ファイル
+			string folder_path = Application.persistentDataPath + FOLDER_NAME;
+			//もしファイルが無かったら作成する
+			if (!Directory.Exists(folder_path))
+        Directory.CreateDirectory(folder_path);
+			
+			this.file_path = folder_path + file_path + ".json";
+
+		} else if (type == PathType.HIDDEN_NAME) {	// 隠しファイル
+			string folder_path = Application.persistentDataPath + HIDDEN_FOLDER_NAME;
+			//もしファイルが無かったら隠しフォルダを作成する
+			if (!Directory.Exists(folder_path)) {
+        Directory.CreateDirectory(folder_path);
+				// フォルダの属性を取得
+				FileAttributes attributes = File.GetAttributes(folder_path);
+				// Hidden フラグを追加
+				attributes |= FileAttributes.Hidden;
+				// フォルダの属性を更新
+				File.SetAttributes(folder_path, attributes);
+			}
+			this.file_path = folder_path + file_path + ".json";
+
 		}
 	}
 

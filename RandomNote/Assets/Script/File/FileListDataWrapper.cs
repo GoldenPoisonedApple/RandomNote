@@ -18,14 +18,14 @@ public class FileListDataWrapper : I_FileContent
 	/// <summary>
 	/// 単語リストのリスト
 	/// </summary>
-	public List<I_FlameData> listData = new List<I_FlameData>();
+	public List<FileListData> listDatas = new List<FileListData>();
 
 	/// <summary>
 	/// データ保存
 	/// </summary>
 	public void Save()
 	{
-		FileManager fileManager = new FileManager(FILE_NAME, FileManager.PathType.FILE_NAME);
+		FileManager fileManager = new FileManager(FILE_NAME, FileManager.PathType.NAME);
 		//シリアライズ
 		fileManager.Save(this);
 	}

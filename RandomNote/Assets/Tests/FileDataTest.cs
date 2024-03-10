@@ -10,12 +10,22 @@ public class FileDataTest
 {
 	[Test]
 	public void InitTest() {
+		// 通常データ
 		// Arrange
 		I_FileContent fileContent = new FileData("作成テスト");
 		// Act
 		fileContent.Save();
 		// Assert
-		FileManager fileManager = new FileManager("作成テスト", FileManager.PathType.FILE_NAME);
+		FileManager fileManager = new FileManager("作成テスト", FileManager.PathType.NAME);
+		fileManager.Load<FileData>();
+
+		// 隠しフォルダ
+		// Arrange
+		fileContent = new FileData("隠しファイル", true);
+		// Act
+		fileContent.Save();
+		// Assert
+		fileManager = new FileManager("隠しファイル", FileManager.PathType.HIDDEN_NAME);
 		fileManager.Load<FileData>();
 	}
 
@@ -45,7 +55,7 @@ public class FileDataTest
 		((I_FileContent)fileData).Save();
 
 		// Assert
-		FileManager fileManager = new FileManager("テスト単語集", FileManager.PathType.FILE_NAME);
+		FileManager fileManager = new FileManager("テスト単語集", FileManager.PathType.NAME);
 		FileData loadData = fileManager.Load<FileData>();
 		Assert.AreEqual("タグその1", loadData.tagDatas.GetName(0));
 	}
