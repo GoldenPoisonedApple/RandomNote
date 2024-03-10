@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class FileManager
 {
+	  /// <summary>
+    /// ファイルのパス読み取り形式
+    /// </summary>
+    public enum PathType {
+        FILE_NAME,
+        FILE_PATH
+    };
 
 	/// <summary>
 	/// データ読み込み、書き込みするデータファイルパス
@@ -13,10 +20,15 @@ public class FileManager
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
-	/// <param name="file_path">ここで渡したファイルに対して操作を行う</param>
-	public FileManager(string file_path)
+	/// <param name="file_path">ファイルの名前</param>
+	/// <param name="type">PathType.FILE_NAME : ファイルの名前, PathType.FILE_PATH : ファイルの絶対パス</param>
+	public FileManager(string file_path, PathType type)
 	{
-		this.file_path = file_path;
+		if (type == PathType.FILE_NAME) {
+			this.file_path = Application.persistentDataPath + "/" + file_path + ".json";
+		} else if (type == PathType.FILE_PATH) {
+			this.file_path = file_path;
+		}
 	}
 
 	/// <summary>
