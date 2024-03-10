@@ -9,8 +9,21 @@ using UnityEngine;
 [Serializable]
 public class FileData : I_FileContent
 {
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
+	/// <param name="title">タイトル、そのままファイルパスへ</param>
 	public FileData (string title) {
 		this.title = title;
+	}
+	/// <summary>
+	/// コンストラクタ
+	/// </summary>
+	/// <param name="title">タイトル、そのままファイルパスへ</param>
+	/// <param name="is_locked">隠しファイルかどうか</param>
+	public FileData (string title, bool is_locked) {
+		this.title = title;
+		this.is_locked = is_locked;
 	}
 
 	/// <summary>

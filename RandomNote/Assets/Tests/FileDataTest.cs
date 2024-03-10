@@ -21,7 +21,7 @@ public class FileDataTest
 
 		// 隠しフォルダ
 		// Arrange
-		fileContent = new FileData("隠しファイル");
+		fileContent = new FileData("隠しファイル", true);
 		// Act
 		fileContent.Save();
 		// Assert

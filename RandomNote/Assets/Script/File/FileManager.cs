@@ -19,6 +19,10 @@ public class FileManager
 	/// </summary>
 	private string file_path;
 
+	private const string FOLDER_NAME = "/data/";
+	private const string HIDDEN_FOLDER_NAME = "/hidden/";
+
+
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
@@ -30,23 +34,27 @@ public class FileManager
 			this.file_path = file_path;
 
 		else if (type == PathType.NAME) {	// 通常ファイル
-			this.file_path = Application.persistentDataPath + "/data/" + file_path + ".json";
+			string folder_path = Application.persistentDataPath + FOLDER_NAME;
 			//もしファイルが無かったら作成する
-			if (!Directory.Exists(this.file_path))
-        Directory.CreateDirectory(this.file_path);
+			if (!Directory.Exists(folder_path))
+        Directory.CreateDirectory(folder_path);
+			
+			this.file_path = folder_path + file_path + ".json";
 
 		} else if (type == PathType.HIDDEN_NAME) {	// 隠しファイル
-			this.file_path = Application.persistentDataPath + "/hidden/" + file_path + ".json";
+			string folder_path = Application.persistentDataPath + HIDDEN_FOLDER_NAME;
 			//もしファイルが無かったら隠しフォルダを作成する
-			if (!Directory.Exists(this.file_path)) {
-        Directory.CreateDirectory(this.file_path);
+			if (!Directory.Exists(folder_path)) {
+        Directory.CreateDirectory(folder_path);
 				// フォルダの属性を取得
-				FileAttributes attributes = File.GetAttributes(this.file_path);
+				FileAttributes attributes = File.GetAttributes(folder_path);
 				// Hidden フラグを追加
 				attributes |= FileAttributes.Hidden;
 				// フォルダの属性を更新
-				File.SetAttributes(this.file_path, attributes);
+				File.SetAttributes(folder_path, attributes);
 			}
+			this.file_path = folder_path + file_path + ".json";
+
 		}
 	}
 
