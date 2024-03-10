@@ -9,6 +9,11 @@ using UnityEngine.TestTools;
 public class FileDataTest
 {
 	[Test]
+	public void InitTest() {
+		
+	}
+
+	[Test]
 	public void SaveTest()
 	{
 		// Arrange
@@ -33,6 +38,7 @@ public class FileDataTest
 
 		// Act
 		((I_FileContent)fileData).Save();
+
 		// Assert
 
 	}

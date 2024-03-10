@@ -12,7 +12,7 @@ public class FileData : I_FileContent
 	/// <summary>
 	/// 単語群データタイトル
 	/// </summary>
-	public string title;
+	public string title = null;
 
 	/// <summary>
 	/// 隠しファイルか
@@ -28,6 +28,17 @@ public class FileData : I_FileContent
 	/// タグデータ
 	/// </summary>
 	public TagDataWrapper tagDatas = new TagDataWrapper();
+
+	/// <summary>
+	/// ファイルを新規作成
+	/// </summary>
+	/// <param name="title">作成ファイルタイトル(ファイル名)</param>
+	public void CreateNewFile (string title) {
+		if (this.title == null) {
+			this.title = title;
+			Save();
+		}
+	}
 
 	/// <summary>
 	/// データ保存
