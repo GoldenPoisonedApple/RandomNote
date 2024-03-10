@@ -11,11 +11,11 @@ public class FileDataTest
 	[Test]
 	public void InitTest() {
 		// Arrange
-		I_FileContent fileContent = new FileData("作成テスト");
+		I_FileContent fileContent = new FileData("作成テスト/テスト");
 		// Act
 		fileContent.Save();
 		// Assert
-		FileManager fileManager = new FileManager("作成テスト", FileManager.PathType.FILE_NAME);
+		FileManager fileManager = new FileManager("作成テスト/テスト", FileManager.PathType.NAME);
 		fileManager.Load<FileData>();
 	}
 
@@ -45,7 +45,7 @@ public class FileDataTest
 		((I_FileContent)fileData).Save();
 
 		// Assert
-		FileManager fileManager = new FileManager("テスト単語集", FileManager.PathType.FILE_NAME);
+		FileManager fileManager = new FileManager("テスト単語集", FileManager.PathType.NAME);
 		FileData loadData = fileManager.Load<FileData>();
 		Assert.AreEqual("タグその1", loadData.tagDatas.GetName(0));
 	}
