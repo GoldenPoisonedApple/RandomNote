@@ -23,7 +23,7 @@ public class Test : MonoBehaviour {
         */
         //ファイルパス
         string file_path = Application.persistentDataPath + "/WordsData" + ".json";
-        I_FileContent fileData = (new FileManager(file_path, FileManager.PathType.FILE_PATH)).Load<FileData>();
+        I_FileContent fileData = (new FileManager(file_path, FileManager.PathType.PATH)).Load<FileData>();
         new FlameList(new FlameFactory(FlameFactory.FileType.WORD_FLAME, fileData));
     }
 
@@ -36,7 +36,7 @@ public class Test : MonoBehaviour {
         Debug.Log("ボタンが押された");
         //ファイルパス
         string file_path = Application.persistentDataPath + "/WordsData" + ".json";
-        FileManager fileManager = new FileManager(file_path, FileManager.PathType.FILE_PATH);
+        FileManager fileManager = new FileManager(file_path, FileManager.PathType.PATH);
 
         //データ入力
         FileData fileData = new FileData("テスト単語集");

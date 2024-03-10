@@ -23,16 +23,30 @@ public class FileManager
 	/// コンストラクタ
 	/// </summary>
 	/// <param name="file_path">ファイルの名前</param>
-	/// <param name="type">PathType.FILE_NAME : ファイルの名前, PathType.FILE_PATH : ファイルの絶対パス</param>
+	/// <param name="type">PathType.PATH : ファイルの絶対パス, PathType.NAME : ファイルの名前, PathType.HIDDEN_NAME : 隠しファイルの名前</param>
 	public FileManager(string file_path, PathType type)
 	{
-		if (type == PathType.NAME)
-		{
-			this.file_path = Application.persistentDataPath + "/" + file_path + ".json";
-		}
-		else if (type == PathType.PATH)
-		{
+		if (type == PathType.PATH)	// 絶対パス
 			this.file_path = file_path;
+
+		else if (type == PathType.NAME) {	// 通常ファイル
+			this.file_path = Application.persistentDataPath + "/data/" + file_path + ".json";
+			//もしファイルが無かったら作成する
+			if (!Directory.Exists(this.file_path))
+        Directory.CreateDirectory(this.file_path);
+
+		} else if (type == PathType.HIDDEN_NAME) {	// 隠しファイル
+			this.file_path = Application.persistentDataPath + "/hidden/" + file_path + ".json";
+			//もしファイルが無かったら隠しフォルダを作成する
+			if (!Directory.Exists(this.file_path)) {
+        Directory.CreateDirectory(this.file_path);
+				// フォルダの属性を取得
+				FileAttributes attributes = File.GetAttributes(this.file_path);
+				// Hidden フラグを追加
+				attributes |= FileAttributes.Hidden;
+				// フォルダの属性を更新
+				File.SetAttributes(this.file_path, attributes);
+			}
 		}
 	}
 

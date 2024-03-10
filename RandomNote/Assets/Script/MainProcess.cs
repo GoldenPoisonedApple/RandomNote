@@ -12,7 +12,7 @@ public class MainProcess : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         string file_path = Application.persistentDataPath + "/WordsData" + ".json";
-        this.fileContent = new FileManager(file_path, FileManager.PathType.FILE_PATH).Load<FileData>();
+        this.fileContent = new FileManager(file_path, FileManager.PathType.PATH).Load<FileData>();
         Debug.Log(fileContent);
     }
 }

@@ -10,12 +10,22 @@ public class FileDataTest
 {
 	[Test]
 	public void InitTest() {
+		// 通常データ
 		// Arrange
-		I_FileContent fileContent = new FileData("作成テスト/テスト");
+		I_FileContent fileContent = new FileData("作成テスト");
 		// Act
 		fileContent.Save();
 		// Assert
-		FileManager fileManager = new FileManager("作成テスト/テスト", FileManager.PathType.NAME);
+		FileManager fileManager = new FileManager("作成テスト", FileManager.PathType.NAME);
+		fileManager.Load<FileData>();
+
+		// 隠しフォルダ
+		// Arrange
+		fileContent = new FileData("隠しファイル");
+		// Act
+		fileContent.Save();
+		// Assert
+		fileManager = new FileManager("隠しファイル", FileManager.PathType.HIDDEN_NAME);
 		fileManager.Load<FileData>();
 	}
 

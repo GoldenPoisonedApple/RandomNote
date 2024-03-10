@@ -21,7 +21,7 @@ public class FileData : I_FileContent
 	/// <summary>
 	/// 隠しファイルか
 	/// </summary>
-	public bool is_locked;
+	public bool is_locked = false;
 
 	/// <summary>
 	/// 単語データ
@@ -38,7 +38,11 @@ public class FileData : I_FileContent
 	/// </summary>
 	public void Save()
 	{
-		FileManager fileManager = new FileManager(title, FileManager.PathType.FILE_NAME);
+		FileManager fileManager;
+		if (is_locked)
+			fileManager = new FileManager(title, FileManager.PathType.HIDDEN_NAME);
+		else
+			fileManager = new FileManager(title, FileManager.PathType.NAME);
 		//シリアライズ
 		fileManager.Save(this);
 	}
