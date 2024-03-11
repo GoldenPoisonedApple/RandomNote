@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using Codice.CM.Client.Differences;
 
 /// <summary>
-/// 単語データ
+/// コントローラ
 /// </summary>
 public class FlameDatasControl <T>
-	//制約(I_FileContentというインターフェースを持っている型のみ)
 	where T : I_FlameData
 	{
 	/// <summary>

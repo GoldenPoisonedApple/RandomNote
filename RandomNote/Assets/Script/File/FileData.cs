@@ -39,7 +39,7 @@ public class FileData : I_FileContent
 	/// <summary>
 	/// 単語データ
 	/// </summary>
-	public WordDataWrapper wordDatas = new WordDataWrapper();
+	public List<WordData> wordDatas = new List<WordData>();
 
 	/// <summary>
 	/// タグデータ
@@ -58,5 +58,11 @@ public class FileData : I_FileContent
 			fileManager = new FileManager(title, FileManager.PathType.NAME);
 		//シリアライズ
 		fileManager.Save(this);
+	}
+
+
+	public object GetFlameDatasController ()
+	{
+		return new FlameDatasControl<WordData>(ref wordDatas);
 	}
 }
