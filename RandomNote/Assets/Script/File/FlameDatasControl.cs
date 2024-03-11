@@ -25,16 +25,17 @@ public class FlameDatasControl <T>
 	/// フレームデータ全取得
 	/// </summary>
 	/// <returns>フレームデータ</returns>
-	public List<T> GetDatas () {
+	public List<I_FlameData> GetDatas () {
 		// 参照を渡さないようにコピーを作成し渡す
-		return new List<T>(flameDatas);
+		// ConvertAllは新しいリスト作成してるらしい
+		return flameDatas.ConvertAll(item => (I_FlameData)item);
 	}
 	/// <summary>
 	/// 有効フレームデータ全取得
 	/// </summary>
 	/// <returns>有効フレームデータ</returns>
-	public List<T> GetValidDatas () {
-		return flameDatas.FindAll(flame => flame.GetStatus()==I_FlameData.DATA);
+	public List<I_FlameData> GetValidDatas () {
+		return flameDatas.ConvertAll(item => (I_FlameData)item).FindAll(flame => flame.GetStatus() == I_FlameData.DATA);
 	}
 
 	/// <summary>
@@ -55,15 +56,15 @@ public class FlameDatasControl <T>
 	/// </summary>
 	/// <param name="flameData">データ</param>
 	/// <returns>追加したindex番号</returns>
-	public int Add (T flameData) {
+	public int Add (I_FlameData flameData) {
 		next = SearchNext(next);
 		// 登録番号セット
 		flameData.SetNum(next);
 
 		if (next >= flameDatas.Count) {
-			flameDatas.Add(flameData);
+			flameDatas.Add((T)flameData);
 		} else {
-			flameDatas[next] = flameData;
+			flameDatas[next] = (T)flameData;
 		}
 		next++;
 
@@ -77,11 +78,11 @@ public class FlameDatasControl <T>
 	public void Del (int num) {
 		try
 		{
-			T T = flameDatas[num];
-			if (T.GetStatus() == T.DEL)
+			T flameData = flameDatas[num];
+			if (flameData.GetStatus() == I_FlameData.DEL)
 				throw new Exception("The Data is already deleted");
 			else
-				T.SetStatus(T.DEL);
+				flameData.SetStatus(I_FlameData.DEL);
 				
 			if (num < next)
 				next = num;
@@ -94,14 +95,14 @@ public class FlameDatasControl <T>
 	/// </summary>
 	/// <param name="num">更新ワードデータ番号</param>
 	/// <param name="flameData">ワードデータ</param>
-	public void Update (int num, T flameData) {
+	public void Update (int num, I_FlameData flameData) {
 		try
 		{
 			if (flameDatas[num].GetStatus() == I_FlameData.DEL)
 				throw new Exception("The Data is deleted");
 			else {
 				flameData.SetNum(num);
-				flameDatas[num] = flameData;
+				flameDatas[num] = (T)flameData;
 			}
 		}
 		catch (Exception) { throw; }
