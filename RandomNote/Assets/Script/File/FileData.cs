@@ -15,6 +15,7 @@ public class FileData : I_FileContent
 	/// <param name="title">タイトル、そのままファイルパスへ</param>
 	public FileData (string title) {
 		this.title = title;
+		flameDatasControl = new FlameDatasControl<WordData>(ref wordDatas);
 	}
 	/// <summary>
 	/// コンストラクタ
@@ -24,6 +25,7 @@ public class FileData : I_FileContent
 	public FileData (string title, bool is_locked) {
 		this.title = title;
 		this.is_locked = is_locked;
+		flameDatasControl = new FlameDatasControl<WordData>(ref wordDatas);
 	}
 
 	/// <summary>
@@ -47,6 +49,11 @@ public class FileData : I_FileContent
 	public TagDataWrapper tagDatas = new TagDataWrapper();
 
 	/// <summary>
+	/// コントローラ
+	/// </summary>
+	private FlameDatasControl<WordData> flameDatasControl;
+
+	/// <summary>
 	/// データ保存
 	/// </summary>
 	public void Save()
@@ -61,8 +68,11 @@ public class FileData : I_FileContent
 	}
 
 
-	public object GetFlameDatasController ()
-	{
-		return new FlameDatasControl<WordData>(ref wordDatas);
-	}
+	// 以下コンポジション
+	public List<I_FlameData> GetDatas () { return flameDatasControl.GetDatas(); }
+	public List<I_FlameData> GetValidDatas () { return flameDatasControl.GetValidDatas(); }
+	public int GetValidCount () { return flameDatasControl.GetValidCount(); }
+	public int Add (I_FlameData flameData) { return flameDatasControl.Add(flameData); }
+	public void Del (int num) { flameDatasControl.Del(num); }
+	public void Update (int num, I_FlameData flameData) { flameDatasControl.Update(num, flameData); }
 }
