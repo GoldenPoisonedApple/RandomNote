@@ -17,6 +17,7 @@ public class FileListData : I_FlameData
 		this.word_num = word_num;
 		this.entry_date = entry_date;
 		this.update_date = update_date;
+		status = I_FlameData.DATA;
 	}
 	/// <summary>
 	/// デバッグ用
@@ -30,6 +31,7 @@ public class FileListData : I_FlameData
 		this.word_num = word_num;
 		this.entry_date = entry_date;
 		this.update_date = update_date;
+		status = I_FlameData.DATA;
 	}
 
 	/// <summary>
@@ -39,6 +41,20 @@ public class FileListData : I_FlameData
 	public void SetNum(int num)
 	{
 		this.num = num;
+	}
+	/// <summary>
+	/// ステータス取得
+	/// </summary>
+	/// <returns>ステータス</returns>
+	public int GetStatus () {
+		return status;
+	}
+	/// <summary>
+	/// ステータス設定
+	/// </summary>
+	/// <returns>ステータス</returns>
+	public void SetStatus (int status) {
+		this.status = status;
 	}
 
 	/// <summary>
@@ -75,4 +91,9 @@ public class FileListData : I_FlameData
 	/// 更新日時
 	/// </summary>
 	public string update_date;
+
+	/// <summary>
+	/// ステータス
+	/// </summary>
+	public int status;
 }

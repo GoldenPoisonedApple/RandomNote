@@ -9,13 +9,19 @@ public interface I_FlameDatas {
 	/// フレームデータ全取得
 	/// </summary>
 	/// <returns>フレームデータ</returns>
-	public List<I_FlameData> GetFlameDatas ();
+	public List<I_FlameData> GetDatas ();
+
+	/// <summary>
+	/// 有効フレームデータ全取得
+	/// </summary>
+	/// <returns>有効フレームデータ</returns>
+	public List<I_FlameData> GetValidDatas ();
 
 	/// <summary>
 	/// 有効フレームデータ数取得
 	/// </summary>
 	/// <returns>有効フレームデータ数</returns>
-	public int GetFlameCount ();
+	public int GetValidCount ();
 
 	/// <summary>
 	/// フレームデータ追加

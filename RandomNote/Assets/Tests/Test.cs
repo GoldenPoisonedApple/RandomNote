@@ -20,10 +20,13 @@ public class Test
 	}
 
 
-	private TestA func (TestA testA) {
+	private TestA funcA (TestA testA) {
 		int index = testA.GetMenber();
 		testA.SetMenber(index+1);
 		return testA;
+	}
+	private void funcB (List<TestA> list) {
+		list.Add(new TestA());
 	}
 
 	[Test]
@@ -33,8 +36,20 @@ public class Test
 		Assert.AreEqual(0, list[0].GetMenber());
 		Assert.AreEqual(0, list[1].GetMenber());
 
-		func(list[0]);
+		funcA(list[0]);
 		Assert.AreEqual(1, list[0].GetMenber());
 		Assert.AreEqual(0, list[1].GetMenber());
 	}
+
+	[Test]
+	public void ListAddTest()
+	{
+		List<TestA> list = new List<TestA>() {new TestA(), new TestA()};
+		Assert.AreEqual(2, list.Count);
+
+		funcB(list);
+
+		Assert.AreEqual(3, list.Count);
+	}
+
 }
