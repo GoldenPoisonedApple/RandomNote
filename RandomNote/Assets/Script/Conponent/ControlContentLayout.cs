@@ -3,33 +3,12 @@ using UnityEngine;
 
 public class ControlContentLayout : MonoBehaviour
 {
-	[SerializeField]
-	private Transform tagPrehub;     //タグ
-	private const float SPACING = 10f; // Spacing between child objects
-	private const float MIN_HEIGHT = 100f; // Minimum height of the layout
-
-	public void SetTags (List<int> tags, I_TagControl tagControl)
-	{
-		// Remove all existing tags
-		foreach (Transform child in transform)
-		{
-			Destroy(child.gameObject);
-		}
-
-		// Add new tags
-		foreach (int tag in tags)
-		{
-			tagPrehub.GetComponent<TagComponent>().ReflectData(tagControl.GetName(tag));
-			Instantiate(tagPrehub, transform);
-		}
-
-		// Arrange the child objects
-		ArrangeChildObjects();
-	}
+	private const float SPACING = 20f; // Spacing between child objects
+	private const float MIN_HEIGHT = 10f; // Minimum height of the layout
 
 	public void ArrangeChildObjects()
 	{
-		RectTransform layoutTransform = GetComponent<RectTransform>();
+		RectTransform layoutTransform = transform.GetComponent<RectTransform>();
 		float layoutWidth = layoutTransform.rect.width;
 
 		float currentX = 0f;

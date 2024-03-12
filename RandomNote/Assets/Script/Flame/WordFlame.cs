@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
-
+using System.Collections;
 
 public class WordFlame : MonoBehaviour, I_Flame
 {
@@ -23,7 +23,9 @@ public class WordFlame : MonoBehaviour, I_Flame
 	[SerializeField]
 	private Sprite star_off;     //星ナシ
 	[SerializeField]
-	private Transform tag_space;     //タグ配置場所
+	private Transform tagPrehub;     //タグプレハブ
+	[SerializeField]
+	private Transform tagTrans;     //タグ配置場所
 
 	private WordData wordData;     //単語データ
 	private I_TagControl tagControl;     //タグコントローラ
@@ -45,7 +47,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 		count_text.text = wordData.count.ToString();  //コピー回数
 		set_date();  //時間
 		set_star();    //星
-		set_tag();    //タグ
+		StartCoroutine(set_tag());    //タグ
 	}
 
 	//説明文設定
@@ -88,8 +90,21 @@ public class WordFlame : MonoBehaviour, I_Flame
 	}
 
 	// タグ設定
-	private void set_tag()
+	IEnumerator set_tag()
 	{
-		tag_space.GetComponent<ControlContentLayout>().SetTags(wordData.tags, tagControl);
+		// Destroyが即刻反映されないとかいうクソ仕様だけど、一応念のため
+		foreach (Transform child in tagTrans)
+		{
+			Destroy(child.gameObject);
+		}
+		// Add new tags
+		foreach (int tag in wordData.tags)
+		{
+			tagPrehub.GetComponent<TagComponent>().ReflectData(tagControl.GetName(tag));
+			Instantiate(tagPrehub, tagTrans);
+		}
+
+		yield return null; // 1フレーム待つ sizeDeltaが更新されるのを待つため
+		tagTrans.GetComponent<ControlContentLayout>().ArrangeChildObjects();
 	}
 }
