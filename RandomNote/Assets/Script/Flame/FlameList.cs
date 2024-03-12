@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class FlameList
 {
-	//フレームデータ
+	// フレームデータ
 	private I_FileContent fileContent;
-	//表示するデータ
+	// 表示するデータ
 	private List<I_FlameData> viewFlames;
-	//プレハブデータ
+	// タグコントローラ
+	private I_TagControl tagControl;
+	// プレハブデータ
 	private GameObject flamePrehub;
 
-	//フレームの親
+	// フレームの親
 	private GameObject flameParent;
 
 	/// <summary>
@@ -24,6 +26,7 @@ public class FlameList
 		//情報取得
 		flamePrehub = flameFactory.flamePrehub;
 		fileContent = flameFactory.fileContent;
+		tagControl = fileContent.GetTagControl();
 		//オブジェクト取得
 		flameParent = GlobalObjData.Instance.getFlameParent();
 		//表示
@@ -48,7 +51,7 @@ public class FlameList
 			//プレハブインスタンス作成
 			GameObject obj = GlobalObjData.UseInstantiate(flamePrehub, flameParent.transform.position, Quaternion.identity);
 			//データ反映
-			obj.GetComponent<I_Flame>().ReflectData(flameData, i);
+			obj.GetComponent<I_Flame>().ReflectData(i, flameData, tagControl);
 			//親設定
 			obj.transform.SetParent(flameParent.transform, false);
 		}
@@ -59,6 +62,4 @@ public class FlameList
 		layoutGroup.spacing = 20f;
 		GlobalObjData.Instance.Coroutine(() => layoutGroup.spacing = 30f);
 	}
-
-
 }
