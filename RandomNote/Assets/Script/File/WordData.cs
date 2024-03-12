@@ -26,7 +26,7 @@ public class WordData : I_FlameData
 		this.tags = tags;
 		this.entry_date = entry_date;
 		this.update_date = entry_date;
-		status = DATA;
+		status = I_FlameData.DATA;
 	}
 	/// <summary>
 	/// デバッグ用
@@ -47,9 +47,16 @@ public class WordData : I_FlameData
 		this.tags = tags;
 		this.entry_date = entry_date;
 		this.update_date = entry_date;
-		status = DATA;
+		status = I_FlameData.DATA;
 	}
 
+	/// <summary>
+	/// 登録番号を取得
+	/// </summary>
+	/// <returns>登録番号</returns>
+	public int GetNum () {
+		return num;
+	}
 	/// <summary>
 	/// 登録番号セット
 	/// </summary>
@@ -57,6 +64,20 @@ public class WordData : I_FlameData
 	public void SetNum (int num) {
 		this.num = num;
 	}
+	/// <summary>
+	/// ステータス取得
+	/// </summary>
+	/// <returns>ステータス</returns>
+	public int GetStatus () {
+		return status;
+	}
+	/// <summary>
+	/// ステータス設定
+	/// </summary>
+	public void SetStatus (int status) {
+		this.status = status;
+	}
+
 	/// <summary>
 	/// 登録番号
 	/// </summary>
@@ -101,12 +122,4 @@ public class WordData : I_FlameData
 	/// 状態
 	/// </summary>
 	public int status;
-	/// <summary>
-	/// status : データ
-	/// </summary>
-	public const int DATA = 1;
-	/// <summary>
-	/// status : 削除済み
-	/// </summary>
-	public const int DEL = 2;
 }

@@ -51,7 +51,7 @@ public class FlameFactory {
     //ワードフレーム
     private void wordFlameFactory (in I_FileContent fileContent, GlobalObjData globalObjData)
     {
-        flameDatas = ((FileData)fileContent).wordDatas.GetFlameDatas();   //フレームデータ割り当て
-        flamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
+      flameDatas = fileContent.GetValidDatas();   //フレームデータ割り当て
+      flamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
     }
 }
