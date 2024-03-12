@@ -26,7 +26,7 @@ public class FlameFactory
 	public FlameFactory(I_FileContent.FileType type, string title, bool is_locked)
 	{
 		GlobalObjData globalObjData = GlobalObjData.Instance;
-		FileManager fileManager = new FileManager(title, is_locked?FileManager.PathType.HIDDEN_NAME:FileManager.PathType.NAME);
+		FileManager fileManager = new FileManager(title, is_locked ? FileManager.PathType.HIDDEN_NAME : FileManager.PathType.NAME);
 		switch (type)
 		{
 			case I_FileContent.FileType.FILE_LIST:
