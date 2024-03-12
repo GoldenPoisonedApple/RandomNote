@@ -2,56 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlameFactory {
-
-    /// <summary>
-    /// ファイルの種類
-    /// </summary>
-    public enum FileType {
-        FILE_FLAME,
-        WORD_FLAME
-    };
-
-    //フレームデータ
-    public List<I_FlameData> flameDatas { get; private set; }
-    //フレームプレハブ
-    public GameObject flamePrehub { get; private set; }
-    //ソート系統プレハブ
-    public GameObject sortPrehub { get; private set; }
-    //フィルタ系統プレハブ
-    public GameObject fillterPrehub { get; private set; }
+public class FlameFactory
+{
+	// フレームデータ
+	public I_FileContent fileContent { get; private set; }
+	// タグデータ
+	public I_TagControl tagControl { get; private set; }
+	// フレームプレハブ
+	public GameObject flamePrehub { get; private set; }
+	// ソート系統プレハブ
+	public GameObject sortPrehub { get; private set; }
+	// フィルタ系統プレハブ
+	public GameObject fillterPrehub { get; private set; }
 
 
 
-    /// <summary>
-    /// フレームに必要なデータ作成
-    /// </summary>
-    /// <param name="type">フレームの種類</param>
-    /// <param name="fileContent">ファイル情報</param>
-    public FlameFactory (FileType type, in I_FileContent fileContent)
-    {
-        GlobalObjData globalObjData = GlobalObjData.Instance;
-        switch (type)
-        {
-            case FileType.FILE_FLAME :
-                fileFlameFactory(in fileContent, globalObjData);
-                break;
-            case FileType.WORD_FLAME :
-                wordFlameFactory(in fileContent, globalObjData);
-                break;
-        }
-    }
+	/// <summary>
+	/// フレームに必要なデータ作成
+	/// </summary>
+	/// <param name="type">フレームの種類</param>
+	/// <param name="title">ファイルのタイトル</param>
+	/// <param name="is_locked">隠しファイルか</param>
+	public FlameFactory(I_FileContent.FileType type, string title, bool is_locked)
+	{
+		GlobalObjData globalObjData = GlobalObjData.Instance;
+		FileManager fileManager = new FileManager(title, is_locked ? FileManager.PathType.HIDDEN_NAME : FileManager.PathType.NAME);
+		switch (type)
+		{
+			case I_FileContent.FileType.FILE_LIST:
+				fileFlameFactory(fileManager, globalObjData);
+				break;
+			case I_FileContent.FileType.WORD:
+				wordFlameFactory(fileManager, globalObjData);
+				break;
+		}
+	}
 
-    //ファイルフレーム
-    private void fileFlameFactory (in I_FileContent fileContent, GlobalObjData globalObjData)
-    {
-        flameDatas = ((FileListDataWrapper)fileContent).listDatas.ConvertAll(item => (I_FlameData)item);   //フレームデータ割り当て
-        flamePrehub = globalObjData.getFileFlamePrehub();  //フレームプレハブ割り当て
-    }
-    //ワードフレーム
-    private void wordFlameFactory (in I_FileContent fileContent, GlobalObjData globalObjData)
-    {
-      flameDatas = fileContent.GetValidDatas();   //フレームデータ割り当て
-      flamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
-    }
+	// ファイルリスト
+	private void fileFlameFactory(FileManager fileManager, GlobalObjData globalObjData)
+	{
+		fileContent = fileManager.Load<FileListDataWrapper>();
+		flamePrehub = globalObjData.getFileFlamePrehub();  //フレームプレハブ割り当て
+	}
+	// ワード
+	private void wordFlameFactory(FileManager fileManager, GlobalObjData globalObjData)
+	{
+		fileContent = fileManager.Load<FileData>();
+		flamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
+	}
 }
