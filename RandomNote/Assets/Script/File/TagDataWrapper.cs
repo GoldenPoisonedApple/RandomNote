@@ -23,7 +23,8 @@ public class TagDataWrapper : I_TagControl
 	/// </summary>
 	/// <returns>全てのタグデータ</returns>
 	public List<TagData> GetDatas() {
-		return tagDatas;
+		// 参照を渡さないようにコピーを作成し渡す
+		return new List<TagData>(tagDatas);
 	}
 
 	/// <summary>
