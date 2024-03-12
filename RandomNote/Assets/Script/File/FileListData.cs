@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 /// <summary>
 /// 単語リスト
@@ -9,24 +10,24 @@ public class FileListData : I_FlameData
 	/// <summary>
 	/// 全入力コンストラクタ
 	/// </summary>
-	public FileListData(string title, string path, bool is_locked, int word_num, string entry_date, string update_date)
+	public FileListData(string title, I_FileContent.FileType type, bool is_locked, int word_num, string entry_date)
 	{
 		this.title = title;
-		this.path = path;
+		this.type = (int)type;
 		this.is_locked = is_locked;
 		this.word_num = word_num;
 		this.entry_date = entry_date;
-		this.update_date = update_date;
+		update_date = entry_date;
 		status = I_FlameData.DATA;
 	}
 	/// <summary>
 	/// デバッグ用
 	/// </summary>
-	public FileListData(int num, string title, string path, bool is_locked, int word_num, string entry_date, string update_date)
+	public FileListData(int num, string title, I_FileContent.FileType type, bool is_locked, int word_num, string entry_date, string update_date)
 	{
 		this.num = num;
 		this.title = title;
-		this.path = path;
+		this.type = (int)type;
 		this.is_locked = is_locked;
 		this.word_num = word_num;
 		this.entry_date = entry_date;
@@ -75,9 +76,9 @@ public class FileListData : I_FlameData
 	public string title;
 
 	/// <summary>
-	/// データファイルのパス
+	/// ファイルのタイプ
 	/// </summary>
-	public string path;
+	public int type;
 
 	/// <summary>
 	/// 隠しファイルかどうか
