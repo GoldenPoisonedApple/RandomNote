@@ -44,7 +44,7 @@ public class FlameDatasControlTest {
 	}
 
 	[Test]
-	public void AddTest()
+	public void AddTest1()
 	{
 		// 単体
 		// Arrange
@@ -61,19 +61,29 @@ public class FlameDatasControlTest {
 		Assert.AreEqual(5, flameDatasControl.GetValidCount());
 		Assert.AreEqual("5-test", ((WordData)flameDatasControl.GetDatas()[4]).word);
 		Assert.AreEqual(4, ((WordData)flameDatasControl.GetDatas()[4]).num);
-
+	}
+	[Test]
+	public void AddTest2()
+	{
 		// DELデータがあった場合
 		// Arrange
+		List<WordData> wordDatas = new List<WordData>() {
+			new WordData(0, "1", 0, "test", new List<int>{0, 1}, "2022/01/05"),
+			new WordData(1, "2", 0, "test", new List<int>{0, 1}, "2022/01/05"),
+			new WordData(2, "3", 0, "test", new List<int>{0, 1}, "2022/01/05"),
+			new WordData(3, "4", 0, "test", new List<int>{0, 1}, "2022/01/05")
+			};
+		FlameDatasControl<WordData> flameDatasControl = new FlameDatasControl<WordData>(ref wordDatas);
 		wordDatas[2].SetStatus(I_FlameData.DEL);
 		// Act
 		flameDatasControl.Add(new WordData("3-test", 0, "test", new List<int>{0, 1}, "2020/01/05"));
 		flameDatasControl.Add(new WordData("6-test", 0, "test", new List<int>{0, 1}, "2020/01/05"));
 		// Assert
-		Assert.AreEqual(6, flameDatasControl.GetValidCount());
+		Assert.AreEqual(5, flameDatasControl.GetValidCount());
 		Assert.AreEqual("3-test", ((WordData)flameDatasControl.GetDatas()[2]).word);
 		Assert.AreEqual(2, ((WordData)flameDatasControl.GetDatas()[2]).num);
-		Assert.AreEqual("6-test", ((WordData)flameDatasControl.GetDatas()[5]).word);
-		Assert.AreEqual(5, ((WordData)flameDatasControl.GetDatas()[5]).num);
+		Assert.AreEqual("6-test", ((WordData)flameDatasControl.GetDatas()[4]).word);
+		Assert.AreEqual(4, ((WordData)flameDatasControl.GetDatas()[4]).num);
 	}
 
 	[Test]
