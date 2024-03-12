@@ -12,6 +12,11 @@ public interface I_FlameData {
 	public const int DEL = 0;
 
 	/// <summary>
+	/// 登録番号を取得
+	/// </summary>
+	/// <returns>登録番号</returns>
+	public int GetNum ();
+	/// <summary>
 	/// 登録番号を登録
 	/// </summary>
 	/// <param name="num">登録番号</param>

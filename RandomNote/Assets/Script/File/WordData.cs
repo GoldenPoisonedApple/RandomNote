@@ -51,6 +51,13 @@ public class WordData : I_FlameData
 	}
 
 	/// <summary>
+	/// 登録番号を取得
+	/// </summary>
+	/// <returns>登録番号</returns>
+	public int GetNum () {
+		return num;
+	}
+	/// <summary>
 	/// 登録番号セット
 	/// </summary>
 	/// <param name="num">登録番号</param>

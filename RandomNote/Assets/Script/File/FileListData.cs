@@ -35,6 +35,13 @@ public class FileListData : I_FlameData
 	}
 
 	/// <summary>
+	/// 登録番号を取得
+	/// </summary>
+	/// <returns>登録番号</returns>
+	public int GetNum () {
+		return num;
+	}
+	/// <summary>
 	/// 保存番号設定
 	/// </summary>
 	/// <param name="num">保存番号</param>

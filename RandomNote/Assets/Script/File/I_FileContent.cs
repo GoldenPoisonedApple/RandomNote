@@ -50,4 +50,10 @@ public interface I_FileContent {
 	/// <param name="num">更新フレームデータ番号</param>
 	/// <param name="flameData">フレームデータ</param>
 	public void Update (int num, I_FlameData flameData);
+
+	/// <summary>
+	/// タグコントローラ取得
+	/// </summary>
+	/// <returns>タグコントローラ</returns>
+	public I_TagControl GetTagControl ();
 }
