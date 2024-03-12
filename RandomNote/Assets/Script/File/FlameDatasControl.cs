@@ -80,9 +80,16 @@ public class FlameDatasControl <T>
 		{
 			T flameData = flameDatas[num];
 			if (flameData.GetStatus() == I_FlameData.DEL)
-				throw new Exception("The Data is already deleted");
-			else
+				throw new Exception("The Data is already deleted");	// 既に削除されてた場合
+			else {
 				flameData.SetStatus(I_FlameData.DEL);
+				// データ削除しても問題ない場合(一番最後の場合)削除
+				// 消せる所まで繰り返し
+				if (num == flameDatas.Count-1) {
+					while (flameDatas[flameDatas.Count-1].GetStatus() == I_FlameData.DEL)
+						flameDatas.RemoveAt(flameDatas.Count-1);
+				}
+			}
 				
 			if (num < next)
 				next = num;
