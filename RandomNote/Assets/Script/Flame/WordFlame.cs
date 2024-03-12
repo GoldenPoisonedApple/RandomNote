@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Collections.Generic;
+using System.Collections;
 
 public class WordFlame : MonoBehaviour, I_Flame
 {
@@ -22,7 +23,12 @@ public class WordFlame : MonoBehaviour, I_Flame
 	[SerializeField]
 	private Sprite star_off;     //星ナシ
 	[SerializeField]
-	private Transform tag_prehub;     //タグ
+	private Transform tagPrehub;     //タグプレハブ
+	[SerializeField]
+	private Transform tagTrans;     //タグ配置場所
+
+	private WordData wordData;     //単語データ
+	private I_TagControl tagControl;     //タグコントローラ
 
 	/// <summary>
 	/// フレーム作成
@@ -32,26 +38,30 @@ public class WordFlame : MonoBehaviour, I_Flame
 	/// <param name="tagControl">タグデータ</param>
 	public void ReflectData(int flame_num, I_FlameData flameData, I_TagControl tagControl)
 	{
-		WordData wordData = (WordData)flameData;
+		wordData = (WordData)flameData;
+		this.tagControl = tagControl;
 		//データ代入
 		num_text.text = flame_num.ToString();   //フレーム番号
 		word_text.text = wordData.word;          //単語名
-		set_explain(wordData.explain);   //説明
+		set_explain();   //説明
 		count_text.text = wordData.count.ToString();  //コピー回数
-		set_date(wordData.update_date, wordData.entry_date);  //時間
-		set_star(wordData.star_num);    //星
+		set_date();  //時間
+		set_star();    //星
+		StartCoroutine(set_tag());    //タグ
 	}
 
 	//説明文設定
-	private void set_explain(string explain)
+	private void set_explain()
 	{
-		explain_text.text = explain;
+		explain_text.text = wordData.explain;
 		explain_text.GetComponent<ControlTextHeight>().controlTextHeight(); //高さ調節
 	}
 
 	//時間設定
-	private void set_date(string update_date, string entry_date)
+	private void set_date()
 	{
+		string update_date = wordData.update_date;
+		string entry_date = wordData.entry_date;
 		if (update_date == entry_date)
 		{
 			time_text.text = entry_date;
@@ -63,8 +73,9 @@ public class WordFlame : MonoBehaviour, I_Flame
 	}
 
 	//評価設定
-	private void set_star(int star_num)
+	private void set_star()
 	{
+		int star_num = wordData.star_num;
 		int i = 0;
 		//評価の数だけやる
 		for (; i < star_num; i++)
@@ -76,5 +87,24 @@ public class WordFlame : MonoBehaviour, I_Flame
 		{
 			stars[i].sprite = star_off;
 		}
+	}
+
+	// タグ設定
+	IEnumerator set_tag()
+	{
+		// Destroyが即刻反映されないとかいうクソ仕様だけど、一応念のため
+		foreach (Transform child in tagTrans)
+		{
+			Destroy(child.gameObject);
+		}
+		// Add new tags
+		foreach (int tag in wordData.tags)
+		{
+			tagPrehub.GetComponent<TagComponent>().ReflectData(tagControl.GetName(tag));
+			Instantiate(tagPrehub, tagTrans);
+		}
+
+		yield return null; // 1フレーム待つ sizeDeltaが更新されるのを待つため
+		tagTrans.GetComponent<ControlContentLayout>().ArrangeChildObjects();
 	}
 }
