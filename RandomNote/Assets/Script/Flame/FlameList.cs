@@ -75,8 +75,8 @@ public class FlameList
 	}
 
 	private void ReflectTagUpdate() {
-		foreach (GameObject flame in flameInstances) {
-			flame.GetComponent<I_Flame>().ReflectTagUpdate(tagControl);
+		for (int i=0; i<flameInstances.Count; i++) {
+			flameInstances[i].GetComponent<I_Flame>().ReflectTagUpdate(viewFlames[i], tagControl);
 		}
 	}
 }
