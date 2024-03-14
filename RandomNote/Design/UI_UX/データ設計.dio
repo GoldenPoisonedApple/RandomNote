@@ -11,33 +11,36 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="3" value="FileListData" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=15;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" parent="1" vertex="1">
-                    <mxGeometry x="177.99999999999994" y="834.51" width="160" height="96" as="geometry">
+                    <mxGeometry x="177.99999999999994" y="834.51" width="160" height="107" as="geometry">
                         <mxRectangle x="550" y="410" width="90" height="20" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="4" value="+ title : string    //タイトル" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
+                <mxCell id="890" value="+ num : int         //登録番号" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="3">
                     <mxGeometry y="15" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="889" value="+ type : int            //ファイルタイプ" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="3">
+                <mxCell id="4" value="+ title : string    //タイトル" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
                     <mxGeometry y="26" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="+ is_locked : bool    //隠しファイルか" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
+                <mxCell id="889" value="+ type : int            //ファイルタイプ" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="3">
                     <mxGeometry y="37" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="9" value="+ word_num : int    //単語数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
+                <mxCell id="5" value="+ is_locked : bool    //隠しファイルか" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
                     <mxGeometry y="48" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="+ entry_date : string    //追加日時" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
+                <mxCell id="9" value="+ word_num : int    //単語数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
                     <mxGeometry y="59" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="11" value="+ update_datte : string    //更新日時(追加日時)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
+                <mxCell id="10" value="+ entry_date : string    //追加日時" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
                     <mxGeometry y="70" width="160" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="843" value="+ status : int    //状態" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="3">
+                <mxCell id="11" value="+ update_datte : string    //更新日時(追加日時)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
                     <mxGeometry y="81" width="160" height="11" as="geometry"/>
                 </mxCell>
+                <mxCell id="843" value="+ status : int    //状態" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="3">
+                    <mxGeometry y="92" width="160" height="11" as="geometry"/>
+                </mxCell>
                 <mxCell id="12" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="3" vertex="1">
-                    <mxGeometry y="92" width="160" height="4" as="geometry"/>
+                    <mxGeometry y="103" width="160" height="4" as="geometry"/>
                 </mxCell>
                 <mxCell id="178" style="edgeStyle=none;html=1;exitX=0.564;exitY=0.011;exitDx=0;exitDy=0;entryX=-0.008;entryY=0.149;entryDx=0;entryDy=0;fontSize=10;fontColor=#FFFFFF;exitPerimeter=0;endArrow=block;endFill=0;dashed=1;entryPerimeter=0;" parent="1" source="13" target="172" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
