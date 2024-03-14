@@ -12,4 +12,10 @@ public interface I_Flame
 	/// <param name="flameData">フレームデータ</param>
 	/// <param name="tagControl">タグデータ</param>
 	public void ReflectData(int flame_num, I_FlameData flameData, I_TagControl tagControl);
+
+	/// <summary>
+	/// タグデータ更新
+	/// </summary>
+	/// <param name="tagControl">タグデータ</param>
+	public void ReflectTagUpdate (I_TagControl tagControl);
 }

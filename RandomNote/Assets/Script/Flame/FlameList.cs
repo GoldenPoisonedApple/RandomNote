@@ -13,6 +13,8 @@ public class FlameList
 	private I_TagControl tagControl;
 	// プレハブデータ
 	private GameObject flamePrehub;
+	// フレームインスタンス
+	private List<GameObject> flameInstances = new List<GameObject>();
 
 	// フレームの親
 	private GameObject flameParent;
@@ -31,17 +33,24 @@ public class FlameList
 		flameParent = GlobalObjData.Instance.getFlameParent();
 		//表示
 		viewFlames = fileContent.GetValidDatas();
-		create_flames();
+		CreateFlames();
 	}
 
+	public void Test () {
+		Debug.Log("テスト");
+		tagControl.UpdateName(0, "タグ名変更テスト");
+
+	}
 
 	/// <summary>
 	/// フレーム作成、表示
 	/// </summary>
-	private void create_flames()
+	private void CreateFlames()
 	{
 		//子オブジェクト削除
 		foreach (GameObject child in flameParent.transform) { Object.Destroy(child); }
+		//インスタンス削除
+		flameInstances.Clear();
 		// データ代入
 		int i = 0;
 		foreach (I_FlameData flameData in viewFlames)
@@ -49,11 +58,13 @@ public class FlameList
 			i++;
 
 			//プレハブインスタンス作成
-			GameObject obj = GlobalObjData.UseInstantiate(flamePrehub, flameParent.transform.position, Quaternion.identity);
+			GameObject instance = GlobalObjData.UseInstantiate(flamePrehub, flameParent.transform.position, Quaternion.identity);
 			//データ反映
-			obj.GetComponent<I_Flame>().ReflectData(i, flameData, tagControl);
+			instance.GetComponent<I_Flame>().ReflectData(i, flameData, tagControl);
 			//親設定
-			obj.transform.SetParent(flameParent.transform, false);
+			instance.transform.SetParent(flameParent.transform, false);
+			//インスタンス保存
+			flameInstances.Add(instance);
 		}
 
 		//vertical layout プレハブ実体化の1フレーム後にフレームの大きさが変わる事によるずれを修正するため、一度spacingを20fにしてから1フレーム後に30fに戻してる
@@ -61,5 +72,11 @@ public class FlameList
 		VerticalLayoutGroup layoutGroup = flameParent.GetComponent<VerticalLayoutGroup>();
 		layoutGroup.spacing = 20f;
 		GlobalObjData.Instance.Coroutine(() => layoutGroup.spacing = 30f);
+	}
+
+	private void ReflectTagUpdate() {
+		foreach (GameObject flame in flameInstances) {
+			flame.GetComponent<I_Flame>().ReflectTagUpdate(tagControl);
+		}
 	}
 }

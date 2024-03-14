@@ -14,7 +14,7 @@ public class Test : MonoBehaviour
 	private void Start()
 	{
 		//リスナー登録
-		//button.onClick.AddListener(OnClick);
+		button.onClick.AddListener(OnClick);
 		/*
 		GameObject obj = Instantiate(prehub, parent.position, Quaternion.identity);
 		obj.transform.SetParent(parent, false);
