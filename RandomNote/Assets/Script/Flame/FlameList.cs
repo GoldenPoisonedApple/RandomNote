@@ -39,7 +39,7 @@ public class FlameList
 	public void Test () {
 		Debug.Log("テスト");
 		tagControl.UpdateName(0, "タグ名変更テスト");
-
+		ReflectTagUpdate();
 	}
 
 	/// <summary>
