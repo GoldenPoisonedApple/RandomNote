@@ -45,8 +45,15 @@ public class WordFlame : MonoBehaviour, I_Flame
 		StartCoroutine(ReflectTag(flameData, tagControl));    //タグ
 	}
 
+	/// <summary>
+	/// タグデータ更新
+	/// </summary>
+	/// <param name="flameData">フレームデータ</param>
+	/// <param name="tagControl">タグデータ</param>
 	public void ReflectTagUpdate(I_FlameData flameData, I_TagControl tagControl)
 	{
+		// サイズ更新のために一旦無効化
+		transform.GetComponent<VerticalLayoutGroup>().enabled = false;
 		StartCoroutine(ReflectTag(flameData, tagControl));
 	}
 
@@ -103,5 +110,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 
 		yield return null; // 1フレーム待つ sizeDeltaが更新されるのを待つため
 		tagTrans.GetComponent<ControlContentLayout>().ArrangeChildObjects();
+		// サイズ変更更新
+		transform.GetComponent<VerticalLayoutGroup>().enabled = true;
 	}
 }

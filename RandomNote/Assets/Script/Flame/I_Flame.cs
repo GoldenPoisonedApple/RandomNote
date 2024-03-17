@@ -16,6 +16,7 @@ public interface I_Flame
 	/// <summary>
 	/// タグデータ更新
 	/// </summary>
+	/// <param name="flameData">フレームデータ</param>
 	/// <param name="tagControl">タグデータ</param>
 	public void ReflectTagUpdate (I_FlameData flameData, I_TagControl tagControl);
 }
