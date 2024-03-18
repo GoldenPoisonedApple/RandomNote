@@ -28,22 +28,26 @@ public class WordFlame : MonoBehaviour, I_Flame
 	[SerializeField]
 	private Transform tagTrans;     //タグ配置場所
 
+
+	private int flame_num;     //フレーム番号
+	private I_FlameData flameData;     //フレームデータ
+	private I_TagControl tagControl;     //タグデータ
+
 	/// <summary>
 	/// フレーム作成
 	/// </summary>
 	/// <param name="flame_num">フレーム番号</param>
 	/// <param name="flameData">フレームデータ</param>
 	/// <param name="tagControl">タグデータ</param>
-	public void ReflectData(int flame_num, I_FlameData flameData, I_TagControl tagControl)
+	public void Reflect(int flame_num, I_FlameData flameData, I_TagControl tagControl)
 	{
-		//データ代入
-		num_text.text = flame_num.ToString();   //フレーム番号
-		word_text.text = ((WordData)flameData).word;          //単語名
-		ReflectExplain(flameData);   //説明
-		count_text.text = ((WordData)flameData).count.ToString();  //コピー回数
-		ReflectDate(flameData);  //時間
-		ReflectStar(flameData);    //星
-		StartCoroutine(ReflectTag(flameData, tagControl));    //タグ
+		// データ代入
+		this.flame_num = flame_num;
+		this.flameData = flameData;
+		this.tagControl = tagControl;
+		// データ反映
+		ReflectData();	// データ反映
+		StartCoroutine(ReflectTag());    // タグデータ反映
 		//長押し設定
 		transform.GetComponent<LongPressControl>().SetLongPressAction( () => {
 			GlobalObjData.Instance.inputPanel.SetActive(true);
@@ -55,22 +59,37 @@ public class WordFlame : MonoBehaviour, I_Flame
 	/// </summary>
 	/// <param name="flameData">フレームデータ</param>
 	/// <param name="tagControl">タグデータ</param>
-	public void ReflectTagUpdate(I_FlameData flameData, I_TagControl tagControl)
+	public void ReflectTagUpdate(I_TagControl tagControl)
 	{
+		this.tagControl = tagControl;
 		// サイズ更新のために一旦無効化
 		transform.GetComponent<VerticalLayoutGroup>().enabled = false;
-		StartCoroutine(ReflectTag(flameData, tagControl));
+		StartCoroutine(ReflectTag());
+	}
+
+
+	/// <summary>
+	/// データ反映のとりまとめ
+	/// </summary>
+	private void ReflectData () {
+		//データ反映
+		num_text.text = flame_num.ToString();   //フレーム番号
+		word_text.text = ((WordData)flameData).word;          //単語名
+		ReflectExplain();   //説明
+		count_text.text = ((WordData)flameData).count.ToString();  //コピー回数
+		ReflectDate();  //時間
+		ReflectStar();    //星
 	}
 
 	//説明文設定
-	private void ReflectExplain(I_FlameData flameData)
+	private void ReflectExplain()
 	{
 		explain_text.text = ((WordData)flameData).explain;
 		explain_text.GetComponent<ControlTextHeight>().controlTextHeight(); //高さ調節
 	}
 
 	//時間設定
-	private void ReflectDate(I_FlameData flameData)
+	private void ReflectDate()
 	{
 		string update_date = ((WordData)flameData).update_date;
 		string entry_date = ((WordData)flameData).entry_date;
@@ -85,7 +104,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	}
 
 	//評価設定
-	private void ReflectStar(I_FlameData flameData)
+	private void ReflectStar()
 	{
 		int star_num = ((WordData)flameData).star_num;
 		int i = 0;
@@ -102,7 +121,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	}
 
 	// タグ設定
-	private IEnumerator ReflectTag(I_FlameData flameData, I_TagControl tagControl)
+	private IEnumerator ReflectTag()
 	{
 		// Destroyが即刻反映されないとかいうクソ仕様だけど、一応念のため
 		foreach (Transform child in tagTrans)	{ Destroy(child.gameObject); }

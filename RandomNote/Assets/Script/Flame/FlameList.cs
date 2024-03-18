@@ -60,7 +60,7 @@ public class FlameList
 			//プレハブインスタンス作成
 			GameObject instance = GlobalObjData.UseInstantiate(flamePrehub, flameParent.transform.position, Quaternion.identity);
 			//データ反映
-			instance.GetComponent<I_Flame>().ReflectData(i, flameData, tagControl);
+			instance.GetComponent<I_Flame>().Reflect(i, flameData, tagControl);
 			//親設定
 			instance.transform.SetParent(flameParent.transform, false);
 			//インスタンス保存
@@ -76,7 +76,7 @@ public class FlameList
 
 	private void ReflectTagUpdate() {
 		for (int i=0; i<flameInstances.Count; i++) {
-			flameInstances[i].GetComponent<I_Flame>().ReflectTagUpdate(viewFlames[i], tagControl);
+			flameInstances[i].GetComponent<I_Flame>().ReflectTagUpdate(tagControl);
 		}
 	}
 }
