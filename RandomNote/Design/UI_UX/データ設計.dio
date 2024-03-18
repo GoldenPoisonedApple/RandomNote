@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="vcL6-Ej94j082WODxmDW" name="データ設計">
-        <mxGraphModel dx="2203" dy="309" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="2116" dy="309" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -274,7 +274,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="230" value="FlameList" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=20;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;labelBackgroundColor=none;sketch=0;fontSize=10;fontColor=#FFFFFF;fillColor=#000000;spacingLeft=0;" parent="1" vertex="1">
-                    <mxGeometry x="-620" y="428" width="238.25" height="308" as="geometry">
+                    <mxGeometry x="-620" y="428" width="238.25" height="311" as="geometry">
                         <mxRectangle x="-620" y="428" width="90" height="20" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
@@ -323,38 +323,41 @@
                 <mxCell id="512" value="+ コンストラクタ(Factory factory)    ファクトリの情報取得、リスナー追加" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
                     <mxGeometry y="167" width="238.25" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="233" value="+ create_flames() : void&#10;//インスタンス作成・表示update, deletelistener追加" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="178" width="238.25" height="20" as="geometry"/>
-                </mxCell>
                 <mxCell id="562" value="ボタンリスナー関数" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="198" width="238.25" height="11" as="geometry"/>
+                    <mxGeometry y="178" width="238.25" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="281" value="- fillter (条件) : void    //表示フレームデータフィルタ" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="209" width="238.25" height="11" as="geometry"/>
+                    <mxGeometry y="189" width="238.25" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="514" value="- sort (条件) : void    //表示フレームデータソート" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="220" width="238.25" height="11" as="geometry"/>
+                    <mxGeometry y="200" width="238.25" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="264" value="- random() : void    //表示フレームデータをランダムに並び替え" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="231" width="238.25" height="11" as="geometry"/>
+                    <mxGeometry y="211" width="238.25" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="673" value="情報更新系統" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="242" width="238.25" height="11" as="geometry"/>
+                    <mxGeometry y="222" width="238.25" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="674" value="+ getFlameDatas() : List&lt;I_FlameData&gt;    //フレームデータ取得" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="253" width="238.25" height="11" as="geometry"/>
+                <mxCell id="891" value="+ Add(I_FlameData)    //フレームデータ追加" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
+                    <mxGeometry y="233" width="238.25" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="671" value="+ tagUpdate(TagData) : void    //タグデータ更新による表示情報更新" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="264" width="238.25" height="11" as="geometry"/>
+                <mxCell id="515" value="+ Del(int index)    //フレームデータ削除" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
+                    <mxGeometry y="244" width="238.25" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="516" value="+ Update(int num, I_FlameData)    //該当フレーム表示更新" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="275" width="238.25" height="11" as="geometry"/>
+                <mxCell id="674" value="+ Update(int index, I_FlameData)    //更新" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
+                    <mxGeometry y="255" width="238.25" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="515" value="+ Del(int num)    //フレームデータ削除" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
-                    <mxGeometry y="286" width="238.25" height="11" as="geometry"/>
+                <mxCell id="892" value="表示系統" style="text;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="230">
+                    <mxGeometry y="266" width="238.25" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="891" value="+ Add(I_FlameData)    //フレームデータ追加" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" vertex="1" parent="230">
-                    <mxGeometry y="297" width="238.25" height="11" as="geometry"/>
+                <mxCell id="233" value="- CreateFlames() : void    //フレーム作成表示" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
+                    <mxGeometry y="277" width="238.25" height="12" as="geometry"/>
+                </mxCell>
+                <mxCell id="671" value="- ReflectTagUpdate()    //タグの変更表示更新" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
+                    <mxGeometry y="289" width="238.25" height="11" as="geometry"/>
+                </mxCell>
+                <mxCell id="516" value="- ReflectDataUpdate(int num)    //該当フレーム表示更新" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="230" vertex="1">
+                    <mxGeometry y="300" width="238.25" height="11" as="geometry"/>
                 </mxCell>
                 <mxCell id="239" style="edgeStyle=none;html=1;entryX=0.342;entryY=1.034;entryDx=0;entryDy=0;fontSize=10;fontColor=#FFFFFF;endArrow=block;endFill=0;dashed=1;entryPerimeter=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="271" target="266" edge="1">
                     <mxGeometry relative="1" as="geometry">
@@ -1191,7 +1194,7 @@
                 <mxCell id="569" value="+ GetFillterCommands() : List&lt;I_FillterCommand&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;labelBackgroundColor=none;sketch=0;fontSize=7;fontColor=#FFFFFF;" parent="567" vertex="1">
                     <mxGeometry y="29" width="210" height="11" as="geometry"/>
                 </mxCell>
-                <mxCell id="571" style="edgeStyle=none;html=1;fontSize=10;fontColor=#FFFFFF;endArrow=classic;endFill=1;exitX=0.54;exitY=1.064;exitDx=0;exitDy=0;entryX=0.35;entryY=0.029;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" parent="1" source="515" target="567" edge="1">
+                <mxCell id="571" style="edgeStyle=none;html=1;fontSize=10;fontColor=#FFFFFF;endArrow=classic;endFill=1;exitX=0.771;exitY=1.218;exitDx=0;exitDy=0;entryX=0.35;entryY=0.029;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" parent="1" source="516" target="567" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="-339.995" y="515.74" as="sourcePoint"/>
                         <mxPoint x="-339.995" y="636.74" as="targetPoint"/>

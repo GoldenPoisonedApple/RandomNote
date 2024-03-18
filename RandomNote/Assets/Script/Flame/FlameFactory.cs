@@ -5,15 +5,15 @@ using UnityEngine;
 public class FlameFactory
 {
 	// フレームデータ
-	public I_FileContent fileContent { get; private set; }
+	public I_FileContent FileContent { get; private set; }
 	// タグデータ
-	public I_TagControl tagControl { get; private set; }
+	public I_TagControl TagControl { get; private set; }
 	// フレームプレハブ
-	public GameObject flamePrehub { get; private set; }
+	public GameObject FlamePrehub { get; private set; }
 	// ソート系統プレハブ
-	public GameObject sortPrehub { get; private set; }
+	public GameObject SortPrehub { get; private set; }
 	// フィルタ系統プレハブ
-	public GameObject fillterPrehub { get; private set; }
+	public GameObject FillterPrehub { get; private set; }
 
 
 
@@ -41,13 +41,13 @@ public class FlameFactory
 	// ファイルリスト
 	private void fileFlameFactory(FileManager fileManager, GlobalObjData globalObjData)
 	{
-		fileContent = fileManager.Load<FileListDataWrapper>();
-		flamePrehub = globalObjData.getFileFlamePrehub();  //フレームプレハブ割り当て
+		FileContent = fileManager.Load<FileListDataWrapper>();
+		FlamePrehub = globalObjData.getFileFlamePrehub();  //フレームプレハブ割り当て
 	}
 	// ワード
 	private void wordFlameFactory(FileManager fileManager, GlobalObjData globalObjData)
 	{
-		fileContent = fileManager.Load<FileData>();
-		flamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
+		FileContent = fileManager.Load<FileData>();
+		FlamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
 	}
 }
