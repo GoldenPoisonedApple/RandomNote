@@ -4275,6 +4275,7 @@ GameObject:
   - component: {fileID: 4078054879895637044}
   - component: {fileID: 4484366489134424585}
   - component: {fileID: 1691031453863858764}
+  - component: {fileID: 3055789058121111826}
   m_Layer: 5
   m_Name: WordFlameInput
   m_TagString: Untagged
@@ -4466,6 +4467,19 @@ MonoBehaviour:
   tagPrehub: {fileID: 3482257511698068563, guid: ff0b95f86ddb73e4792b99b189f7719c, type: 3}
   tagTrans: {fileID: 5854507758611755981}
   inputFlamePrehub: {fileID: 7376346521399709328}
+--- !u!114 &3055789058121111826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7376346521399709328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7643c00a59a388645b991be0742a4b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropDown: {fileID: 4282976286706526190}
 --- !u!1 &7941983648090235562
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public interface I_TagControl {
 	/// 有効なタグデータ取得
 	/// </summary>
 	/// <returns>全てのタグデータ</returns>
-	public List<TagData> ValidGetDatas();
+	public List<TagData> GetValidDatas();
 	
 	/// <summary>
 	/// タグの名前更新

@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class InputFlame : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject flameParent;     //プレハブ配置場所
+	[SerializeField]
+	private TMP_Dropdown dropDown;     //ドロップダウン
 
 	public void SetFlame(int flame_num, I_FlameData flameData, I_TagControl tagControl, GameObject flamePrehub)
 	{
@@ -15,6 +19,6 @@ public class InputFlame : MonoBehaviour
 		instance.transform.SetParent(flameParent.transform, false);
 
 		//データ反映
-		instance.GetComponent<I_Flame>().Reflect(flame_num, flameData, tagControl);
+		instance.GetComponent<I_Flame>().ReflectInput(flame_num, flameData, tagControl);
 	}
 }
