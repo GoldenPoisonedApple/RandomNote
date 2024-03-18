@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Shapes2D;
 
 /// <summary>
 /// オブジェクト情報
@@ -71,4 +72,7 @@ public sealed class GlobalObjData : MonoBehaviour
     private GameObject popUp;  //ポップアップ
     [SerializeField]
     private TMP_Text popUpMessage;  //ポップアップ
+		//LongPressControl
+		[SerializeField]
+		public GameObject inputPanel;  //入力パネル
 }

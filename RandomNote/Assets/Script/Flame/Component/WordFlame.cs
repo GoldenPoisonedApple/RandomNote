@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
 using System.Collections;
+using Unity.VisualScripting;
 
 public class WordFlame : MonoBehaviour, I_Flame
 {
@@ -43,6 +44,10 @@ public class WordFlame : MonoBehaviour, I_Flame
 		ReflectDate(flameData);  //時間
 		ReflectStar(flameData);    //星
 		StartCoroutine(ReflectTag(flameData, tagControl));    //タグ
+		//長押し設定
+		transform.GetComponent<LongPressControl>().SetLongPressAction( () => {
+			GlobalObjData.Instance.inputPanel.SetActive(true);
+			});
 	}
 
 	/// <summary>

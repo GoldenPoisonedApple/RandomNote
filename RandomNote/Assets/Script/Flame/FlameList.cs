@@ -43,35 +43,6 @@ public class FlameList
 	}
 
 	/// <summary>
-	/// フレームデータ追加
-	/// </summary>
-	/// <param name="flameData">フレームデータ</param>
-	public void Add (I_FlameData flameData) {
-		fileContent.Add(flameData);
-		fileContent.Save();
-	}
-
-	/// <summary>
-	/// フレームデータ削除
-	/// </summary>
-	/// <param name="index">削除するフレーム保存番号</param>
-	public void Del (int index) {
-		fileContent.Del(index);
-		fileContent.Save();
-	}
-
-	/// <summary>
-	/// フレームデータ更新
-	/// </summary>
-	/// <param name="index">更新するフレーム保存番号</param>
-	/// <param name="flameData">フレームデータ</param>
-	public void Update (int index, I_FlameData flameData) {
-		fileContent.Update(index, flameData);
-		fileContent.Save();
-	}
-
-
-	/// <summary>
 	/// フレーム作成、表示
 	/// </summary>
 	private void CreateFlames()
