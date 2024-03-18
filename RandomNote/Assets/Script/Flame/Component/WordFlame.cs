@@ -10,9 +10,9 @@ public class WordFlame : MonoBehaviour, I_Flame
 	[SerializeField]
 	private TMP_Text num_text;     //フレーム番号
 	[SerializeField]
-	private TMP_Text word_text;     //単語名
+	private GameObject word;     //単語名
 	[SerializeField]
-	private TMP_Text explain_text;     //説明
+	private GameObject explain;     //説明
 	[SerializeField]
 	private TMP_Text count_text;     //回数
 	[SerializeField]
@@ -27,7 +27,8 @@ public class WordFlame : MonoBehaviour, I_Flame
 	private Transform tagPrehub;     //タグプレハブ
 	[SerializeField]
 	private Transform tagTrans;     //タグ配置場所
-
+	[SerializeField]
+	private GameObject inputFlamePrehub;     //単語フレーム入力プレハブ
 
 	private int flame_num;     //フレーム番号
 	private I_FlameData flameData;     //フレームデータ
@@ -48,9 +49,18 @@ public class WordFlame : MonoBehaviour, I_Flame
 		// データ反映
 		ReflectData();	// データ反映
 		StartCoroutine(ReflectTag());    // タグデータ反映
+	}
+	/// <summary>
+	/// リスナー登録
+	/// </summary>
+	public void AddListener () {
 		//長押し設定
 		transform.GetComponent<LongPressControl>().SetLongPressAction( () => {
-			GlobalObjData.Instance.inputPanel.SetActive(true);
+			GameObject inputpanel = GlobalObjData.Instance.inputPanel;
+			// パネル表示
+			inputpanel.SetActive(true);
+			// フレーム入力プレハブをインスタンスして配置
+			inputpanel.GetComponent<InputFlame>().SetFlame(flame_num, flameData, tagControl, inputFlamePrehub);
 			});
 	}
 
@@ -74,18 +84,34 @@ public class WordFlame : MonoBehaviour, I_Flame
 	private void ReflectData () {
 		//データ反映
 		num_text.text = flame_num.ToString();   //フレーム番号
-		word_text.text = ((WordData)flameData).word;          //単語名
+		ReflectWord();        //単語名
 		ReflectExplain();   //説明
 		count_text.text = ((WordData)flameData).count.ToString();  //コピー回数
 		ReflectDate();  //時間
 		ReflectStar();    //星
 	}
 
+	//単語名設定
+	private void ReflectWord ()
+	{
+		if (word.GetComponent<TMP_Text>())
+			word.GetComponent<TMP_Text>().text = ((WordData)flameData).word;
+		else
+			word.GetComponent<TMP_InputField>().text = ((WordData)flameData).word;
+	}
 	//説明文設定
 	private void ReflectExplain()
 	{
-		explain_text.text = ((WordData)flameData).explain;
-		explain_text.GetComponent<ControlTextHeight>().controlTextHeight(); //高さ調節
+		if (explain.GetComponent<TMP_Text>())
+			explain.GetComponent<TMP_Text>().text = ((WordData)flameData).explain;
+		else
+			explain.GetComponent<TMP_InputField>().text = ((WordData)flameData).explain;
+
+		//高さ調節
+		if (explain.GetComponent<ControlTextHeight>())
+			explain.GetComponent<ControlTextHeight>().controlTextHeight();
+		else
+			explain.GetComponent<ControlInputHeight>().control_inputfield_height();
 	}
 
 	//時間設定

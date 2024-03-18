@@ -60,7 +60,9 @@ public class FlameList
 			//プレハブインスタンス作成
 			GameObject instance = GlobalObjData.UseInstantiate(flamePrehub, flameParent.transform.position, Quaternion.identity);
 			//データ反映
-			instance.GetComponent<I_Flame>().Reflect(i, flameData, tagControl);
+			I_Flame flame = instance.GetComponent<I_Flame>();
+			flame.Reflect(i, flameData, tagControl);
+			flame.AddListener();
 			//親設定
 			instance.transform.SetParent(flameParent.transform, false);
 			//インスタンス保存

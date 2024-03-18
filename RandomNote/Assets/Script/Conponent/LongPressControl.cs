@@ -22,10 +22,10 @@ public class LongPressControl : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
 			if (pressDuration >= longPressDuration)
 			{
-				longPressAction();
 				isPointerDown = false;
 				pressDuration = 0f;
 				bar.anchorMax = new Vector2(0f, bar.anchorMax.y);
+				longPressAction();
 			}
 		}
 	}

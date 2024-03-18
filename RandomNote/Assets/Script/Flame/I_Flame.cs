@@ -19,4 +19,9 @@ public interface I_Flame
 	/// <param name="flameData">フレームデータ</param>
 	/// <param name="tagControl">タグデータ</param>
 	public void ReflectTagUpdate (I_TagControl tagControl);
+
+	/// <summary>
+	/// 長押しリスナー登録
+	/// </summary>
+	public void AddListener ();
 }

@@ -1039,8 +1039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   num_text: {fileID: 163063465430829548}
-  word_text: {fileID: 2555241255396356444}
-  explain_text: {fileID: 5520223038303121082}
+  word: {fileID: 7646852074390422906}
+  explain: {fileID: 7647035551846839808}
   count_text: {fileID: 8454053057484122355}
   time_text: {fileID: 3182549207010475487}
   stars:
@@ -1053,6 +1053,7 @@ MonoBehaviour:
   star_off: {fileID: 21300000, guid: f473a06967bed2444ae5c38df8fd59be, type: 3}
   tagPrehub: {fileID: 3482257511698068563, guid: 82e9b5c9c26a6b7489cb3bc0fbff816a, type: 3}
   tagTrans: {fileID: 1136295132866667143}
+  inputFlamePrehub: {fileID: 7376346521399709328, guid: 75d2d6035a44efd4aac0ca28c0bb6d80, type: 3}
 --- !u!114 &6042375149322977330
 MonoBehaviour:
   m_ObjectHideFlags: 0
