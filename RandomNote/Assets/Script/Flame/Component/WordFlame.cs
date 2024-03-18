@@ -18,11 +18,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	[SerializeField]
 	private TMP_Text time_text;     //日時
 	[SerializeField]
-	private Image[] stars;     //星
-	[SerializeField]
-	private Sprite star_on;     //星アリ
-	[SerializeField]
-	private Sprite star_off;     //星ナシ
+	private GameObject evaluation;     //評価
 	[SerializeField]
 	private Transform tagPrehub;     //タグプレハブ
 	[SerializeField]
@@ -133,17 +129,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	private void ReflectStar()
 	{
 		int star_num = ((WordData)flameData).star_num;
-		int i = 0;
-		//評価の数だけやる
-		for (; i < star_num; i++)
-		{
-			stars[i].sprite = star_on;
-		}
-		//残りを白にする
-		for (; i < stars.Length; i++)
-		{
-			stars[i].sprite = star_off;
-		}
+		evaluation.GetComponent<StarComponent>().ReflectEvaluation(star_num);
 	}
 
 	// タグ設定

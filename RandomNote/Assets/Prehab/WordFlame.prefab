@@ -1043,14 +1043,7 @@ MonoBehaviour:
   explain: {fileID: 7647035551846839808}
   count_text: {fileID: 8454053057484122355}
   time_text: {fileID: 3182549207010475487}
-  stars:
-  - {fileID: 6444867139161830743}
-  - {fileID: 6437173048114097361}
-  - {fileID: 5391266953801630750}
-  - {fileID: 5882521145825575066}
-  - {fileID: 4959047341045657336}
-  star_on: {fileID: 21300000, guid: e488accb8b2c89140841dca0fa64c244, type: 3}
-  star_off: {fileID: 21300000, guid: f473a06967bed2444ae5c38df8fd59be, type: 3}
+  evaluation: {fileID: 5836083084503219441}
   tagPrehub: {fileID: 3482257511698068563, guid: 82e9b5c9c26a6b7489cb3bc0fbff816a, type: 3}
   tagTrans: {fileID: 1136295132866667143}
   inputFlamePrehub: {fileID: 7376346521399709328, guid: 75d2d6035a44efd4aac0ca28c0bb6d80, type: 3}
@@ -1190,6 +1183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8268578552593493687}
   - component: {fileID: 2390703468909843452}
+  - component: {fileID: 4220264104233019145}
   m_Layer: 5
   m_Name: StarSpace
   m_TagString: Untagged
@@ -1248,6 +1242,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &4220264104233019145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836083084503219441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181af2b73be54a34e8380c6d1682ed2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  star_on: {fileID: 21300000, guid: e488accb8b2c89140841dca0fa64c244, type: 3}
+  star_off: {fileID: 21300000, guid: f473a06967bed2444ae5c38df8fd59be, type: 3}
 --- !u!1 &6289127141308361902
 GameObject:
   m_ObjectHideFlags: 0
