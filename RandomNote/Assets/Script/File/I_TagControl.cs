@@ -9,6 +9,11 @@ public interface I_TagControl {
 	/// </summary>
 	/// <returns>全てのタグデータ</returns>
 	public List<TagData> GetDatas();
+	/// <summary>
+	/// 有効なタグデータ取得
+	/// </summary>
+	/// <returns>全てのタグデータ</returns>
+	public List<TagData> ValidGetDatas();
 	
 	/// <summary>
 	/// タグの名前更新

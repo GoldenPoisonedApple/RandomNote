@@ -26,6 +26,13 @@ public class TagDataWrapper : I_TagControl
 		// 参照を渡さないようにコピーを作成し渡す
 		return new List<TagData>(tagDatas);
 	}
+	/// <summary>
+	/// 有効なタグデータ取得
+	/// </summary>
+	/// <returns>全てのタグデータ</returns>
+	public List<TagData> ValidGetDatas() {
+		return tagDatas.FindAll(tagData => tagData.status == TagData.DATA);
+	}
 
 	/// <summary>
 	/// タグの名前更新
