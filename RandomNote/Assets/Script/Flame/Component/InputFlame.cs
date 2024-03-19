@@ -46,4 +46,8 @@ public class InputFlame : MonoBehaviour
 		}
 	}
 
+	public void newFlame (int newFlameCount, I_TagControl tagControl) {
+		// データ反映
+		inputFlame.GetComponent<I_Flame>().NewInput(newFlameCount, tagControl);
+	}
 }

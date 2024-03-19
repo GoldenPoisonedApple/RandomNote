@@ -88,7 +88,7 @@ public class FlameControl : MonoBehaviour
 	{
 		GameObject inputpanel = GlobalObjData.Instance.inputPanel;
 		inputpanel.SetActive(true); // gameObjectをアクティブ化
-		//inputpanel.GetComponent<InputFlame>().AddFlame(fileContent.GetValidCount(), fileContent.GetTagControl());
+		inputpanel.GetComponent<InputFlame>().newFlame(fileContent.GetValidCount(), fileContent.GetTagControl());
 	}
 
 	/// <summary>

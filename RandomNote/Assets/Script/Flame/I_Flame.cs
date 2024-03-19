@@ -32,4 +32,10 @@ public interface I_Flame
 	/// <param name="flameData">フレームデータ</param>
 	/// <param name="tagControl">タグデータ</param>
 	public void ReflectInput(int flame_num, I_FlameData flameData, I_TagControl tagControl);
+	/// <summary>
+	/// フレーム新規作成時
+	/// </summary>
+	/// <param name="flame_num">フレーム番号</param>
+	/// <param name="tagControl">タグデータ</param>
+	public void NewInput(int flame_num, I_TagControl tagControl);
 }

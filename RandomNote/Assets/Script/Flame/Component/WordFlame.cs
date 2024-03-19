@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 using System.Collections;
 using Unity.VisualScripting;
+using System;
 
 public class WordFlame : MonoBehaviour, I_Flame
 {
@@ -81,6 +82,17 @@ public class WordFlame : MonoBehaviour, I_Flame
 	public void ReflectInput(int flame_num, I_FlameData flameData, I_TagControl tagControl)
 	{
 		Reflect(flame_num, flameData, tagControl);
+		transform.GetComponent<TagDropDown>().Reflect(flameData, tagControl, ()=>{ ReflectTagUpdate(tagControl); });
+	}
+	/// <summary>
+	/// フレーム新規作成時
+	/// </summary>
+	/// <param name="flame_num">フレーム番号</param>
+	/// <param name="flameData">フレームデータ</param>
+	/// <param name="tagControl">タグデータ</param>
+	public void NewInput(int flame_num, I_TagControl tagControl)
+	{
+		Reflect(flame_num, new WordData("", 3, "", new List<int>(), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")), tagControl);
 		transform.GetComponent<TagDropDown>().Reflect(flameData, tagControl, ()=>{ ReflectTagUpdate(tagControl); });
 	}
 
