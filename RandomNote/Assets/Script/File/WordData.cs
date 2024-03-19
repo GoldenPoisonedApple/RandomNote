@@ -102,7 +102,7 @@ public class WordData : I_FlameData
 	}
 	public I_FlameData Clone()
 	{
-		return new WordData(num, word, count, star_num, explain, tags, entry_date, update_date, status);
+		return new WordData(num, word, count, star_num, "コピーテストです", new List<int>(tags), entry_date, update_date, status);
 	}
 
 	/// <summary>

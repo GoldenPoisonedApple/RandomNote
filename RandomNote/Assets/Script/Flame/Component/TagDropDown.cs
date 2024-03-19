@@ -22,8 +22,6 @@ public class TagDropDown : MonoBehaviour {
 		dropDown.onValueChanged.AddListener( (int value) => {
 			// 一番最後のやつは何もしない
 			if (value < selectableDatas.Count) {
-				Debug.Log("value: " + value);
-				Debug.Log("selectableDatas[value].num: " + selectableDatas[value].num);
 				// タグ追加
 				flameData.GetTags().Add(selectableDatas[value].num);
 				// タグ削除
