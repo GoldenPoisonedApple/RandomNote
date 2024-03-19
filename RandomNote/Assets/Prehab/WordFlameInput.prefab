@@ -4493,6 +4493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropDown: {fileID: 4282976286706526190}
   inputField: {fileID: 4282976287644959862}
+  createTag: {fileID: 4282976288096754725}
 --- !u!1 &7941983648090235562
 GameObject:
   m_ObjectHideFlags: 0

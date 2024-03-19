@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ public class TagDropDown : MonoBehaviour {
 	private TMP_Dropdown dropDown;     // ドロップダウン
 	[SerializeField]
 	private TMP_InputField inputField;     // インプットフィールド
+	[SerializeField]
+	private Button createTag;     // インプットフィールド
 
 	private List<TagData> selectableDatas;     // セレクト可能なタグデータ
 	private I_FlameData flameData;     // フレームデータ
@@ -21,19 +24,29 @@ public class TagDropDown : MonoBehaviour {
 		ControlData();
 
 		// リスナー登録
+		// ドロップダウン
 		dropDown.onValueChanged.AddListener( (int value) => {
 			// 一番最後のやつは何もしない
 			if (value < selectableDatas.Count) {
 				// タグ追加
 				flameData.GetTags().Add(selectableDatas[value].num);
-				// タグ削除
+				// タグ変更反映
 				ControlData();
 				// タグデータ反映
 				action();
 			}
 		});
+		// インプットフィールド
 		inputField.onEndEdit.AddListener( (string value) => {
 			ControlData();
+		});
+		// ボタン
+		createTag.onClick.AddListener( () => {
+			int tagIndex = tagControl.AddTag(inputField.text);
+			// タグ追加
+			flameData.GetTags().Add(tagIndex);
+			// タグデータ反映
+			action();
 		});
 	}
 
