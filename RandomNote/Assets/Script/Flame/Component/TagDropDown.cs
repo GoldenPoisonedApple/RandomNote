@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class TagDropDown : MonoBehaviour {
 	[SerializeField]
 	private TMP_Dropdown dropDown;     // ドロップダウン
+	[SerializeField]
+	private TMP_InputField inputField;     // インプットフィールド
 
 	private List<TagData> selectableDatas;     // セレクト可能なタグデータ
 	private I_FlameData flameData;     // フレームデータ
@@ -30,14 +32,25 @@ public class TagDropDown : MonoBehaviour {
 				action();
 			}
 		});
+		inputField.onEndEdit.AddListener( (string value) => {
+			ControlData();
+		});
 	}
 
 	private void ControlData () {
 		// ドロップダウンデータ反映
 		dropDown.ClearOptions();
+		// インプットフィールドデータ取得
+		string[] searchTexts = inputField.text.Split('　', ' ');
 		// セレクト可能なタグを選別
 		List<int> tags = flameData.GetTags();
+		// 使われてるタグを除外
 		selectableDatas = tagControl.GetValidDatas().FindAll(tag => !tags.Contains(tag.num));
+		// 検索ワードで絞り込み
+		foreach (string searchText in searchTexts) {
+			selectableDatas = selectableDatas.FindAll(tag => tag.name.Contains(searchText));
+		}
+		// ドロップダウンデータ反映
 		for (int i=0; i<selectableDatas.Count; i++)
 		{
 			dropDown.options.Add(new TMP_Dropdown.OptionData { text = selectableDatas[i].name });
