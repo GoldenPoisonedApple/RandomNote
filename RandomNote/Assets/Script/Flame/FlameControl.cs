@@ -48,37 +48,6 @@ public class FlameControl : MonoBehaviour
 		discardButton.onClick.AddListener(DiscardButton);
 	}
 
-	/// <summary>
-	/// フレームデータ追加
-	/// </summary>
-	/// <param name="flameData">フレームデータ</param>
-	public void AddFlame(I_FlameData flameData)
-	{
-		fileContent.Add(flameData);
-		fileContent.Save();
-	}
-
-	/// <summary>
-	/// フレームデータ削除
-	/// </summary>
-	/// <param name="index">削除するフレーム保存番号</param>
-	public void DelFlame(int index)
-	{
-		fileContent.Del(index);
-		fileContent.Save();
-	}
-
-	/// <summary>
-	/// フレームデータ更新
-	/// </summary>
-	/// <param name="index">更新するフレーム保存番号</param>
-	/// <param name="flameData">フレームデータ</param>
-	public void UpdateFlame(int index, I_FlameData flameData)
-	{
-		fileContent.Update(index, flameData);
-		fileContent.Save();
-	}
-
 	// 以下ボタンリスナー関数
 
 	/// <summary>
@@ -114,13 +83,15 @@ public class FlameControl : MonoBehaviour
 	private void CreateButton () {
 		if (GlobalObjData.Instance.createButtonText.text == "作成") {
 			// フレーム作成
-			Debug.Log("フレーム作成");
+			//Debug.Log("フレーム作成");
 			fileContent.Add(GlobalObjData.Instance.inputPanel.GetComponent<InputFlame>().GetFlameData());
+			flameList.Add();
 		} else {
 			// フレーム更新
-			Debug.Log("フレーム更新");
+			//Debug.Log("フレーム更新");
 			I_FlameData flameData = GlobalObjData.Instance.inputPanel.GetComponent<InputFlame>().GetFlameData();
 			fileContent.Update(flameData.GetNum(), flameData);
+			flameList.Update();
 		}
 		fileContent.Save();
 		CloseInputPanel();
@@ -129,11 +100,12 @@ public class FlameControl : MonoBehaviour
 	private void DiscardButton () {
 		if (GlobalObjData.Instance.discardButtonText.text == "破棄") {
 			// フレーム破棄
-			Debug.Log("フレーム破棄");
+			//Debug.Log("フレーム破棄");
 		} else {
 			// フレーム削除
-			Debug.Log("フレーム削除");
+			//Debug.Log("フレーム削除");
 			fileContent.Del(GlobalObjData.Instance.inputPanel.GetComponent<InputFlame>().GetFlameData().GetNum());
+			flameList.Del();
 			fileContent.Save();
 		}
 		CloseInputPanel();

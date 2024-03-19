@@ -44,7 +44,7 @@ public class Flexibility : MonoBehaviour
 				{
 					//Debug.Log("broHeight : " + child.GetComponent<RectTransform>().sizeDelta.y);
 					otherHeight += child.GetComponent<RectTransform>().sizeDelta.y;
-					Debug.Log("bro height" + child.GetComponent<RectTransform>().sizeDelta.y);
+					//Debug.Log("bro height" + child.GetComponent<RectTransform>().sizeDelta.y);
 				}
 			}
 		}
