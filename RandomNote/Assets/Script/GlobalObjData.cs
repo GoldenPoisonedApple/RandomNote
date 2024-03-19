@@ -63,10 +63,32 @@ public sealed class GlobalObjData : MonoBehaviour
     //FlameFactory
     [SerializeField]
     private GameObject fileFlamePrehub;   //ファイルのフレーム
-    public GameObject getFileFlamePrehub() { return fileFlamePrehub; }
     [SerializeField]
     private GameObject wordFlamePrehub;  //単語のフレーム
-    public GameObject getWordFlamePrehub() { return wordFlamePrehub; }
+		/// <summary>
+		/// フレームプレハブ取得
+		/// </summary>
+		/// <param name="type">タイプ</param>
+		/// <returns></returns>
+    public GameObject GetFlamePrehub(I_FileContent.FileType type)
+		{
+				if (type == I_FileContent.FileType.FILE_LIST) { return fileFlamePrehub; }
+				else if (type == I_FileContent.FileType.WORD) { return wordFlamePrehub; }
+				else { return null; }
+		}
+		[SerializeField]
+    private GameObject wordInputFlamePrehub;  //単語のフレーム
+		/// <summary>
+		/// 入力フレームプレハブ取得
+		/// </summary>
+		/// <param name="type">タイプ</param>
+		/// <returns></returns>
+    public GameObject GetInputFlamePrehub(I_FileContent.FileType type)
+		{
+				if (type == I_FileContent.FileType.FILE_LIST) { return null; }
+				else if (type == I_FileContent.FileType.WORD) { return wordInputFlamePrehub; }
+				else { return null; }
+		}
     //CopyToCripBoard
     [SerializeField]
     private GameObject popUp;  //ポップアップ

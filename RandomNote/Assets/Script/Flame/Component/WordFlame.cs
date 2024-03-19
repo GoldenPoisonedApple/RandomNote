@@ -23,8 +23,6 @@ public class WordFlame : MonoBehaviour, I_Flame
 	private Transform tagPrehub;     //タグプレハブ
 	[SerializeField]
 	private Transform tagTrans;     //タグ配置場所
-	[SerializeField]
-	private GameObject inputFlamePrehub;     //単語フレーム入力プレハブ
 
 	private int flame_num;     //フレーム番号
 	private I_FlameData flameData;     //フレームデータ
@@ -57,7 +55,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 			inputpanel.SetActive(true);
 			// フレーム入力プレハブをインスタンスして配置
 			// flameDataはコピーして渡す
-			inputpanel.GetComponent<InputFlame>().SetFlame(flame_num, flameData.Clone(), tagControl, inputFlamePrehub);
+			inputpanel.GetComponent<InputFlame>().SetFlame(flame_num, flameData.Clone(), tagControl);
 			});
 	}
 

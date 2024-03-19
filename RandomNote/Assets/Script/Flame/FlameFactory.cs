@@ -40,12 +40,13 @@ public class FlameFactory
 	private void fileFlameFactory(FileManager fileManager, GlobalObjData globalObjData)
 	{
 		FileContent = fileManager.Load<FileListDataWrapper>();
-		FlamePrehub = globalObjData.getFileFlamePrehub();  //フレームプレハブ割り当て
+		FlamePrehub = globalObjData.GetFlamePrehub(I_FileContent.FileType.WORD);  //フレームプレハブ割り当て
 	}
 	// ワード
 	private void wordFlameFactory(FileManager fileManager, GlobalObjData globalObjData)
 	{
 		FileContent = fileManager.Load<FileData>();
-		FlamePrehub = globalObjData.getWordFlamePrehub();  //フレームプレハブ割り当て
+		FlamePrehub = globalObjData.GetFlamePrehub(I_FileContent.FileType.WORD);  //フレームプレハブ割り当て
+		globalObjData.inputPanel.GetComponent<InputFlame>().SetFlamePrehub(globalObjData.GetInputFlamePrehub(I_FileContent.FileType.WORD));  //入力フレームプレハブ割り当て
 	}
 }
