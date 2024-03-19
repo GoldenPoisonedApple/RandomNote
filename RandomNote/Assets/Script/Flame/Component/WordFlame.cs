@@ -56,7 +56,8 @@ public class WordFlame : MonoBehaviour, I_Flame
 			// パネル表示
 			inputpanel.SetActive(true);
 			// フレーム入力プレハブをインスタンスして配置
-			inputpanel.GetComponent<InputFlame>().SetFlame(flame_num, flameData, tagControl, inputFlamePrehub);
+			// flameDataはコピーして渡す
+			inputpanel.GetComponent<InputFlame>().SetFlame(flame_num, flameData.Clone(), tagControl, inputFlamePrehub);
 			});
 	}
 
@@ -82,7 +83,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	public void ReflectInput(int flame_num, I_FlameData flameData, I_TagControl tagControl)
 	{
 		Reflect(flame_num, flameData, tagControl);
-		transform.GetComponent<TagDropDown>().Reflect(tagControl);
+		transform.GetComponent<TagDropDown>().Reflect(flameData, tagControl, ()=>{ ReflectTagUpdate(tagControl); });
 	}
 
 

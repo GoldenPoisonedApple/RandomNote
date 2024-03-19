@@ -6,8 +6,6 @@ public class FlameFactory
 {
 	// フレームデータ
 	public I_FileContent FileContent { get; private set; }
-	// タグデータ
-	public I_TagControl TagControl { get; private set; }
 	// フレームプレハブ
 	public GameObject FlamePrehub { get; private set; }
 	// ソート系統プレハブ

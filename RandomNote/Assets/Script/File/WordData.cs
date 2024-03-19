@@ -77,6 +77,33 @@ public class WordData : I_FlameData
 	public void SetStatus (int status) {
 		this.status = status;
 	}
+	/// <summary>
+	/// タグ情報取得
+	/// </summary>
+	/// <returns>タグ情報</returns>
+	public List<int> GetTags () {
+		return tags;
+	}
+
+	/// <summary>
+	/// コピー作成用コンストラクタ
+	/// </summary>
+	private WordData (int num, string word, int count, short star_num, string explain, List<int> tags, string entry_date, string update_date, int status)
+	{
+		this.num = num;
+		this.word = word;
+		this.count = count;
+		this.star_num = star_num;
+		this.explain = explain;
+		this.tags = tags;
+		this.entry_date = entry_date;
+		this.update_date = update_date;
+		this.status = status;
+	}
+	public I_FlameData Clone()
+	{
+		return new WordData(num, word, count, star_num, explain, tags, entry_date, update_date, status);
+	}
 
 	/// <summary>
 	/// 登録番号

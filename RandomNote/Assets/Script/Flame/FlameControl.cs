@@ -60,6 +60,7 @@ public class FlameControl : MonoBehaviour
 	/// テスト
 	/// </summary>
 	private void Test () {
-		flameList.Test();
+		Debug.Log("テスト");
+		fileContent.Save();
 	}
 }

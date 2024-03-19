@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
+
 
 /// <summary>
 /// 単語リスト
@@ -63,6 +65,32 @@ public class FileListData : I_FlameData
 	/// <returns>ステータス</returns>
 	public void SetStatus (int status) {
 		this.status = status;
+	}
+	/// <summary>
+	/// タグ情報取得
+	/// </summary>
+	/// <returns>タグ情報</returns>
+	public List<int> GetTags () {
+		throw new NotImplementedException();
+	}
+
+	/// <summary>
+	/// コピー作成用コンストラクタ
+	/// </summary>
+	private FileListData (int num, string title, int type, bool is_locked, int word_num, string entry_date, string update_date, int status)
+	{
+		this.num = num;
+		this.title = title;
+		this.type = type;
+		this.is_locked = is_locked;
+		this.word_num = word_num;
+		this.entry_date = entry_date;
+		this.update_date = update_date;
+		this.status = status;
+	}
+	public I_FlameData Clone()
+	{
+		return new FileListData(num, title, type, is_locked, word_num, entry_date, update_date, status);
 	}
 
 	/// <summary>

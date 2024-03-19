@@ -1,7 +1,9 @@
+using System.Collections.Generic;
+
 /// <summary>
 /// 書き込みファイル一括管理用
 /// </summary>
-public interface I_FlameData {
+public interface I_FlameData{
 	/// <summary>
 	/// データ
 	/// </summary>
@@ -32,4 +34,16 @@ public interface I_FlameData {
 	/// ステータス設定
 	/// </summary>
 	public void SetStatus (int status);
+
+	/// <summary>
+	/// タグ情報取得
+	/// </summary>
+	/// <returns>タグ情報</returns>
+	public List<int> GetTags ();
+
+	/// <summary>
+	/// コピー作成
+	/// </summary>
+	/// <returns>コピー</returns>
+	public I_FlameData Clone();
 }
