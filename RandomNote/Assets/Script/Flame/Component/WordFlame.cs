@@ -92,7 +92,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	/// <param name="tagControl">タグデータ</param>
 	public void NewInput(int flame_num, I_TagControl tagControl)
 	{
-		Reflect(flame_num, new WordData("", 3, "", new List<int>(), DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")), tagControl);
+		Reflect(flame_num, new WordData("", 3, "", new List<int>(), "作成時間"), tagControl);
 		transform.GetComponent<TagDropDown>().Reflect(flameData, tagControl, ()=>{ ReflectTagUpdate(tagControl); });
 	}
 
@@ -104,9 +104,11 @@ public class WordFlame : MonoBehaviour, I_Flame
 		// データ取得
 		((WordData)flameData).word = word.GetComponent<TMP_InputField>().text;
 		((WordData)flameData).explain = explain.GetComponent<TMP_InputField>().text;
-		if (time_text.text.Length >= 40)
-			((WordData)flameData).entry_date = time_text.text[20..39];
-		((WordData)flameData).update_date = time_text.text[..18];
+		if (time_text.text.Length > 5) {
+			((WordData)flameData).update_date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+		} else {
+			((WordData)flameData).entry_date = ((WordData)flameData).update_date = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss");
+		}
 		((WordData)flameData).star_num = evaluation.GetComponent<StarComponent>().GetEvaluation();
 		// タグは反映されてるのでそのまま
 		// データ返却

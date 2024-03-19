@@ -44,8 +44,8 @@ public class FlameControl : MonoBehaviour
 		// フレーム更新用
 		addButton.onClick.AddListener(ShowInputPanel);
 		returnPanel.onClick.AddListener(CloseInputPanel);
-		createButton.onClick.AddListener(CloseInputPanel);
-		discardButton.onClick.AddListener(CloseInputPanel);
+		createButton.onClick.AddListener(CreateButton);
+		discardButton.onClick.AddListener(DiscardButton);
 	}
 
 	/// <summary>
@@ -97,7 +97,7 @@ public class FlameControl : MonoBehaviour
 	{
 		GameObject inputpanel = GlobalObjData.Instance.inputPanel;
 		inputpanel.SetActive(true); // gameObjectをアクティブ化
-		inputpanel.GetComponent<InputFlame>().NewFlame(fileContent.GetValidCount(), fileContent.GetTagControl());
+		inputpanel.GetComponent<InputFlame>().NewFlame(fileContent.GetValidCount()+1, fileContent.GetTagControl());
 	}
 
 	/// <summary>
@@ -114,23 +114,28 @@ public class FlameControl : MonoBehaviour
 	private void CreateButton () {
 		if (GlobalObjData.Instance.createButtonText.text == "作成") {
 			// フレーム作成
+			Debug.Log("フレーム作成");
 			fileContent.Add(GlobalObjData.Instance.inputPanel.GetComponent<InputFlame>().GetFlameData());
 		} else {
 			// フレーム更新
+			Debug.Log("フレーム更新");
 			I_FlameData flameData = GlobalObjData.Instance.inputPanel.GetComponent<InputFlame>().GetFlameData();
 			fileContent.Update(flameData.GetNum(), flameData);
 		}
 		fileContent.Save();
+		CloseInputPanel();
 	}
 
 	private void DiscardButton () {
 		if (GlobalObjData.Instance.discardButtonText.text == "破棄") {
 			// フレーム破棄
-			CloseInputPanel();
+			Debug.Log("フレーム破棄");
 		} else {
 			// フレーム削除
+			Debug.Log("フレーム削除");
 			fileContent.Del(GlobalObjData.Instance.inputPanel.GetComponent<InputFlame>().GetFlameData().GetNum());
 			fileContent.Save();
 		}
+		CloseInputPanel();
 	}
 }
