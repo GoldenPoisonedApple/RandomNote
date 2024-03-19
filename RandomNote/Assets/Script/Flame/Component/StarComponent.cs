@@ -14,16 +14,16 @@ public class StarComponent : MonoBehaviour
 	/// <summary>
 	/// 評価
 	/// </summary>
-	private int evaluation = 0;     //評価
+	private short evaluation = 0;     //評価
 
 	void Start ()
 	{
 		// リスナー登録
-		int i = 0;
+		short i = 0;
 		foreach (Transform item in transform) {
 			i++;
 			if (item.GetComponent<Button>()) {
-				int tmp = i;
+				short tmp = i;
 				item.GetComponent<Button>().onClick.AddListener(() => {
 					ReflectEvaluation(tmp);
 				});
@@ -35,7 +35,7 @@ public class StarComponent : MonoBehaviour
 	/// 評価設定
 	/// </summary>
 	/// <param name="evaluation">評価</param>
-	public void ReflectEvaluation (int evaluation) {
+	public void ReflectEvaluation (short evaluation) {
 		this.evaluation = evaluation;
 		//星の表示
 		for (int i = 0; i < transform.childCount; i++) {
@@ -52,7 +52,7 @@ public class StarComponent : MonoBehaviour
 	/// 評価取得
 	/// </summary>
 	/// <returns></returns>
-	public int GetEvaluation () {
+	public short GetEvaluation () {
 		return evaluation;
 	}
 }

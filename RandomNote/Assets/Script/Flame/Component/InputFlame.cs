@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 
 public class InputFlame : MonoBehaviour
 {
 	[SerializeField]
 	private GameObject flameParent;     //プレハブ配置場所
+
 
 	private GameObject inputFlame;     // 入力フレーム
 
@@ -33,6 +34,9 @@ public class InputFlame : MonoBehaviour
 	/// <param name="flamePrehub"></param>
 	public void SetFlame(int flame_num, I_FlameData flameData, I_TagControl tagControl)
 	{
+		GlobalObjData.Instance.createButtonText.text = "更新";	// ボタンテキストを"更新"に変更
+		GlobalObjData.Instance.discardButtonText.text = "削除";	// ボタンテキストを"削除"に変更
+
 		// データ反映
 		inputFlame.GetComponent<I_Flame>().ReflectInput(flame_num, flameData, tagControl);
 
@@ -46,8 +50,24 @@ public class InputFlame : MonoBehaviour
 		}
 	}
 
-	public void newFlame (int newFlameCount, I_TagControl tagControl) {
+	/// <summary>
+	/// フレーム新規作成
+	/// </summary>
+	/// <param name="newFlameCount"></param>
+	/// <param name="tagControl"></param>
+	public void NewFlame (int newFlameCount, I_TagControl tagControl) {
+		GlobalObjData.Instance.createButtonText.text = "作成";	// ボタンテキストを"作成"に変更
+		GlobalObjData.Instance.discardButtonText.text = "破棄";	// ボタンテキストを"破棄"に変更
+
 		// データ反映
 		inputFlame.GetComponent<I_Flame>().NewInput(newFlameCount, tagControl);
+	}
+
+	/// <summary>
+	/// 入力フレームデータ取得
+	/// </summary>
+	/// <returns>フレームデータ取得</returns>
+	public I_FlameData GetFlameData () {
+		return inputFlame.GetComponent<I_Flame>().GetFlameData();
 	}
 }

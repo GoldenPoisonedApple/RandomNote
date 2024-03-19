@@ -1482,9 +1482,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -12, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4282976287027588045
 MonoBehaviour:
@@ -2192,7 +2192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4282976287411139312
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3066,7 +3066,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.93333334}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4478,7 +4478,6 @@ MonoBehaviour:
   evaluation: {fileID: 1010604062723108283}
   tagPrehub: {fileID: 3482257511698068563, guid: ff0b95f86ddb73e4792b99b189f7719c, type: 3}
   tagTrans: {fileID: 5854507758611755981}
-  inputFlamePrehub: {fileID: 7376346521399709328}
 --- !u!114 &3055789058121111826
 MonoBehaviour:
   m_ObjectHideFlags: 0

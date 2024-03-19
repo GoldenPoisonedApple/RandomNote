@@ -38,4 +38,10 @@ public interface I_Flame
 	/// <param name="flame_num">フレーム番号</param>
 	/// <param name="tagControl">タグデータ</param>
 	public void NewInput(int flame_num, I_TagControl tagControl);
+
+	/// <summary>
+	/// フレームデータ取得
+	/// </summary>
+	/// <returns>フレームデータ</returns>
+	public I_FlameData GetFlameData();
 }

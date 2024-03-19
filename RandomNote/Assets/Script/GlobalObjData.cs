@@ -94,7 +94,11 @@ public sealed class GlobalObjData : MonoBehaviour
     private GameObject popUp;  //ポップアップ
     [SerializeField]
     private TMP_Text popUpMessage;  //ポップアップ
-		//LongPressControl
+		// フレーム入力パネル関係
 		[SerializeField]
 		public GameObject inputPanel;  //入力パネル
+		[SerializeField]
+		public TMP_Text createButtonText;	//作成ボタンテキスト
+		[SerializeField]
+		public TMP_Text discardButtonText;	//破棄・削除ボタンテキスト
 }

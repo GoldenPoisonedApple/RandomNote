@@ -96,6 +96,23 @@ public class WordFlame : MonoBehaviour, I_Flame
 		transform.GetComponent<TagDropDown>().Reflect(flameData, tagControl, ()=>{ ReflectTagUpdate(tagControl); });
 	}
 
+	/// <summary>
+	/// フレームデータ取得
+	/// </summary>
+	/// <returns>フレームデータ</returns>
+	public I_FlameData GetFlameData() {
+		// データ取得
+		((WordData)flameData).word = word.GetComponent<TMP_InputField>().text;
+		((WordData)flameData).explain = explain.GetComponent<TMP_InputField>().text;
+		if (time_text.text.Length >= 40)
+			((WordData)flameData).entry_date = time_text.text[20..39];
+		((WordData)flameData).update_date = time_text.text[..18];
+		((WordData)flameData).star_num = evaluation.GetComponent<StarComponent>().GetEvaluation();
+		// タグは反映されてるのでそのまま
+		// データ返却
+		return flameData;
+	}
+
 
 	/// <summary>
 	/// データ反映のとりまとめ
@@ -151,7 +168,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 	//評価設定
 	private void ReflectStar()
 	{
-		int star_num = ((WordData)flameData).star_num;
+		short star_num = ((WordData)flameData).star_num;
 		evaluation.GetComponent<StarComponent>().ReflectEvaluation(star_num);
 	}
 
