@@ -93,7 +93,6 @@ public class WordFlame : MonoBehaviour, I_Flame
 	public void NewInput(int flame_num, I_TagControl tagControl)
 	{
 		Reflect(flame_num, new WordData("", 3, "", new List<int>(), "作成時間"), tagControl);
-		transform.GetComponent<TagDropDown>().Reflect(flameData, tagControl, ()=>{ ReflectTagUpdate(tagControl); });
 	}
 
 	/// <summary>
@@ -182,7 +181,7 @@ public class WordFlame : MonoBehaviour, I_Flame
 		// Add new tags
 		foreach (int tag in ((WordData)flameData).tags)
 		{
-			tagPrehub.GetComponent<TagComponent>().ReflectData(tagControl.GetName(tag));
+			tagPrehub.GetComponent<I_TagComponent>().ReflectData(tagControl.GetTag(tag), flameData);
 			Instantiate(tagPrehub, tagTrans);
 		}
 

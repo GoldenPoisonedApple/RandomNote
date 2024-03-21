@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 
 /// <summary>
 /// 単語リスト
@@ -145,6 +146,14 @@ public class TagDataWrapper : I_TagControl
 		{
 			throw;
 		}
+	}
+
+	public TagData GetTag(int num) {
+		TagData tagData = tagDatas[num];
+		if (tagData.status == TagData.DATA)
+			return tagData;
+		else
+			throw new Exception("This tag is deleted");
 	}
 
 	/// <summary>

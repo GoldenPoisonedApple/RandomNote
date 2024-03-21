@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting.YamlDotNet.Core.Tokens;
 
 /// <summary>
 /// タグ操作 どうせTagDataWrapperの具現クラス使うからいらん気がするけど
@@ -53,6 +54,13 @@ public interface I_TagControl {
 	/// </summary>
 	/// <param name="num">削除するタグ番号</param>
 	public void DelTag(int num);
+
+	/// <summary>
+	/// タグの取得
+	/// </summary>
+	/// <param name="num">取得するタグ番号</param>
+	/// <returns>タグ</returns>
+	public TagData GetTag(int num);
 
 	/// <summary>
 	/// タグの名前取得
